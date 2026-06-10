@@ -1,6 +1,8 @@
 #ifndef CUB_PARSE
 # define CUB_PARSE
 
+#include <stdbool.h>
+
 typedef struct s_player_pos
 {
 	double	x;
@@ -19,5 +21,7 @@ typedef struct s_map
 	char		*texture_ea;
 	t_player_pos	pos;
 }	t_map;
+
+bool	parsing(char *map_path);
 
 #endif

@@ -1,28 +1,47 @@
-CC = cc
-FLAGS = -Wall -Werror -Wextra -g3
+NAME		= cub3D
 
-NAME = cub3D
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror -g3
+CPPFLAGS	= -Iincludes -I$(LIBFT_DIR) -I$(MLX_DIR)
 
-MLXDIR = ./minilibx-linux
-MLXA = $(MLXDIR)/libmlx.a
+LIBFT_DIR	= libft
+LIBFT		= $(LIBFT_DIR)/libft.a
 
-SRC=./src
-DIR_UTILS=$SRC/utils
-MAPS=./maps
-OBJS = $(SRC:.c=.o)
+MLX_DIR		= minilibx-linux
+MLX			= $(MLX_DIR)/libmlx.a
+MLX_FLAGS	= -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 
-$(NAME): all
+SRC_DIR		= src
+OBJ_DIR		= obj
 
-all : $(OBJS) mlx
-	$(CC) $(FLAGS) $(OBJS) -I$(MLXDIR) -o $(NAME) -L$(MLXDIR) -lmlx -lXext -lX11 -lm 
-%.o : %.c
-	$(CC) $(FLAGS) -I$(MLXDIR) -c $< -o $@
-mlx :
-	make -C $(MLXDIR) all
-clean :
-	rm -rf $(OBJS)
-fclean : clean
-	rm -rf $(NAME)
-re : fclean all
+SRCS		= $(SRC_DIR)/main.c \
+			  $(SRC_DIR)/parsing/parsing.c
 
-.PHONY: all clean fclean re mlx
+OBJS		= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+
+all: $(NAME)
+
+$(NAME): $(LIBFT) $(MLX) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft $(MLX_FLAGS) -o $(NAME)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_DIR) bonus
+
+$(MLX):
+	$(MAKE) -C $(MLX_DIR) all
+
+clean:
+	rm -rf $(OBJ_DIR)
+	$(MAKE) -C $(LIBFT_DIR) clean
+
+fclean: clean
+	rm -f $(NAME)
+	$(MAKE) -C $(LIBFT_DIR) fclean
+
+re: fclean all
+
+.PHONY: all clean fclean re
