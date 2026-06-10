@@ -3,12 +3,23 @@ FLAGS = -Wall -Werror -Wextra -g3
 
 NAME = cub3D
 
+TEST=./test/main.c
+MAIN=./main.c
 MLXDIR = ./minilibx-linux
 MLXA = $(MLXDIR)/libmlx.a
 
-SRC=./src
-DIR_UTILS=$SRC/utils
-MAPS=./maps
+SRC_DIR = ./src
+
+DIR_UTILS = $SRC_DIR/utils
+SRC_UTILS = \
+
+DIR_WINDOW = $SRC_DIR/window
+SRC_WINDOW = $DIR_WINDOW/init.c \
+
+SRC = $SRC_UTILS \
+	  $SRC_WINDOW \
+
+MAPS = ./maps
 OBJS = $(SRC:.c=.o)
 
 $(NAME): all
@@ -24,5 +35,7 @@ clean :
 fclean : clean
 	rm -rf $(NAME)
 re : fclean all
+
+test: all
 
 .PHONY: all clean fclean re mlx
