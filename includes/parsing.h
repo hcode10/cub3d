@@ -1,6 +1,8 @@
 #ifndef CUB_PARSE
 # define CUB_PARSE
 
+#include <stdbool.h>
+
 typedef struct s_player_pos
 {
 	double	x;
