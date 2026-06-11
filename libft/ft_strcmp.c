@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 18:47:23 by coressor          #+#    #+#             */
-/*   Updated: 2025/11/11 18:23:45 by coressor         ###   ########.fr       */
+/*   Created: 2026/03/23 12:04:24 by coressor          #+#    #+#             */
+/*   Updated: 2026/04/25 16:58:45 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_strcmp(char *s1, char *s2)
 {
-	if (!s)
-		return ;
-	while (*s)
+	size_t	i;
+
+	i = 0;
+	while (s1[i] && s2[i])
 	{
-		ft_putchar_fd(*s, fd);
-		s++;
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
 	}
+	return (s1[i] - s2[i]);
 }

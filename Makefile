@@ -1,47 +1,62 @@
-NAME		= cub3D
+CC = cc
+FLAGS = -Wall -Werror -Wextra -g3
+NAME = cub3D
 
-CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -g3
-CPPFLAGS	= -Iincludes -I$(LIBFT_DIR) -I$(MLX_DIR)
+INCDIR=./includes
 
-LIBFT_DIR	= libft
-LIBFT		= $(LIBFT_DIR)/libft.a
+MLXDIR = ./minilibx-linux
+MLXA = $(MLXDIR)/libmlx.a
 
-MLX_DIR		= minilibx-linux
-MLX			= $(MLX_DIR)/libmlx.a
-MLX_FLAGS	= -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
+LIBFTDIR = ./libft/
+LIBFT=libft.a
 
-SRC_DIR		= src
-OBJ_DIR		= obj
+SRC_DIR = ./src
 
-SRCS		= $(SRC_DIR)/main.c \
-			  $(SRC_DIR)/parsing/parsing.c
+#---------   UTILS --------------
 
-OBJS		= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+DIR_UTILS = $(SRC_DIR)/utils
+SRC_UTILS = \
 
-all: $(NAME)
+#--------  WINDOW -----------
 
-$(NAME): $(LIBFT) $(MLX) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft $(MLX_FLAGS) -o $(NAME)
+# DIR_WINDOW = $(SRC_DIR)/window
+# SRC_WINDOW = $(DIR_WINDOW)/init.c \
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+#-------- ALL THE SOURCES -----
+SRC = $(SRC_DIR)/main.c \
+		$(SRC_UTILS) \
+		# $(SRC_WINDOW) \
 
-$(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR) bonus
+MAPS = ./maps
+OBJS = $(SRC:.c=.o)
 
-$(MLX):
-	$(MAKE) -C $(MLX_DIR) all
+#------- TEST CFG ----------
 
-clean:
-	rm -rf $(OBJ_DIR)
-	$(MAKE) -C $(LIBFT_DIR) clean
+TEST= ./test/main.c \
+	  $(SRC_UTILS) \
+	  # $(SRC_WINDOW) \
 
-fclean: clean
-	rm -f $(NAME)
-	$(MAKE) -C $(LIBFT_DIR) fclean
+TEST_OBJS = $(TEST:.c=.o)
 
-re: fclean all
+TEST_TARGET = cub3Dtest
 
-.PHONY: all clean fclean re
+$(NAME): all
+
+all : $(OBJS) mlx
+	$(CC) $(FLAGS) $(OBJS) -I$(MLXDIR) -I$(INCDIR) -o $(NAME) $(LIBFT) -L$(MLXDIR) -lmlx -lXext -lX11 -lm 
+
+%.o : %.c
+	$(CC) $(FLAGS) -I$(MLXDIR) -I$(INCDIR) -c $< -o $@
+mlx :
+	make -C $(MLXDIR) all
+clean :
+	rm -rf $(OBJS)
+fclean : clean
+	rm -rf $(NAME)
+re : fclean all
+
+test: all
+
+$(TEST_TARGET) : $(TEST_OBJS) mlx
+	$(CC) $(FLAGS) $(OBJS) -I$(MLXDIR) -I$(INCDIR) -o $(TEST_TARGET) $(LIBFT) -L$(MLXDIR) -lmlx -lXext -lX11 -lm 
+.PHONY: all clean fclean re mlx

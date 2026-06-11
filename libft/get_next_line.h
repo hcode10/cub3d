@@ -3,22 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 10:10:17 by dcasadio          #+#    #+#             */
-/*   Updated: 2025/12/05 21:30:17 by dcasadio         ###   ########.fr       */
+/*   Created: 2025/11/17 10:12:10 by coressor          #+#    #+#             */
+/*   Updated: 2025/11/18 12:59:47 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 1024
 # endif
-
-# include <unistd.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 char	*get_next_line(int fd);
+size_t	ft_strlen(char *str);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char *s1, char *s2);
+
 #endif

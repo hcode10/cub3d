@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   free_split.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 18:47:23 by coressor          #+#    #+#             */
-/*   Updated: 2025/11/11 18:23:45 by coressor         ###   ########.fr       */
+/*   Created: 2026/03/23 17:37:17 by coressor          #+#    #+#             */
+/*   Updated: 2026/04/26 15:39:07 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	free_split(char **start)
 {
-	if (!s)
-		return ;
-	while (*s)
+	char	**tmp;
+
+	tmp = start;
+	if (*start)
 	{
-		ft_putchar_fd(*s, fd);
-		s++;
+		while (*start)
+		{
+			free(*start);
+			start++;
+		}
 	}
+	if (tmp)
+		free(tmp);
 }

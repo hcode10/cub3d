@@ -3,74 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 19:24:02 by dcasadio          #+#    #+#             */
-/*   Updated: 2025/11/20 16:39:32 by dcasadio         ###   ########.fr       */
+/*   Created: 2025/11/10 11:42:33 by coressor          #+#    #+#             */
+/*   Updated: 2025/11/12 09:28:05 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	int_sizechar(long long n)
+int	nb_len(int nb)
 {
-	size_t	count;
+	int	count;
 
-	count = 0;
-	if (n < 0)
-	{
+	count = 1;
+	if (nb < 0)
 		count++;
-		n = -n;
-	}
-	while (n >= 10)
+	while (nb / 10)
 	{
-		n /= 10;
+		nb /= 10;
 		count++;
 	}
-	return (++count);
+	return (count);
 }
 
 char	*ft_itoa(int n)
 {
 	size_t	len;
-	char	*ascii_int;
-	long	nbr;
+	char	*nb;
+	int		sign;
 
-	nbr = (long)n;
-	len = int_sizechar(nbr);
-	ascii_int = (char *)ft_calloc(len + 1, sizeof(char));
-	if (!ascii_int)
+	if (!n)
+		return (ft_strdup("0"));
+	sign = 1;
+	len = nb_len(n);
+	nb = ft_calloc(len + 1, sizeof(char));
+	if (!nb)
 		return (NULL);
-	if (nbr < 0)
+	ft_bzero(nb, len + 1);
+	if (n < 0)
 	{
-		ascii_int[0] = '-';
-		nbr = -nbr;
+		sign *= -1;
+		*nb = '-';
 	}
-	ascii_int[--len] = (nbr % 10) + '0';
-	while (nbr >= 10)
+	while (n)
 	{
-		nbr /= 10;
-		ascii_int[--len] = (nbr % 10) + '0';
+		nb[--len] = ((n % 10) * sign) + 48;
+		n /= 10;
 	}
-	return (ascii_int);
+	return (nb);
 }
-
-/*int	main(void)
-{
-	int	n = -4256;
-	char *str;
-	int i;
-	
-	i = 0;
-	printf("$%zu$\n", int_sizechar(n));
-	str = ft_itoa(n);
-
-	while (str[i])
-	{
-		printf("str[%d] = $%c$\n", i, str[i]);
-		i++;
-	}
-	
-	free(str);
-	return (0);
-}*/

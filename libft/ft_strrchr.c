@@ -3,47 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 15:48:02 by dcasadio          #+#    #+#             */
-/*   Updated: 2025/11/19 17:01:42 by dcasadio         ###   ########.fr       */
+/*   Created: 2025/11/05 19:35:05 by coressor          #+#    #+#             */
+/*   Updated: 2025/11/11 18:30:53 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int searchedChar)
+char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int	len;
 
-	i = ft_strlen(str);
-	if (searchedChar == '\0')
-		return ((char *)&str[i]);
-	while (i >= 0)
+	len = ft_strlen((char *)s);
+	while (len + 1)
 	{
-		if (str[i] == (unsigned char)searchedChar)
-			return ((char *)&str[i]);
-		i--;
+		if (s[len] == (char)c)
+			return ((char *)&s[len]);
+		len--;
 	}
 	return (NULL);
 }
-
-/*#include <stdlib.h>
-#include <string.h>
-int main(void)
-{
-	const char * source = "tripouille";
-    char * destination;
-    int length = strlen(source);
-    
-
-    destination = (char *) malloc(sizeof(char) * (length+1));
-    strcpy(destination, source);
-        
-    printf("Return    : %s^\n", strrchr(destination, 0));
-	printf("Return FT : %s^\n", ft_strrchr(destination, 0));
-        
-    free(destination);
-    
-    return 0;
-}*/

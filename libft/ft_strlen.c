@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 10:42:31 by dcasadio          #+#    #+#             */
-/*   Updated: 2025/11/19 15:42:12 by dcasadio         ###   ########.fr       */
+/*   Created: 2025/11/04 17:01:18 by coressor          #+#    #+#             */
+/*   Updated: 2026/04/24 04:12:48 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,9 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (!str)
+		return (0);
+	while (str[i])
 		i++;
 	return (i);
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	char *str = "Bonjour";
-	printf("Result : %d\n", ft_strlen(str));
-}*/

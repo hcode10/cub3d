@@ -3,105 +3,97 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 18:55:23 by dcasadio          #+#    #+#             */
-/*   Updated: 2025/11/19 13:29:30 by dcasadio         ###   ########.fr       */
+/*   Created: 2025/11/10 13:54:21 by coressor          #+#    #+#             */
+/*   Updated: 2026/04/26 15:54:11 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_words(char *str, char c)
+int	count_word(char *s, char c)
 {
-	size_t	words;
-	size_t	i;
+	int	i;
+	int	flag;
 
-	words = 0;
+	flag = 0;
 	i = 0;
-	while (str[i])
+	while (*s)
 	{
-		if (str[i] != c)
+		if (*s != c && !flag)
 		{
-			words++;
-			while (str[i])
-			{
-				i++;
-				if (str[i] == c)
-					break ;
-			}
-		}
-		else
+			flag = 1;
 			i++;
+		}
+		else if (*s == c && flag)
+			flag = 0;
+		s++;
 	}
-	return (words);
+	return (i);
 }
 
-static void	free_all(char **sl, size_t count)
+int	len_word(char *s, char c)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i < count)
+	while (*s != c && *s)
 	{
-		free(sl[i]);
+		s++;
 		i++;
 	}
-	free(sl);
+	return (i);
 }
 
-static char	*alloc_word(char const *s, size_t start, size_t end)
+static const char	*next_occ(char const *s, char c)
 {
-	char	*word;
-
-	word = ft_calloc((end - start) + 1, sizeof(char));
-	if (!word)
-		return (NULL);
-	ft_strlcpy(word, s + start, (end - start) + 1);
-	return (word);
+	while (*s == c && *s)
+		s++;
+	return (s);
 }
+
+// void	free_split(char **start)
+// {
+// 	char	**tmp;
+//
+// 	tmp = start;
+// 	if (*start)
+// 	{
+// 		while (*start)
+// 		{
+// 			free(*start);
+// 			start++;
+// 		}
+// 	}
+// 	free(tmp);
+// }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	start;
-	size_t	index;
-	char	**sl;
+	char	**split;
+	char	**start;
 
-	i = -1;
-	index = 0;
-	sl = ft_calloc(count_words((char *)s, c) + 1, sizeof(char *));
-	if (!sl)
+	if (!s)
 		return (NULL);
-	while (s[++i])
+	split = ft_calloc(count_word((char *)s, c) + 1, sizeof(char *));
+	if (!split)
+		return (NULL);
+	start = split;
+	while (*s)
 	{
-		if (s[i] != c)
+		if (len_word((char *)s, c))
 		{
-			start = i;
-			while (s[i] && s[i] != c)
-				i++;
-			sl[index++] = alloc_word(s, start, i--);
-			if (!sl[index - 1])
-				return (free_all(sl, index - 1), NULL);
+			*split = ft_calloc(len_word((char *)s, c) + 1, sizeof(char));
+			if (!(*split))
+				return (free_split(start), NULL);
+			ft_strlcpy(*split, (char *)s, len_word((char *)s, c) + 1);
+			split++;
+			s += len_word((char *)s, c);
 		}
+		else
+			s = next_occ(s, c);
 	}
-	return (sl);
+	split = NULL;
+	return (start);
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	char *s = "split  ||this|for|me|||||!|";
-    char **result = ft_split(s, '|');
- 
-	int index = 0;
-	while (result[index])
-	{
-		printf("arr[%d] = $%s$\n", index, result[index]);
-		index++;
-	}
-    free(result);
-        
-	return (0);
-	//print_index(str);
-}*/
