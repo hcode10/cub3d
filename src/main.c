@@ -1,13 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-#include <unistd.h>
-/*   Updated: 2026/06/11 14:20:06 by coressor         ###   ########.fr       */
-#include <stdlib.h>
+/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/11 16:11:45 by dcasadio          #+#    #+#             */
+/*   Updated: 2026/06/11 16:12:13 by dcasadio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "parsing.h"
 
 int main(int argc, char **argv)
 {
-	t_map *map;
+	t_map	*map;
+
 	if (argc != 2)
 	{
 		printf("Arguments incorrect : ./cub3d /path/to/map.cub\n");
