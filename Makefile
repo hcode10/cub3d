@@ -71,6 +71,7 @@ mlx :
 
 clean:
 	rm -rf $(OBJS)
+
 fclean : clean
 	make -C $(MLXDIR) clean
 	make -C $(LIBFTDIR) fclean
