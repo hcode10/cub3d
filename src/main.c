@@ -1,5 +1,6 @@
+/*                                                    +:+ +:+         +:+     */
 #include <unistd.h>
-#include <stdio.h>
+/*   Updated: 2026/06/11 14:20:06 by coressor         ###   ########.fr       */
 #include <stdlib.h>
 
 #include "parsing.h"
