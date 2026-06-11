@@ -68,6 +68,14 @@ SRC_UTILS = \
 SRC = $(SRC_DIR)/main.c \
 		$(SRC_UTILS) \
 		# $(SRC_WINDOW) \
+<<<<<<< HEAD
+=======
+SRC = $SRC_UTILS \
+	  $SRC_WINDOW \
+SRC = main.c \
+		$SRC_UTILS \
+		$SRC_WINDOW \
+>>>>>>> 310ef4b (fix: makefile fix)
 
 MAPS = ./maps
 OBJS = $(SRC:.c=.o)
@@ -77,6 +85,7 @@ OBJS = $(SRC:.c=.o)
 TEST= ./test/main.c \
 	  $(SRC_UTILS) \
 	  # $(SRC_WINDOW) \
+	  $(SRC_WINDOW) \
 
 TEST_OBJS = $(TEST:.c=.o)
 
@@ -114,5 +123,9 @@ $(TEST_TARGET) : $(TEST_OBJS) mlx
 	$(CC) $(FLAGS) $(OBJS) -I$(MLXDIR) -o $(TEST_TARGET) -L$(MLXDIR) -lmlx -lXext -lX11 -lm 
 =======
 	$(CC) $(FLAGS) $(OBJS) -I$(MLXDIR) -I$(INCDIR) -o $(TEST_TARGET) $(LIBFT) -L$(MLXDIR) -lmlx -lXext -lX11 -lm 
+<<<<<<< HEAD
 >>>>>>> 13609f3 (ref: libft)
+=======
+	$(CC) $(FLAGS) $(OBJS) -I$(MLXDIR) -o $(TEST_TARGET) -L$(MLXDIR) -lmlx -lXext -lX11 -lm 
+>>>>>>> 310ef4b (fix: makefile fix)
 .PHONY: all clean fclean re mlx
