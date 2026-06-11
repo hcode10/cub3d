@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 13:05:37 by dcasadio          #+#    #+#             */
-/*   Updated: 2025/11/19 13:30:07 by dcasadio         ###   ########.fr       */
+/*   Created: 2025/11/10 10:12:22 by coressor          #+#    #+#             */
+/*   Updated: 2026/04/06 00:29:01 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,27 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
+	char	*joinstr;
+	size_t	totallen;
 	size_t	i;
-	size_t	s1_size;
-	size_t	s2_size;
-	char	*final_string;
 
-	s1_size = ft_strlen(s1);
-	s2_size = ft_strlen(s2);
 	i = 0;
-	final_string = (char *)malloc(sizeof(char) * (s1_size + s2_size) + 1);
-	if (!final_string)
+	if (!s1 || !s2)
 		return (NULL);
-	while (s1[i])
+	totallen = ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1;
+	joinstr = ft_calloc(totallen, sizeof(char));
+	if (!joinstr)
+		return (NULL);
+	ft_bzero(joinstr, totallen);
+	while (*s1)
 	{
-		final_string[i] = s1[i];
+		joinstr[i] = *s1++;
 		i++;
 	}
-	i = 0;
-	while (s2[i])
+	while (*s2)
 	{
-		final_string[s1_size + i] = s2[i];
+		joinstr[i] = *s2++;
 		i++;
 	}
-	final_string[s1_size + i] = '\0';
-	return (final_string);
+	return (joinstr);
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	printf("result : %s", ft_strjoin("Salut ", "tout"));
-	return (0);
-}*/

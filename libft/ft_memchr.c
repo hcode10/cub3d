@@ -3,49 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 12:40:37 by dcasadio          #+#    #+#             */
-/*   Updated: 2025/11/19 13:28:47 by dcasadio         ###   ########.fr       */
+/*   Created: 2025/11/05 19:24:09 by coressor          #+#    #+#             */
+/*   Updated: 2025/11/11 18:30:27 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*tmp_ptr;
-	size_t			i;
-
-	tmp_ptr = (unsigned char *)memoryBlock;
-	i = 0;
-	while (i < size)
+	while (n--)
 	{
-		if (tmp_ptr[i] == (unsigned char)searchedChar)
-			return (&tmp_ptr[i]);
-		i++;
+		if (*((unsigned char *)s) == (unsigned char)c)
+			return ((void *)s);
+		s++;
 	}
-	return (0);
+	return (NULL);
 }
-
-/*#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-int main() {
-
-    char data[] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 'A' };
-    const unsigned int size = 10;
-
-
-    void * found = ft_memchr( data, 'A' + 256, size );
-    printf( "A is %s\n", ( found != NULL ? "found" : "not found" ) );
-
-    found = ft_memchr( data, 50, size );
-    printf( "50 is %s\n", ( found != NULL ? "found" : "not found" ) );
-    if ( found != NULL ) {
-        printf( "La valeur à la position calculée est %c\n", *((char *) found) );
-    }
-
-    return EXIT_SUCCESS;
-}*/

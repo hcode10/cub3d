@@ -3,45 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 12:06:53 by dcasadio          #+#    #+#             */
-/*   Updated: 2025/11/20 16:16:10 by dcasadio         ###   ########.fr       */
+/*   Created: 2025/11/05 19:52:55 by coressor          #+#    #+#             */
+/*   Updated: 2025/11/11 18:29:40 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *first, const char *second, size_t length)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	l;
+	size_t	i;
 
-	l = 0;
-	while (l < length && (second[l] != '\0' || first[l] != '\0'))
+	i = 0;
+	while (i < n && (*s1 || *s2))
 	{
-		if ((unsigned char)first[l] != (unsigned char)second[l])
-		{
-			if ((unsigned char)first[l] > (unsigned char)second[l])
-			{
-				return (1);
-			}
-			else
-			{
-				return (-1);
-			}
-		}
-		l++;
+		if ((unsigned char) *s1 != (unsigned char) *s2)
+			return ((unsigned char) *s1 - (unsigned char) *s2);
+		s1++;
+		s2++;
+		i++;
 	}
 	return (0);
 }
-
-/*#include <string.h>
-*#include <stdio.h>
-int	main(void)
-{
-	int my_result = ft_strncmp("abcd", "abcd", 25);
-	int	result    = strncmp("abcd", "abcd", 25);
-
-	printf("ft_strncmp : %d\n", my_result);
-	printf("strncmp    : %d\n", result);
-}*/

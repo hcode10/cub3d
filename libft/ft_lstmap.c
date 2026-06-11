@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 20:37:28 by dcasadio          #+#    #+#             */
-/*   Updated: 2025/11/18 20:41:03 by dcasadio         ###   ########.fr       */
+/*   Created: 2025/11/11 11:28:28 by coressor          #+#    #+#             */
+/*   Updated: 2026/04/25 16:57:28 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_list;
-	t_list	*new_elem;
+	t_list	*new_lst;
+	t_list	*new_nd;
 	void	*content;
 
 	if (!lst || !f || !del)
 		return (NULL);
-	new_list = NULL;
+	new_lst = NULL;
 	while (lst)
 	{
 		content = f(lst->content);
-		new_elem = ft_lstnew(content);
-		if (!new_elem)
+		new_nd = ft_lstnew(content);
+		if (!new_nd)
 		{
 			del(content);
-			ft_lstclear(&new_list, del);
-			return (NULL);
+			return (new_lst);
 		}
-		ft_lstadd_back(&new_list, new_elem);
+		ft_lstadd_back(&new_lst, new_nd);
 		lst = lst->next;
 	}
-	return (new_list);
+	return (new_lst);
 }

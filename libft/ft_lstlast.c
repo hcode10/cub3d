@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 10:59:01 by dcasadio          #+#    #+#             */
-/*   Updated: 2025/11/18 20:31:40 by dcasadio         ###   ########.fr       */
+/*   Created: 2025/11/10 18:00:26 by coressor          #+#    #+#             */
+/*   Updated: 2025/11/11 18:29:06 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
-	while (lst)
-	{
-		if (lst->next == NULL)
-			return (lst);
+	while (lst->next)
 		lst = lst->next;
-	}
-	return (NULL);
+	return (lst);
 }
