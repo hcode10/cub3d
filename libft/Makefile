@@ -38,8 +38,7 @@ SOURCES = ft_isdigit.c \
 		ft_strcmp.c \
 		free_split.c \
 		ft_isspace.c \
-		get_next_line.c \
-		get_next_line_utils.c
+		get_next_line.c 
 
 SOURCE_BONUS = 		ft_lstnew.c \
 		ft_lstadd_front.c \
