@@ -1,72 +1,3 @@
-<<<<<<< HEAD
-# Prerequisites
-*.d
-
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-
-# debug information files
-*.dwo
-
-# test/main.c
-
-.cub3D*
-# minilibx.tgz
-minilibx-linux.tgz
-<<<<<<< HEAD
-minilibx-linux/*
-cub3D
-.vscode
-test_map.sh
-
-=======
 # Prerequisites
 *.d
 
@@ -128,12 +59,4 @@ dkms.conf
 cub3D*
 # minilibx.tgz
 minilibx-linux.tgz
-minilibx-linux/*
 cub3D
-.vscode
-test_map.sh
-
->>>>>>> 80b9be9 (Putain de git de merde)
-=======
-cub3D
->>>>>>> 75bc87b (Debut parsing)

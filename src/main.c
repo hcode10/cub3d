@@ -38,6 +38,7 @@ int main(int argc, char **argv)
 	t_player	player;
 
 	ft_bzero(&map, sizeof(t_map));
+	t_map *map;
 	if (argc != 2)
 	{
 		printf("Arguments incorrect : ./cub3d /path/to/map.cub\n");
