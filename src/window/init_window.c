@@ -6,7 +6,7 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 17:30:00 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/10 18:02:00 by coressor         ###   ########.fr       */
+/*   Updated: 2026/06/11 17:41:03 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ void	*init_window()
 {
 	t_window	*swn;
 
-	// ft_calloc(1, t_window);
+	swn = ft_calloc(1, sizeof(t_window));
 	if (!swn)
 		return (NULL);
+	swn->title = "CUB3D";
 	swn->mlx = mlx_init();
 	if (!swn->mlx)
 		return (NULL);
-	if (mlx_get_screen_size(swn->mlx, &swn->sizex, &swn->sizey))
+	if (!mlx_get_screen_size(swn->mlx, &swn->sizex, &swn->sizey))
 			return (NULL);
-	// TODO cree un char* pour le titre
-	swn->win = mlx_new_window(swn->mlx, swn->sizey, swn->sizex, "CUB3D");
+	swn->win = mlx_new_window(swn->mlx, swn->sizex, swn->sizey, swn->title); 
 	if (!swn->win)
 		return (NULL);
 	return (swn);
