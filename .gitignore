@@ -60,6 +60,7 @@ dkms.conf
 .cub3D*
 # minilibx.tgz
 minilibx-linux.tgz
+<<<<<<< HEAD
 minilibx-linux/*
 cub3D
 .vscode
@@ -133,3 +134,6 @@ cub3D
 test_map.sh
 
 >>>>>>> 80b9be9 (Putain de git de merde)
+=======
+cub3D
+>>>>>>> 75bc87b (Debut parsing)
