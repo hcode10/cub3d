@@ -22,4 +22,6 @@ typedef struct s_map
 	t_player_pos	pos;
 }	t_map;
 
+bool	parsing(char *map_path);
+
 #endif
