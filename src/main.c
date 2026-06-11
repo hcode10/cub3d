@@ -79,5 +79,13 @@ int main(int argc, char **argv)
 	mlx_loop(win->mlx);
 	printf("Parsing OK");
 	free_struct(&map);
+	{
+		printf("Arguments incorrect : ./cub3d /path/to/map.cub\n");
+		return (1);
+	}
+	map = malloc(sizeof(t_map));
+	if (!map)
+		return (1);
+	parsing(argv[1], map);
 	return (0);
 }
