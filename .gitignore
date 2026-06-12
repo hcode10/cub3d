@@ -54,5 +54,8 @@ dkms.conf
 # debug information files
 *.dwo
 
+test/main.c
+
+cub3D*
 # minilibx.tgz
 minilibx-linux.tgz
