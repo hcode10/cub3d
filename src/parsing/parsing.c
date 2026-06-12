@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 16:11:55 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/11 18:07:40 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:53:20 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,33 @@ static bool	valid_path(char *map_path)
 	ext = map_path + (ft_strlen(map_path) - 4);
 	printf("ext = %s\n", ext);
 	if (ft_strncmp(ext, ".cub", 4) != 0)
-	{
-		ft_putstr_fd("Erreur : Veuillez verifier le chemin de map fourni !", 1);
-		return (false);
-	}
+		return (perror("Veuillez verifier le chemin de map fourni !"), false);
 	return (true);
 }
 
+static bool check_files(char *path)
+{
+	int fd;
+
+	fd = open(path, O_RDONLY);
+	if (fd <= 0)
+		return (false);
+	else
+	{
+		close(fd);
+		return (true);
+	}
+}
 static bool	check_textures(t_map *map)
 {
 	//changer pour open access interdit
-	if (!access(map->texture_ea, F_OK) == 0)
+	if (!check_files(map->texture_ea))
 		return (false);
-	if (!access(map->texture_no, F_OK) == 0)
+	if (!check_files(map->texture_no))
 		return (false);
-	if (!access(map->texture_so, F_OK) == 0)
+	if (!check_files(map->texture_so))
 		return (false);
-	if (!access(map->texture_we, F_OK) == 0)
+	if (!check_files(map->texture_we))
 		return (false);
 	return (true);
 }
@@ -73,7 +83,8 @@ bool	set_textures(t_map *map, char *map_path)
 	int		fd;
 
 	fd = open(map_path, O_RDONLY);
-	printf("fd = %d\n", fd);
+	if (fd <= 0)
+		return (false);
 	while ((line = get_next_line(fd)) != NULL)
 	{
 		splited = ft_split(line, ' ');
@@ -97,14 +108,20 @@ bool	set_color(t_map *map, char *map_path)
 	char	**splited;
 	char	**color_split;
 	int		fd;
-
+	
 	fd = open(map_path, O_RDONLY);
+	if (fd <= 0)
+		return (false);
 	while ((line = get_next_line(fd)) != NULL)
 	{
 		splited = ft_split(line, ' ');
+		if (!splited)
+			return (false);
 		if (ft_strncmp("F", splited[0], 1) == 0)
 		{
 			color_split = ft_split(splited[1], ',');
+			if (!color_split)
+				return (free(splited), false);
 			map->floor_color[0] = ft_atoi(color_split[0]);
 			map->floor_color[1] = ft_atoi(color_split[1]);
 			map->floor_color[2] = ft_atoi(color_split[2]);
@@ -112,6 +129,8 @@ bool	set_color(t_map *map, char *map_path)
 		else if (ft_strncmp("C", splited[0], 1) == 0)
 		{
 			color_split = ft_split(splited[1], ',');
+			if (!color_split)
+				return (free(splited), false);
 			map->sky_color[0] = ft_atoi(color_split[0]);
 			map->sky_color[1] = ft_atoi(color_split[1]);
 			map->sky_color[2] = ft_atoi(color_split[2]);
@@ -122,17 +141,101 @@ bool	set_color(t_map *map, char *map_path)
 	return (false);
 }
 
+bool	space_only(char *str)
+{
+	int	index;
+
+	index = 0;
+	while (str[index])
+	{
+		
+		if (str[index] == '\n')
+		{
+			index++;
+			continue ;
+		}
+		if (str[index] != ' ')
+			return (false);
+		index++;
+	}
+	return (true);
+}
+
+bool	get_map(char *map_path, t_map *map)
+{
+	int		fd;
+	char	*line;
+	int		line_ok;
+	char	**splited;
+	int		index;
+
+	fd = open(map_path, O_RDONLY);
+	if (fd <= 0)
+		return (false);
+	line = ft_calloc(1, 2);
+	if (!line)
+		return (NULL);
+	line[0] = ' ';
+	line[1] = '\0';
+	while (1)
+	{
+		line = get_next_line(fd);
+		if (!line || line_ok == 6)
+			break ;
+		splited = ft_split(line, ' ');
+		if (ft_strncmp("NO", splited[0], 2) == 0)
+			line_ok++;
+		else if (ft_strncmp("SO", splited[0], 2) == 0)
+			line_ok++;
+		else if (ft_strncmp("WE", splited[0], 2) == 0)
+			line_ok++;
+		else if (ft_strncmp("EA", splited[0], 2) == 0)
+			line_ok++;
+		else if (ft_strncmp("F", splited[0], 1) == 0)
+			line_ok++;
+		else if (ft_strncmp("C", splited[0], 1) == 0)
+			line_ok++;
+		free(splited);
+	}
+	if (line_ok > 6 || line_ok < 6)
+		return (false);
+	while (space_only(line))
+		line = get_next_line(fd);
+	index = 0;
+	while (line != NULL)
+	{
+		printf("$%s$\n", line);
+		map->map = ft_calloc(1, ft_strlen(line) + 1);
+		if (!map->map[index])
+			return (NULL);
+		line = get_next_line(fd);
+	}
+	close(fd);
+	return (true);
+}
+
 bool	parsing(char *map_path, t_map *map)
 {
 	if (!valid_path(map_path))
 		return (false);
+	printf("valid_path OK !\n");
 	set_textures(map, map_path);
+	printf("set_textures OK !\n");
 	set_color(map, map_path);
-
+	printf("set_color OK !\n");
 	if (!check_color(map->sky_color, map->floor_color))
 		return (perror("RGB : Valeurs hors plage (0, 255)"), false);
-
+	printf("check_color OK !\n");
 	if (!check_textures(map))
 		return (perror("Veuillez verifier le chemin des textures !"), false);
+	printf("check_textures OK !\n");
+
+	get_map(map_path, map);
+	int line = 0;
+	while (map->map[line])
+	{
+		printf("%s", map->map[line]);
+		line++;
+	}
 	return (true);
 }
