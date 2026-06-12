@@ -41,9 +41,8 @@ OBJS = $(SRC:.c=.o)
 
 TEST= ./test/main.c \
 	  $(SRC_UTILS) \
-	  # $(SRC_WINDOW) \
+	  $(SRC_WINDOW) \
       $(SRC_UTILS) \
-      $(SRC_WINDOW) \
 
 TEST_OBJS = $(TEST:.c=.o)
 
@@ -69,9 +68,6 @@ re : fclean all
 	
 test: all
 
-$(TEST_TARGET) : $(TEST_OBJS) mlx
-	$(CC) $(FLAGS) $(OBJS) -I$(MLXDIR) -I$(INCDIR) -o $(TEST_TARGET) $(LIBFT) -L$(MLXDIR) -lmlx -lXext -lX11 -lm 
-.PHONY: all clean fclean re mlx
 $(TEST_TARGET) : $(TEST_OBJS) libft mlx
 	$(CC) $(FLAGS) $(TEST_OBJS) -I$(MLXDIR) -I$(LIBFTDIR) -I$(INCDIR) -o $(TEST_TARGET) $(LIBFT) -L$(MLXDIR) -lmlx -lXext -lX11 -lm 
 
