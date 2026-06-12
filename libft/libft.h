@@ -6,13 +6,20 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:32:26 by coressor          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2026/04/25 16:58:10 by dcasadio         ###   ########.fr       */
+=======
+/*   Updated: 2026/06/11 17:41:40 by coressor         ###   ########.fr       */
+>>>>>>> create-window
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+<<<<<<< HEAD
 
+=======
+>>>>>>> create-window
 # include <unistd.h>
 # include <stdlib.h>
 
@@ -68,4 +75,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+<<<<<<< HEAD
 #endif
+=======
+#endif
+>>>>>>> create-window

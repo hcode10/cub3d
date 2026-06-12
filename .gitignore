@@ -54,6 +54,11 @@ dkms.conf
 # debug information files
 *.dwo
 
+<<<<<<< HEAD
+=======
+test/main.c
+
+>>>>>>> create-window
 cub3D*
 # minilibx.tgz
 minilibx-linux.tgz
