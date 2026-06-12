@@ -27,6 +27,7 @@ SRC_PARSING = $(SRC_DIR)/parsing
 
 DIR_WINDOW = $(SRC_DIR)/window
 SRC_WINDOW = $(DIR_WINDOW)/init_window.c \
+			 $(DIR_WINDOW)/ceilnfloor.c \
 
 #-------- ALL THE SOURCES -----
 SRC = $(SRC_DIR)/main.c \
@@ -55,8 +56,6 @@ all : $(OBJS) libft mlx
 
 mlx :
 	make -C $(MLXDIR) all
-
-
 
 fclean : clean
 	make -C $(MLXDIR) fclean

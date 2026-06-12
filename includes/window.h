@@ -6,7 +6,7 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 14:41:56 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/12 09:42:51 by coressor         ###   ########.fr       */
+/*   Updated: 2026/06/12 11:48:24 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define WINDOW_H
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include "../minilibx-linux/mlx.h"
 # include "../libft/libft.h"
 
