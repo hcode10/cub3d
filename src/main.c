@@ -1,20 +1,16 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "../includes/parsing.h"
-#include "../includes/window.h"
+#include "parsing.h"
 
-int main()
+int main(int argc, char **argv)
 {
- 	t_window *win;
-
-	win = init_window();
-	if(!win)
-	{
-		printf("Init window failed");
-		return (-1);
-	}
-	mlx_loop(win->mlx);
-	free_window(win);
-	return (0);
-}  
+    if (argc != 2)
+    {
+        printf("Arguments incorrect : ./cub3d /path/to/map.cub\n");
+        return (1);
+    }
+    if (!parsing(argv[1]))
+        return (1);
+    return (0);
+}

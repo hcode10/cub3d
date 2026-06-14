@@ -54,11 +54,16 @@ $(NAME): all
 all : $(OBJS) libft mlx
 	$(CC) $(FLAGS) $(OBJS) -I$(MLXDIR) -I$(LIBFTDIR) -I$(INCDIR) -o $(NAME) $(LIBFT) -L$(MLXDIR) -lmlx -lXext -lX11 -lm
 
+libft:
+	make -C $(LIBFTDIR) all
+
 mlx :
 	make -C $(MLXDIR) all
 
+clean:
+	rm -rf $(OBJS)
 fclean : clean
-	make -C $(MLXDIR) fclean
+	# make -C $(MLXDIR) fclean
 	make -C $(MLXDIR) clean
 	make -C $(LIBFTDIR) fclean
 	rm -rf $(NAME)
