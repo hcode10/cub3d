@@ -39,5 +39,7 @@ typedef struct s_map
 }	t_map;
 
 bool	parsing(char *map_path, t_map *map);
+void 	free_tabs(char **tab);
+void	free_struct(t_map *map);
 
 #endif
