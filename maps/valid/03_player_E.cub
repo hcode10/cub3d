@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 EA ./textures/east.xpm
 WE ./textures/west.xpm
 SO ./textures/south.xpm
@@ -9,3 +10,16 @@ F 200,200,200
 1E0001
 100001
 111111
+=======
+EA ./textures/east.xpm
+WE ./textures/west.xpm
+SO ./textures/south.xpm
+NO ./textures/north.xpm
+C 12,34,56
+F 200,200,200
+
+111111
+1E0001
+100001
+111111
+>>>>>>> 5b3d607 (Feat : Parsing)

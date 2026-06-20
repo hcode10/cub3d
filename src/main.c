@@ -77,6 +77,7 @@ int main(int argc, char **argv)
 	// mlx_hook(win->win, 17, (1L << 5), (void *)key_hook, win->mlx);  // d'abord
 	render_walls(&player, win, &map);
 	mlx_loop(win->mlx);
+	printf("Parsing OK");
 	free_struct(&map);
 	return (0);
 }

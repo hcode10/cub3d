@@ -6,11 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 16:11:51 by dcasadio          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/06/21 14:37:01 by dcasadio         ###   ########.fr       */
-=======
-/*   Updated: 2026/06/11 16:11:52 by dcasadio         ###   ########.fr       */
->>>>>>> b80446b (Ajout des fonction set et check)
+/*   Updated: 2026/07/05 19:00:07 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
