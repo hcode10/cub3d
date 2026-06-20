@@ -83,9 +83,20 @@ int main(int argc, char **argv)
 		printf("Arguments incorrect : ./cub3d /path/to/map.cub\n");
 		return (1);
 	}
+<<<<<<< HEAD
 	map = malloc(sizeof(t_map));
 	if (!map)
 		return (1);
 	parsing(argv[1], map);
+=======
+	if (!parsing(argv[1], &map))
+	{
+		printf("Erreur de parsing !\n");
+		free_struct(&map);
+		return (1);
+	}
+	printf("Parsing OK");
+	free_struct(&map);
+>>>>>>> a44602a (Feat : Parsing)
 	return (0);
 }
