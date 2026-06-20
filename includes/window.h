@@ -6,7 +6,7 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 14:41:56 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/12 16:19:48 by coressor         ###   ########.fr       */
+/*   Updated: 2026/06/20 19:32:20 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,47 @@
 # include "../minilibx-linux/mlx.h"
 # include "../libft/libft.h"
 
+typedef struct s_imag
+{
+	int		h;
+	int		w;
+	int		bitspp;
+	int		endian;	
+	void	*back;
+	void	*walls;
+	void	*no;
+	void	*so;
+	void	*we;
+	void	*ea; 
+} t_imag;
+
+
 typedef struct s_window
 {
 	void	*mlx;
 	void	*win;
 	char	*title;
+	t_imag	img;
 	int		sizex;
 	int		sizey;
 	int		ceil;
 	int		floor;
-	int		bitspp;
-	int		endian;
-	void	*back;
 } t_window;
 
 // ----- init_window
 
 void	*init_window(t_map *map);
-// int		init_screen();
 void	free_window(t_window *s_win);
+// int		init_screen();
 
 // ----- ceilnfloor
 
-int	create_back(t_window *win);
+int	create_back(t_window *w, t_imag *img);
 int	draw_back(t_window *win);
+
+// ------ img
+
+void	*free_img(t_imag *img, void *mlx);
+void	*init_img(t_imag *img, t_window *win, t_map *map);
 
 #endif

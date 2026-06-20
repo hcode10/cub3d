@@ -29,11 +29,19 @@ DIR_WINDOW = $(SRC_DIR)/window
 SRC_WINDOW = $(DIR_WINDOW)/init_window.c \
 			 $(DIR_WINDOW)/ceilnfloor.c \
 
+#-------- GAME --------
+
+DIR_GAME = $(SRC_DIR)/game
+SRC_GAME = $(DIR_GAME)/game.c \
+			$(DIR_GAME)/img.c \
+			$(DIR_GAME)/ray.c
+
 #-------- ALL THE SOURCES -----
 SRC = $(SRC_DIR)/main.c \
       $(SRC_PARSING)/parsing.c \
         $(SRC_UTILS) \
         $(SRC_WINDOW) \
+		$(SRC_GAME) \
 
 MAPS = ./maps
 OBJS = $(SRC:.c=.o)
@@ -43,7 +51,7 @@ OBJS = $(SRC:.c=.o)
 TEST= ./test/main.c \
 	  $(SRC_UTILS) \
 	  $(SRC_WINDOW) \
-      $(SRC_UTILS) \
+      $(SRC_GAME) \
 
 TEST_OBJS = $(TEST:.c=.o)
 
