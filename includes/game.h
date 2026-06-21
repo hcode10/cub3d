@@ -6,7 +6,7 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 16:59:43 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/20 20:12:25 by coressor         ###   ########.fr       */
+/*   Updated: 2026/06/21 14:45:34 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include "parsing.h"
 # include "window.h"
 # include <math.h>
-# include "utils.h"
 
 typedef struct s_player
 {
@@ -23,6 +22,10 @@ typedef struct s_player
 	double			dir[2];
 	t_player_pos	*p_pos;
 }	t_player;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 91440b8 (raycast)
 typedef struct s_render
 {
 	int		lineheight;

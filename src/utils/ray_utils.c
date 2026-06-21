@@ -7,10 +7,14 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 15:11:43 by coressor          #+#    #+#             */
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*   Updated: 2026/06/21 14:34:10 by coressor         ###   ########.fr       */
 =======
 /*   Updated: 2026/06/20 19:52:39 by coressor         ###   ########.fr       */
 >>>>>>> b336579 (merging dev)
+=======
+/*   Updated: 2026/06/21 14:34:10 by coressor         ###   ########.fr       */
+>>>>>>> 91440b8 (raycast)
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +24,7 @@ void	init_sideDist(t_ray *ray, t_player_pos *p_pos)
 {
 	if (ray->ray[0] < 0)
 	{
+<<<<<<< HEAD
 <<<<<<< HEAD
 		ray->sidedist[0] = (p_pos->x - ray->mapx) * ray->deltadist[0];
 		ray->stepx = -1;
@@ -47,33 +52,42 @@ int	dda(t_ray *ray, char **map)
 =======
 		ray->sideDist[0] = (p_pos->x - ray->mapX) * ray->deltaDist[0];
 		ray->stepX = -1;
+=======
+		ray->sidedist[0] = (p_pos->x - ray->mapx) * ray->deltadist[0];
+		ray->stepx = -1;
+>>>>>>> 91440b8 (raycast)
 	}
 	else
 	{
-		ray->sideDist[0] = (ray->mapX + 1 - p_pos->x) * ray->deltaDist[0];
-		ray->stepX = 1;
+		ray->sidedist[0] = (ray->mapx + 1 - p_pos->x) * ray->deltadist[0];
+		ray->stepx = 1;
 	}
 	if (ray->ray[1] < 0)
 	{
-		ray->sideDist[1] = (p_pos->y - ray->mapY) * ray->deltaDist[1];
-		ray->stepY = -1;
+		ray->sidedist[1] = (p_pos->y - ray->mapy) * ray->deltadist[1];
+		ray->stepy = -1;
 	}
 	else
 	{
-		ray->sideDist[1] = (ray->mapY + 1 - p_pos->x) * ray->deltaDist[1];
-		ray->stepY = 1;
+		ray->sidedist[1] = (ray->mapy + 1 - p_pos->x) * ray->deltadist[1];
+		ray->stepy = 1;
 	}
 }
 
-int		dda(t_ray *ray, char **map)
+int	dda(t_ray *ray, char **map)
 {
+<<<<<<< HEAD
 	int touch;
 >>>>>>> b336579 (merging dev)
+=======
+	int	touch;
+>>>>>>> 91440b8 (raycast)
 	int	side;
 
 	touch = 0;
 	while (!touch)
 	{
+<<<<<<< HEAD
 <<<<<<< HEAD
 		if (ray->sidedist[0] < ray->sidedist[1])
 		{
@@ -91,20 +105,28 @@ int		dda(t_ray *ray, char **map)
 			touch = 1;
 =======
 		if (ray->sideDist[0] < ray->sideDist[1])
+=======
+		if (ray->sidedist[0] < ray->sidedist[1])
+>>>>>>> 91440b8 (raycast)
 		{
-			ray->sideDist[0] += ray->deltaDist[0];
-			ray->mapX += ray->stepX;
+			ray->sidedist[0] += ray->deltadist[0];
+			ray->mapx += ray->stepx;
 			side = 0;
 		}
-		else 
-		{	
-			ray->sideDist[1] += ray->deltaDist[1];
-			ray->mapY += ray->stepY;
+		else
+		{
+			ray->sidedist[1] += ray->deltadist[1];
+			ray->mapy += ray->stepy;
 			side = 1;
 		}
+<<<<<<< HEAD
 		if (map[ray->mapX][ray->mapY] == '1')
 			touch = 1;	
 >>>>>>> b336579 (merging dev)
+=======
+		if (map[ray->mapx][ray->mapy] == '1')
+			touch = 1;
+>>>>>>> 91440b8 (raycast)
 	}
 	ray->side = side;
 	return (side);
@@ -113,6 +135,9 @@ int		dda(t_ray *ray, char **map)
 void	calc_render(t_window *win, t_ray *ray, t_render *rend)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 91440b8 (raycast)
 	rend->lineheight = (int)(win->sizey / ray->perpwall);
 	rend->drawstart = -rend->lineheight / 2 + win->sizey / 2;
 	if (rend->drawstart < 0)
@@ -120,6 +145,7 @@ void	calc_render(t_window *win, t_ray *ray, t_render *rend)
 	rend->drawend = rend->lineheight / 2 + win->sizey / 2;
 	if (rend->drawend > win->sizey)
 		rend->drawend = win->sizey - 1;
+<<<<<<< HEAD
 =======
 	rend->lineheight = (int)(win->sizey / ray->perpWall); 
 	rend->drawStart = -rend->lineheight / 2 + win->sizey / 2;
@@ -129,4 +155,6 @@ void	calc_render(t_window *win, t_ray *ray, t_render *rend)
 	if (rend->drawEnd > win->sizey)
 		rend->drawEnd = win->sizey - 1;
 >>>>>>> b336579 (merging dev)
+=======
+>>>>>>> 91440b8 (raycast)
 }

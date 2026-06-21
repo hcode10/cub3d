@@ -23,11 +23,6 @@ SRC_UTILS =  $(DIR_UTILS)/ray_utils.c \
 SRC_PARSING = $(SRC_DIR)/parsing
 
 
-#---------   PARSING --------------
-
-SRC_PARSING = $(SRC_DIR)/parsing
-
-
 #--------  WINDOW -----------
 
 DIR_WINDOW = $(SRC_DIR)/window
@@ -52,7 +47,6 @@ SRC = $(SRC_DIR)/main.c \
 	  $(SRC_PARSING)/map_validate.c \
 	  $(SRC_PARSING)/parsing_utils.c \
 	  $(SRC_PARSING)/flood_fill.c \
-		# $(SRC_WINDOW) \
 
 MAPS = ./maps
 OBJS = $(SRC:.c=.o)
