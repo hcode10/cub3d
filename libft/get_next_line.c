@@ -10,20 +10,28 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*   Created: 2025/12/03 10:06:59 by dcasadio          #+#    #+#             */
 /*   Updated: 2026/06/21 12:19:40 by dcasadio         ###   ########.fr       */
 =======
 /*   Created: 2025/11/17 10:11:11 by coressor          #+#    #+#             */
 /*   Updated: 2026/06/12 12:29:30 by dcasadio         ###   ########.fr       */
 >>>>>>> efd74cb (Parsing de la map quasi fini)
+=======
+/*   Created: 2025/12/03 10:06:59 by dcasadio          #+#    #+#             */
+/*   Updated: 2026/06/21 12:19:40 by dcasadio         ###   ########.fr       */
+>>>>>>> 6a8cdfa (On n'est pas mal la)
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/parsing.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #include "get_next_line.h"
 >>>>>>> efd74cb (Parsing de la map quasi fini)
+=======
+>>>>>>> 6a8cdfa (On n'est pas mal la)
 
 static char	*get_line(char *storage)
 {
@@ -143,6 +151,9 @@ char	*get_next_line(int fd)
 	storage = update_storage(storage);
 	return (line);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6a8cdfa (On n'est pas mal la)
 }
 
 /*
@@ -181,6 +192,7 @@ int main(void)
 	close(fd);
 	
 	return (0);
+<<<<<<< HEAD
 }*/
 =======
 /* ************************************************************************** */
@@ -320,3 +332,6 @@ char	*get_next_line(int fd)
 =======
 }
 >>>>>>> efd74cb (Parsing de la map quasi fini)
+=======
+}*/
+>>>>>>> 6a8cdfa (On n'est pas mal la)
