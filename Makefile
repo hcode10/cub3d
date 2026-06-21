@@ -43,10 +43,16 @@ SRC_GAME = $(DIR_GAME)/game.c \
 
 #-------- ALL THE SOURCES -----
 SRC = $(SRC_DIR)/main.c \
-      $(SRC_PARSING)/parsing.c \
         $(SRC_UTILS) \
         $(SRC_WINDOW) \
 		$(SRC_GAME) \
+	  $(SRC_PARSING)/parsing.c \
+	  $(SRC_PARSING)/map_parse.c \
+	  $(SRC_PARSING)/map_utils.c \
+	  $(SRC_PARSING)/map_validate.c \
+	  $(SRC_PARSING)/parsing_utils.c \
+	  $(SRC_PARSING)/flood_fill.c \
+		# $(SRC_WINDOW) \
 
 MAPS = ./maps
 OBJS = $(SRC:.c=.o)
