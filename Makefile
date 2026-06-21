@@ -60,11 +60,12 @@ libft:
 mlx :
 	make -C $(MLXDIR) all
 
-clean:
+clean :
+	make -C $(MLXDIR) clean
+	make -C $(LIBFTDIR) clean
 	rm -rf $(OBJS)
 
 fclean : clean
-	# make -C $(MLXDIR) fclean
 	make -C $(MLXDIR) clean
 	make -C $(LIBFTDIR) fclean
 	rm -rf $(NAME)
