@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 16:11:55 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/12 16:53:20 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/06/14 20:32:04 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ static bool check_files(char *path)
 		return (true);
 	}
 }
+
 static bool	check_textures(t_map *map)
 {
-	//changer pour open access interdit
 	if (!check_files(map->texture_ea))
 		return (false);
 	if (!check_files(map->texture_no))
@@ -156,7 +156,7 @@ bool	set_color(t_map *map, char *map_path)
 	char	**splited;
 	char	**color_split;
 	int		fd;
-	
+
 	fd = open(map_path, O_RDONLY);
 	if (fd <= 0)
 		return (false);
@@ -203,7 +203,6 @@ bool	space_only(char *str)
 	index = 0;
 	while (str[index])
 	{
-		
 		if (str[index] == '\n')
 		{
 			index++;
@@ -260,6 +259,7 @@ bool	get_map(char *map_path, t_map *map)
 	int		line_ok;
 	char	**splited;
 
+	map_total = NULL;
 	fd = open(map_path, O_RDONLY);
 	if (fd <= 0)
 		return (false);
@@ -285,7 +285,7 @@ bool	get_map(char *map_path, t_map *map)
 		free_tabs(splited);
 		free(line);
 	}
-	if (line_ok > 6 || line_ok < 6)
+	if (line_ok != 6)
 		return (false);
 	while (line && space_only(line))
 	{
@@ -352,7 +352,7 @@ bool	parsing(char *map_path, t_map *map)
 	int line = 0;
 	while (map->map[line])
 	{
-		printf("%s", map->map[line]);
+		printf("$%s$\n", map->map[line]);
 		line++;
 	}
 	return (true);
