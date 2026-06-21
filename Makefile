@@ -31,7 +31,6 @@ SRC_WINDOW = $(DIR_WINDOW)/init_window.c \
 
 #-------- ALL THE SOURCES -----
 SRC = $(SRC_DIR)/main.c \
-      $(SRC_PARSING)/parsing.c \
         $(SRC_UTILS) \
         $(SRC_WINDOW) \
 	  $(SRC_PARSING)/parsing.c \

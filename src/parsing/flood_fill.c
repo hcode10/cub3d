@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:36:24 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/14 21:47:23 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/06/21 15:09:56 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	check_cell(char **map_copy, int y, int x, t_flood *flood)
 	if (pos == 'S' || pos == 'N' || pos == 'W' || pos == 'E')
 		flood->player_count++;
 	
-	printf("Player count : %ld\n", flood->player_count);
+	//printf("Player count : %ld\n", flood->player_count);
 }
 
 static void	flood_fill(char **map_copy, int y, int x, t_flood *flood)
@@ -38,7 +38,7 @@ static void	flood_fill(char **map_copy, int y, int x, t_flood *flood)
 	flood_fill(map_copy, y, x + 1, flood);
 	flood_fill(map_copy, y, x - 1, flood);
 
-	aff_map(map_copy);
+	//aff_map(map_copy);
 }
 
 static int	check_flood_result(t_flood *flood, t_map *game)
@@ -61,7 +61,7 @@ int	is_map_solvable(t_map *game)
 	if (!map_copy)
 		return (-1);
 	flood.player_count = 0;
-	flood_fill(map_copy, game->player_y, game->player_x, &flood);
+	flood_fill(map_copy, game->p_pos.y, game->p_pos.x, &flood);
 	free_map(map_copy);
 	return (check_flood_result(&flood, game));
 }

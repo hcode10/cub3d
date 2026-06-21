@@ -55,6 +55,8 @@ static bool	valid_path(char *map_path)
 {
 	char	*ext;
 
+	if (!map_path)
+		return (false);
 	ext = map_path + (ft_strlen(map_path) - 4);
 	printf("ext = %s\n", ext);
 	if (ft_strncmp(ext, ".cub", 4) != 0)
@@ -129,12 +131,10 @@ bool	set_textures(t_map *map, char *map_path)
 	{
 		splited = ft_split(line, ' ');
 		free(line);
-		if (!splited)
-			continue ;
 		if (count_tabs(splited) != 2)
 		{
 			free_tabs(splited);
-			return (false);
+			continue ;
 		}
 		if (ft_strncmp("NO", splited[0], 2) == 0)
 			map->texture_no = ft_strtrim(splited[1], "\n");
@@ -220,7 +220,7 @@ bool space_is_ugly(t_map *map)
 	size_t index = 0;
 	while (map->map[index])
 	{
-		printf("%s", map->map[index]);
+		//printf("%s\n", map->map[index]);
 		index++;
 	}
 	return (true);
@@ -259,7 +259,6 @@ bool	get_map(char *map_path, t_map *map)
 	int		line_ok;
 	char	**splited;
 
-	map_total = NULL;
 	fd = open(map_path, O_RDONLY);
 	if (fd <= 0)
 		return (false);
@@ -314,6 +313,8 @@ bool	get_map(char *map_path, t_map *map)
 bool	parsing(char *map_path, t_map *map)
 {
 	map->map_dup = ft_calloc(1, 1);
+	if (!map->map_dup)
+		return (false);
 	if (!valid_path(map_path))
 	{
 		printf("Veuillez verifier le chemin de map fourni !\n");
@@ -323,7 +324,8 @@ bool	parsing(char *map_path, t_map *map)
 
 	if (!set_textures(map, map_path))
 	{
-		printf("RGB : Textures invalides\n");
+		printf("Textures invalides\n");
+		return (false);
 	}
 	printf("set_textures OK !\n");
 
@@ -349,11 +351,11 @@ bool	parsing(char *map_path, t_map *map)
 		printf("Impossible d'afficher la map !\n");
 		return (false);
 	}
-	int line = 0;
+	/*int line = 0;
 	while (map->map[line])
 	{
 		printf("$%s$\n", map->map[line]);
 		line++;
-	}
+	}*/
 	return (true);
 }
