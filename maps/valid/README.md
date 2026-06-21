@@ -13,6 +13,8 @@ map fermée). Sert à vérifier que tu ne rejettes pas du valide par erreur.
 | `06_inner_walls.cub` | Murs internes (îlot de 1) — légal |
 | `07_leading_spaces_walls.cub` | Espaces en début de ligne + lignes de largeurs différentes |
 | `08_enclosed_space_inside.cub` | Espace ` ` interne entièrement entouré de murs — légal |
+| `09_blank_lines_between.cub` | Lignes vides entre les éléments — explicitement autorisé par le sujet |
+| `10_multiple_spaces.cub` | Plusieurs espaces entre identifiant et valeur — explicitement autorisé |
 
 ## Note importante
 

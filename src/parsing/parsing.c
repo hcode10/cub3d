@@ -58,7 +58,6 @@ static bool	valid_path(char *map_path)
 	if (!map_path)
 		return (false);
 	ext = map_path + (ft_strlen(map_path) - 4);
-	printf("ext = %s\n", ext);
 	if (ft_strncmp(ext, ".cub", 4) != 0)
 	{
 		return (false);
@@ -136,17 +135,42 @@ bool	set_textures(t_map *map, char *map_path)
 			free_tabs(splited);
 			continue ;
 		}
-		if (ft_strncmp("NO", splited[0], 2) == 0)
+		if (ft_strncmp("NO", splited[0], 2) == 0 && !map->texture_no)
 			map->texture_no = ft_strtrim(splited[1], "\n");
-		else if (ft_strncmp("SO", splited[0], 2) == 0)
+		else if (ft_strncmp("SO", splited[0], 2) == 0 && !map->texture_so)
 			map->texture_so = ft_strtrim(splited[1], "\n");
-		else if (ft_strncmp("WE", splited[0], 2) == 0)
+		else if (ft_strncmp("WE", splited[0], 2) == 0 && !map->texture_we)
 			map->texture_we = ft_strtrim(splited[1], "\n");
-		else if (ft_strncmp("EA", splited[0], 2) == 0)
+		else if (ft_strncmp("EA", splited[0], 2) == 0 && !map->texture_ea)
 			map->texture_ea = ft_strtrim(splited[1], "\n");
 		free_tabs(splited);
 	}
 	close(fd);
+	return (true);
+}
+
+bool	check_numeric_color(char **str)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (str[i][j])
+		{
+			if (ft_strchr(" \n,", str[i][j]))
+			{
+				j++;
+				continue ;
+			}
+			if (!ft_isdigit(str[i][j]))
+				return (false);
+			j++;
+		}
+		i++;
+	}
 	return (true);
 }
 
@@ -170,7 +194,7 @@ bool	set_color(t_map *map, char *map_path)
 			color_split = ft_split(splited[1], ',');
 			if (!color_split)
 				return (free(splited), false);
-			if (count_tabs(color_split) != 3)
+			if (count_tabs(color_split) != 3 || !check_numeric_color(color_split))
 				return (free_tabs(color_split), free_tabs(splited), free(line), false);
 			map->floor_color[0] = ft_atoi(color_split[0]);
 			map->floor_color[1] = ft_atoi(color_split[1]);
@@ -182,7 +206,7 @@ bool	set_color(t_map *map, char *map_path)
 			color_split = ft_split(splited[1], ',');
 			if (!color_split)
 				return (free_tabs(splited), false);
-			if (count_tabs(color_split) != 3)
+			if (count_tabs(color_split) != 3  || !check_numeric_color(color_split))
 				return (free_tabs(color_split), free_tabs(splited), free(line), false);
 			map->sky_color[0] = ft_atoi(color_split[0]);
 			map->sky_color[1] = ft_atoi(color_split[1]);
@@ -217,11 +241,21 @@ bool	space_only(char *str)
 
 bool space_is_ugly(t_map *map)
 {
-	size_t index = 0;
-	while (map->map[index])
+	size_t i;
+	size_t j;
+
+	i = 0;
+	j = 0;
+	while (map->map[i])
 	{
-		//printf("%s\n", map->map[index]);
-		index++;
+		j = 0;
+		while (map->map[i][j])
+		{
+			if (map->map[i][j] == ' ')
+				map->map[i][j] = '1';
+			j++;
+		}
+		i++;
 	}
 	return (true);
 }
@@ -268,6 +302,12 @@ bool	get_map(char *map_path, t_map *map)
 		line = get_next_line(fd);
 		if (!line || line_ok == 6)
 			break ;
+
+		if (space_only(line))
+		{
+			free(line);
+			continue ;
+		}
 		splited = ft_split(line, ' ');
 		if (ft_strncmp("NO", splited[0], 2) == 0)
 			line_ok++;
@@ -281,6 +321,13 @@ bool	get_map(char *map_path, t_map *map)
 			line_ok++;
 		else if (ft_strncmp("C", splited[0], 1) == 0)
 			line_ok++;
+		else
+		{
+			free_tabs(splited);
+			free(line);
+			return (false);
+		}
+			
 		free_tabs(splited);
 		free(line);
 	}
@@ -296,7 +343,7 @@ bool	get_map(char *map_path, t_map *map)
 	map->map = NULL;
 	while (line != NULL)
 	{
-		if (!add_map_line(map, line))
+		if (!add_map_line(map, line) || space_only(line))
 		{
 			free(line);
 			close(fd);
@@ -316,46 +363,16 @@ bool	parsing(char *map_path, t_map *map)
 	if (!map->map_dup)
 		return (false);
 	if (!valid_path(map_path))
-	{
-		printf("Veuillez verifier le chemin de map fourni !\n");
-		return (false);
-	}
-	printf("valid_path OK !\n");
-
+		return (error_msg("Map: extension .cub ou chemin invalide"), false);
 	if (!set_textures(map, map_path))
-	{
-		printf("Textures invalides\n");
-		return (false);
-	}
-	printf("set_textures OK !\n");
-
+		return (error_msg("Textures: identifiant manquant ou invalide"), false);
 	if (!set_color(map, map_path))
-	{
-		printf("RGB : Valeurs invalides\n");
-		return (false);
-	}
-
-	printf("set_color OK !\n");
+		return (error_msg("Couleur: format RGB invalide"), false);
 	if (!check_color(map->sky_color, map->floor_color))
-	{
-		printf("RGB : Valeurs hors plage (0, 255)\n");
-		return (false);
-	}
-	printf("check_color OK !\n");
+		return (error_msg("Couleur: valeur hors plage [0,255]"), false);
 	if (!check_textures(map))
-		return (perror("Veuillez verifier le chemin des textures !"), false);
-	printf("check_textures OK !\n");
-
+		return (error_msg("Textures: fichier introuvable ou illisible"), false);
 	if (!get_map(map_path, map))
-	{
-		printf("Impossible d'afficher la map !\n");
-		return (false);
-	}
-	/*int line = 0;
-	while (map->map[line])
-	{
-		printf("$%s$\n", map->map[line]);
-		line++;
-	}*/
+		return (error_msg("Map: lecture impossible"), false);
 	return (true);
 }

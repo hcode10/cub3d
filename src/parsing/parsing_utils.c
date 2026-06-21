@@ -10,3 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft/libft.h"
+#include "../includes/parsing.h"
+
+int	error_msg(char *msg)
+{
+	ft_putstr_fd("Error\n", 2);
+	if (msg)
+	{
+		ft_putstr_fd(msg, 2);
+		ft_putstr_fd("\n", 2);
+	}
+	return (1);
+}

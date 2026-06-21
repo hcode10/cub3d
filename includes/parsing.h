@@ -60,18 +60,19 @@ typedef struct s_map
 typedef struct s_flood
 {
 	size_t	player_count;
+	bool	escaped;
 }	t_flood;
 
 bool	parsing(char *map_path, t_map *map);
+int		error_msg(char *msg);
 void 	free_tabs(char **tab);
 void	free_struct(t_map *map);
 char	**copy_map(char **map);
 void	aff_map(char **map);
 void	free_map(char **map);
-int		validate_map_chars(t_map *game);
+bool		validate_map_chars(t_map *game);
 int		validate_map_walls(t_map *game);
-int		read_map(t_map *game);
-int		is_map_solvable(t_map *game);
+bool		is_map_solvable(t_map *game);
 void	set_heigth(t_map *game, int height);
 int		map_count_line();
 

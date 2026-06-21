@@ -21,13 +21,12 @@ static void	check_player_collect(t_map *game, int i, int j)
 	pos = game->map[i][j];
 	if (pos == 'S' || pos == 'N' || pos == 'W' || pos == 'E')
 	{
-		//printf("Player ok pos (%c) : x = %d y = %d\n", pos, j, i);
 		game->p_pos.y = (double)i;
 		game->p_pos.x = (double)j;
 	}
 }
 
-int	validate_map_chars(t_map *game)
+bool	validate_map_chars(t_map *game)
 {
 	int		i;
 	int		j;
@@ -42,43 +41,14 @@ int	validate_map_chars(t_map *game)
 		j = 0;
 		while (game->map[i][j])
 		{
-			//printf("i : %d j = %d carac = +%c+\n", i, j, game->map[i][j]);
 			if (!ft_strchr(valid_chars, game->map[i][j]))
-			{
-				return (-1);
-			}
+				return (error_msg("Map: caractere invalide"), false);
 			check_player_collect(game, i, j);
 			j++;
 		}
 		i++;
 	}
 	if (game->p_pos.x == 0 || game->p_pos.y == 0)
-		return (-1);
-	return (0);
-}
-
-int	validate_map_walls(t_map *game)
-{
-	size_t	i;
-	size_t	last_line;
-
-	last_line = 0;
-	while (game->map[last_line])
-		last_line++;
-	last_line--;
-	i = 0;
-	while (i < game->width)
-	{
-		if (game->map[0][i] != '1' || game->map[last_line][i] != '1')
-			return (-1);
-		i++;
-	}
-	i = 0;
-	while (game->map[i])
-	{
-		if (game->map[i][0] != '1' || game->map[i][game->width - 1] != '1')
-			return (-1);
-		i++;
-	}
-	return (0);
+		return (error_msg("Map: joueur absent ou mal place"), false);
+	return (true);
 }
