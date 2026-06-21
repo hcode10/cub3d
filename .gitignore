@@ -56,6 +56,11 @@ dkms.conf
 
 # test/main.c
 
-.cub3D*
+cub3D*
 # minilibx.tgz
 minilibx-linux.tgz
+minilibx-linux/*
+cub3D
+.vscode
+test_map.sh
+

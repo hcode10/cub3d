@@ -31,9 +31,16 @@ SRC_WINDOW = $(DIR_WINDOW)/init_window.c \
 
 #-------- ALL THE SOURCES -----
 SRC = $(SRC_DIR)/main.c \
-      $(SRC_PARSING)/parsing.c \
         $(SRC_UTILS) \
         $(SRC_WINDOW) \
+	  $(SRC_PARSING)/parsing.c \
+	  $(SRC_PARSING)/map_parse.c \
+	  $(SRC_PARSING)/map_utils.c \
+	  $(SRC_PARSING)/map_validate.c \
+	  $(SRC_PARSING)/parsing_utils.c \
+	  $(SRC_PARSING)/flood_fill.c \
+		$(SRC_UTILS) \
+		# $(SRC_WINDOW) \
 
 MAPS = ./maps
 OBJS = $(SRC:.c=.o)
@@ -60,10 +67,12 @@ libft:
 mlx :
 	make -C $(MLXDIR) all
 
-clean:
+clean :
+	make -C $(MLXDIR) clean
+	make -C $(LIBFTDIR) clean
 	rm -rf $(OBJS)
+
 fclean : clean
-	# make -C $(MLXDIR) fclean
 	make -C $(MLXDIR) clean
 	make -C $(LIBFTDIR) fclean
 	rm -rf $(NAME)
