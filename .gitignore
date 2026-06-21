@@ -56,6 +56,6 @@ dkms.conf
 
 # test/main.c
 
-cub3D*
+.cub3D*
 # minilibx.tgz
 minilibx-linux.tgz
