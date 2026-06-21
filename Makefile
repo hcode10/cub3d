@@ -16,7 +16,7 @@ SRC_DIR = ./src
 #---------   UTILS --------------
 
 DIR_UTILS = $(SRC_DIR)/utils
-SRC_UTILS = \
+SRC_UTILS =  $(DIR_UTILS)/ray_utils.c \
 
 #---------   PARSING --------------
 
@@ -50,6 +50,7 @@ OBJS = $(SRC:.c=.o)
 
 TEST= ./test/main.c \
 	  $(SRC_UTILS) \
+      $(SRC_PARSING)/parsing.c \
 	  $(SRC_WINDOW) \
       $(SRC_GAME) \
 
@@ -71,7 +72,6 @@ mlx :
 clean:
 	rm -rf $(OBJS)
 fclean : clean
-	# make -C $(MLXDIR) fclean
 	make -C $(MLXDIR) clean
 	make -C $(LIBFTDIR) fclean
 	rm -rf $(NAME)

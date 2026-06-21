@@ -6,7 +6,7 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 14:41:56 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/20 19:32:20 by coressor         ###   ########.fr       */
+/*   Updated: 2026/06/21 14:03:21 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ typedef struct s_imag
 	void	*no;
 	void	*so;
 	void	*we;
-	void	*ea; 
-} t_imag;
-
+	void	*ea;
+}	t_imag;
 
 typedef struct s_window
 {
@@ -44,7 +43,7 @@ typedef struct s_window
 	int		sizey;
 	int		ceil;
 	int		floor;
-} t_window;
+}	t_window;
 
 // ----- init_window
 
@@ -54,8 +53,8 @@ void	free_window(t_window *s_win);
 
 // ----- ceilnfloor
 
-int	create_back(t_window *w, t_imag *img);
-int	draw_back(t_window *win);
+int		create_back(t_window *w, t_imag *img);
+int		draw_back(t_window *win);
 
 // ------ img
 
