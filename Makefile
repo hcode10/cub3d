@@ -28,11 +28,6 @@ SRC_UTILS =  $(DIR_UTILS)/ray_utils.c \
 SRC_PARSING = $(SRC_DIR)/parsing
 
 
-#---------   PARSING --------------
-
-SRC_PARSING = $(SRC_DIR)/parsing
-
-
 #--------  WINDOW -----------
 
 DIR_WINDOW = $(SRC_DIR)/window
