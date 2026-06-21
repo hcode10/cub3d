@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 16:11:51 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/21 12:06:08 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/06/21 14:37:01 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ typedef struct s_map
 {
 	char			**map;
 	char			**map_dup;
-	double			player_x;
-	double			player_y;
+	t_player_pos	p_pos;
 	int				floor_color[3];
 	int				sky_color[3];
 	char			*texture_no;

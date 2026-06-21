@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 10:11:11 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/12 12:29:30 by dcasadio         ###   ########.fr       */
+/*   Created: 2025/12/03 10:06:59 by dcasadio          #+#    #+#             */
+/*   Updated: 2026/06/21 12:19:40 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/parsing.h"
-#include "get_next_line.h"
 
 static char	*get_line(char *storage)
 {
@@ -131,3 +130,41 @@ char	*get_next_line(int fd)
 	storage = update_storage(storage);
 	return (line);
 }
+
+/*
+#include <fcntl.h>
+
+int main(void)
+{
+	int		fd;
+	char	*line;
+	int		line_count;
+
+	// Ouvrir le fichier 1.txt
+	fd = open("1.txt", O_RDONLY);
+	if (fd == -1)
+	{
+		printf("Erreur: impossible d'ouvrir le fichier 1.txt\n");
+		return (1);
+	}
+
+	printf("=== Test de get_next_line avec 1.txt ===\n\n");
+	
+	line_count = 1;
+	// Lire ligne par ligne jusqu'à la fin du fichier
+	while ((line = get_next_line(fd)) != NULL)
+	{
+		printf("Ligne %d: %s", line_count, line);
+		free(line);
+		if (line_count > 10)
+			break;
+		line_count++;
+	}
+
+	printf("\n=== Fin du fichier (Total: %d lignes) ===\n", line_count - 1);
+	
+	// Fermer le fichier
+	close(fd);
+	
+	return (0);
+}*/

@@ -31,22 +31,24 @@ static bool	check_before_run(t_map *game)
 
 int main(int argc, char **argv)
 {
-	t_map	*map;
+	t_map	map;
 
 	ft_bzero(&map, sizeof(t_map));
-	map = ft_calloc(1, sizeof(t_map));
 	if (argc != 2)
 	{
 		printf("Arguments incorrect : ./cub3d /path/to/map.cub\n");
 		return (1);
 	}
-	parsing(argv[1], map);
 
-	if (check_before_run(map))
+	parsing(argv[1], &map);
+
+	if (check_before_run(&map))
 	{
-		printf("Flood ok !\n");
-		printf("Player position X = %f, Y = %f\n", map->player_x, map->player_y);
-		is_map_solvable(map);
+		//printf("Flood ok !\n");
+		printf("Player position X = %f, Y = %f\n", map.p_pos.x, map.p_pos.y);
+		is_map_solvable(&map);
 	}
+
+	free_struct(&map);
 	return (0);
 }

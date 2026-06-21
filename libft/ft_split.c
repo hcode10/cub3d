@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 13:54:21 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/14 13:27:02 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/06/21 14:25:42 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,28 +46,28 @@ int	len_word(char *s, char c)
 	return (i);
 }
 
-static const char	*next_occ(char const *s, char c)
+const char	*next_occ(char const *s, char c)
 {
 	while (*s == c && *s)
 		s++;
 	return (s);
 }
 
-// void	free_split(char **start)
-// {
-// 	char	**tmp;
-//
-// 	tmp = start;
-// 	if (*start)
-// 	{
-// 		while (*start)
-// 		{
-// 			free(*start);
-// 			start++;
-// 		}
-// 	}
-// 	free(tmp);
-// }
+void	free_split(char **start)
+{
+	char	**tmp;
+
+	tmp = start;
+	if (*start)
+	{
+		while (*start)
+		{
+			free(*start);
+			start++;
+		}
+	}
+	free(tmp);
+}
 
 char	**ft_split(char const *s, char c)
 {
@@ -94,6 +94,5 @@ char	**ft_split(char const *s, char c)
 		else
 			s = next_occ(s, c);
 	}
-	split = NULL;
 	return (start);
 }

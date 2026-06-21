@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:01:12 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/14 21:53:54 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/06/21 14:41:20 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static void	check_player_collect(t_map *game, int i, int j)
 	if (pos == 'S' || pos == 'N' || pos == 'W' || pos == 'E')
 	{
 		//printf("Player ok pos (%c) : x = %d y = %d\n", pos, j, i);
-		game->player_y = (double)i;
-		game->player_x = (double)j;
+		game->p_pos.y = (double)i;
+		game->p_pos.x = (double)j;
 	}
 }
 
@@ -35,8 +35,8 @@ int	validate_map_chars(t_map *game)
 
 	i = 0;
 	valid_chars = "10NSEW \n";
-	game->player_x = 0;
-	game->player_y = 0;
+	game->p_pos.x = 0;
+	game->p_pos.y = 0;
 	while (game->map[i] != NULL)
 	{
 		j = 0;
@@ -52,7 +52,7 @@ int	validate_map_chars(t_map *game)
 		}
 		i++;
 	}
-	if (game->player_x == 0 || game->player_y == 0)
+	if (game->p_pos.x == 0 || game->p_pos.y == 0)
 		return (-1);
 	return (0);
 }
