@@ -6,7 +6,7 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 13:23:15 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/21 14:33:13 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/01 09:04:44 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ static void	update_ray(t_ray *ray, t_window *win, t_player_pos *p_pos, int x)
 	ray->stepy = 0;
 	ray->mapx = (int)p_pos->x;
 	ray->mapy = (int)p_pos->y;
+	ray->deltaDist[0] = sqrt(1 + pow(ray->ray[1] / ray->ray[0], 2));
+	ray->deltaDist[1] = sqrt(1 + pow(ray->ray[0] / ray->ray[1], 2));
+	ray->stepX = 0;
+	ray->stepY = 0;
+	ray->mapX = (int)p_pos->x;
+	ray->mapY = (int)p_pos->y;
+	(void) win;
+	(void) p_pos;
 }
 
 void	*render_walls(t_player *player, t_window *win, t_map *map)
@@ -48,6 +56,8 @@ void	*render_walls(t_player *player, t_window *win, t_map *map)
 		else
 			ray.perpwall = ray.sidedist[1] - ray.deltadist[1];
 		if (!draw_walls(&ray, win, x))
+			ray.perpWall = ray.sideDist[1] - ray.deltaDist[1];
+		if (!draw_walls(&ray,  win, x))
 			return (NULL);
 		x++;
 	}
