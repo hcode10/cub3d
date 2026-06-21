@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 10:53:25 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/14 21:49:12 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/06/21 16:19:37 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	read_map(t_map *game)
 {
 	if (validate_map_chars(game) != 0)
 	{
-		if (game->player_x == 0 || game->player_y == 0)
+		if (game->p_pos.x == 0 || game->p_pos.y == 0)
 			ft_putstr_fd("Player invalide !\n", 0);
 		else
 			ft_putstr_fd("Caracteres invalides !\n", 0);

@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "parsing.h"
+#include "../includes/window.h"
+#include "../includes/game.h"
 
 /*static int	validate_map(t_map *game)
 {
@@ -31,7 +33,9 @@ static bool	check_before_run(t_map *game)
 
 int main(int argc, char **argv)
 {
-	t_map	map;
+	t_map		map;
+	t_window	*win;
+	t_player	player;
 
 	ft_bzero(&map, sizeof(t_map));
 	if (argc != 2)
@@ -39,9 +43,7 @@ int main(int argc, char **argv)
 		printf("Arguments incorrect : ./cub3d /path/to/map.cub\n");
 		return (1);
 	}
-
 	parsing(argv[1], &map);
-
 	if (check_before_run(&map))
 	{
 		//printf("Flood ok !\n");
@@ -49,6 +51,29 @@ int main(int argc, char **argv)
 		is_map_solvable(&map);
 	}
 
+	win = init_window(&map);
+	if(!win)
+	{
+		printf("Init window failed");
+		return (-1);
+	}
+	int i = 0;
+	while (map.map[i])
+	{
+		for (size_t y = 0; y < ft_strlen(map.map[i]); y++)
+			printf("%c", map.map[i][y]);
+		printf("\n");
+		i++;
+	}
+	printf("%d %d\n", (int)map.p_pos.x, (int)map.p_pos.y); 
+	printf("\n\n\n\n\n%c\n\n\n\n", map.map[11][26]);
+	// printf("\n\n\n\n\n\n%c\n\n\n\n\n\n\n", map.map[(int)map.p_pos.x][(int)map.p_pos.y]);
+	init_player(&player, &map.p_pos, map.map);
+	create_back(win, &win->img);;
+	draw_back(win);
+	// mlx_hook(win->win, 17, (1L << 5), (void *)key_hook, win->mlx);  // d'abord
+	render_walls(&player, win, &map);
+	mlx_loop(win->mlx);
 	free_struct(&map);
 	return (0);
 }
