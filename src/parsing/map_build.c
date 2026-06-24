@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_utils.c                                        :+:      :+:    :+:   */
+/*   map_build.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,43 +12,61 @@
 
 #include "parsing.h"
 
-void	free_map(char **map)
+bool	space_only(char *str)
 {
 	int	i;
 
-	if (!map)
-		return ;
 	i = 0;
-	while (map[i])
+	while (str[i])
 	{
-		free(map[i]);
+		if (str[i] != ' ' && str[i] != '\n')
+			return (false);
 		i++;
 	}
-	free(map);
+	return (true);
 }
 
-char	**copy_map(char **map)
+bool	add_map_line(t_map *map, char *line)
 {
-	int		i;
-	int		map_line;
-	char	**map_copy;
+	size_t	n;
+	size_t	i;
+	char	**new;
 
-	map_line = 0;
-	while (map[map_line])
-		map_line++;
-	map_copy = malloc(sizeof(char *) * (map_line + 1));
-	if (!map_copy)
-		return (NULL);
+	n = 0;
+	while (map->map && map->map[n])
+		n++;
+	new = ft_calloc(n + 2, sizeof(char *));
+	if (!new)
+		return (false);
 	i = 0;
-	while (i <= map_line)
-		map_copy[i++] = NULL;
-	map_line = 0;
-	while (map[map_line])
+	while (i < n)
 	{
-		map_copy[map_line] = ft_strdup(map[map_line]);
-		if (!map_copy[map_line])
-			return (free_map(map_copy), NULL);
-		map_line++;
+		new[i] = map->map[i];
+		i++;
 	}
-	return (map_copy);
+	new[n] = ft_strtrim(line, "\n");
+	if (!new[n])
+		return (free(new), false);
+	free(map->map);
+	map->map = new;
+	return (true);
+}
+
+void	normalize_map(t_map *map)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	while (map->map[i])
+	{
+		j = 0;
+		while (map->map[i][j])
+		{
+			if (map->map[i][j] == ' ')
+				map->map[i][j] = '1';
+			j++;
+		}
+		i++;
+	}
 }
