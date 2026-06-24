@@ -10,13 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "../libft/get_next_line.h"
-#include "../includes/parsing.h"
+#include "parsing.h"
 
 static void	check_player_collect(t_map *game, int i, int j)
 {
-	int	pos;
+	char	pos;
 
 	pos = game->map[i][j];
 	if (pos == 'S' || pos == 'N' || pos == 'W' || pos == 'E')
@@ -30,10 +28,8 @@ bool	validate_map_chars(t_map *game)
 {
 	int		i;
 	int		j;
-	char	*valid_chars;
 
 	i = 0;
-	valid_chars = "10NSEW \n";
 	game->p_pos.x = 0;
 	game->p_pos.y = 0;
 	while (game->map[i] != NULL)
@@ -41,14 +37,16 @@ bool	validate_map_chars(t_map *game)
 		j = 0;
 		while (game->map[i][j])
 		{
-			if (!ft_strchr(valid_chars, game->map[i][j]))
-				return (error_msg("Map: caractere invalide"), false);
+			if (!ft_strchr("10NSEW \n", game->map[i][j]))
+				return (dbg_val("char invalide", game->map[i]),
+					error_msg("Map: caractere invalide"), false);
 			check_player_collect(game, i, j);
 			j++;
 		}
 		i++;
 	}
 	if (game->p_pos.x == 0 || game->p_pos.y == 0)
-		return (error_msg("Map: joueur absent ou mal place"), false);
+		return (dbg_fail("validate", "joueur absent ou en bord (x/y==0)"),
+			error_msg("Map: joueur absent ou mal place"), false);
 	return (true);
 }

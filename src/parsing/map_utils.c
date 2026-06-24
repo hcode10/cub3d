@@ -10,10 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "../libft/get_next_line.h"
-#include "../includes/parsing.h"
-
+#include "parsing.h"
 
 void	free_map(char **map)
 {
@@ -53,26 +50,5 @@ char	**copy_map(char **map)
 			return (free_map(map_copy), NULL);
 		map_line++;
 	}
-	map_copy[map_line] = NULL;
 	return (map_copy);
-}
-
-void	aff_map(char **map)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (map[i] != NULL)
-	{
-		j = 0;
-		while (map[i][j])
-		{
-			ft_putchar_fd(map[i][j], 1);
-			j++;
-		}
-		i++;
-		ft_putchar_fd('\n', 1);
-	}
-	ft_putchar_fd('\n', 1);
 }

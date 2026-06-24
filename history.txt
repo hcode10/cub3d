@@ -1,0 +1,3598 @@
+ext = .cub
+valid_path OK !
+set_textures OK !
+RGB : Valeurs invalides
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/08_color_not_numeric.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/09_map_not_closed_top.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/10_map_not_closed_side.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/11_player_on_edge.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/12_no_player.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/13_two_players.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/14_invalid_char.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/15_hole_in_wall.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/16_empty_line_inside_map.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/17_empty_file.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: Success
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/18_no_map.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/19_content_after_map.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/20_unknown_identifier.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/21_color_over_255_multi.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+RGB : Valeurs hors plage (0, 255)
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/22_isolated_zero.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/01_bad_extension.cu ===
+ext = n.cu
+Veuillez verifier le chemin de map fourni !
+Segmentation fault (core dumped)
+(exit: 139)
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/default.cub
+==26095== Memcheck, a memory error detector
+==26095== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==26095== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==26095== Command: ./cub3d maps/default.cub
+==26095==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+==26095==
+==26095== HEAP SUMMARY:
+==26095==     in use at exit: 0 bytes in 0 blocks
+==26095==   total heap usage: 380 allocs, 380 frees, 99,464 bytes allocated
+==26095==
+==26095== All heap blocks were freed -- no leaks are possible
+==26095==
+==26095== For lists of detected and suppressed errors, rerun with: -s
+==26095== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ ./test_map.sh
+=== maps/invalid/02_missing_texture_NO.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/03_duplicate_texture.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/04_bad_texture_path.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/05_color_out_of_range.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+RGB : Valeurs hors plage (0, 255)
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/06_color_negative.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+RGB : Valeurs hors plage (0, 255)
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/07_color_missing_component.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+RGB : Valeurs invalides
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/08_color_not_numeric.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/09_map_not_closed_top.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/10_map_not_closed_side.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/11_player_on_edge.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/12_no_player.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/13_two_players.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/14_invalid_char.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/15_hole_in_wall.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/16_empty_line_inside_map.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/17_empty_file.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: Success
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/18_no_map.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/19_content_after_map.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/20_unknown_identifier.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/21_color_over_255_multi.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+RGB : Valeurs hors plage (0, 255)
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/22_isolated_zero.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+Segmentation fault (core dumped)
+(exit: 139)
+=== maps/invalid/01_bad_extension.cu ===
+ext = n.cu
+Veuillez verifier le chemin de map fourni !
+Segmentation fault (core dumped)
+(exit: 139)
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/01_bad_extension.cu
+==26156== Memcheck, a memory error detector
+==26156== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==26156== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==26156== Command: ./cub3d maps/invalid/01_bad_extension.cu
+==26156==
+ext = n.cu
+Veuillez verifier le chemin de map fourni !
+==26156== Invalid read of size 8
+==26156==    at 0x10BEBD: validate_map_chars (map_validate.c:40)
+==26156==    by 0x10A85D: main (main.c:19)
+==26156==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==26156==
+==26156==
+==26156== Process terminating with default action of signal 11 (SIGSEGV)
+==26156==  Access not within mapped region at address 0x0
+==26156==    at 0x10BEBD: validate_map_chars (map_validate.c:40)
+==26156==    by 0x10A85D: main (main.c:19)
+==26156==  If you believe this happened as a result of a stack
+==26156==  overflow in your program's main thread (unlikely but
+==26156==  possible), you can try to increase the size of the
+==26156==  main thread stack using the --main-stacksize= flag.
+==26156==  The main thread stack size used in this run was 8388608.
+==26156==
+==26156== HEAP SUMMARY:
+==26156==     in use at exit: 1,145 bytes in 5 blocks
+==26156==   total heap usage: 5 allocs, 0 frees, 1,145 bytes allocated
+==26156==
+==26156== LEAK SUMMARY:
+==26156==    definitely lost: 0 bytes in 0 blocks
+==26156==    indirectly lost: 0 bytes in 0 blocks
+==26156==      possibly lost: 0 bytes in 0 blocks
+==26156==    still reachable: 1,145 bytes in 5 blocks
+==26156==         suppressed: 0 bytes in 0 blocks
+==26156== Reachable blocks (those to which a pointer was found) are not shown.
+==26156== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==26156==
+==26156== For lists of detected and suppressed errors, rerun with: -s
+==26156== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+[1]    26156 segmentation fault (core dumped)  valgrind --leak-check=full ./cub3d maps/invalid/01_bad_extension.cu
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/main.c -o src/main.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.032 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/01_bad_extension.cu
+==26211== Memcheck, a memory error detector
+==26211== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==26211== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==26211== Command: ./cub3d maps/invalid/01_bad_extension.cu
+==26211==
+ext = n.cu
+Veuillez verifier le chemin de map fourni !
+==26211==
+==26211== HEAP SUMMARY:
+==26211==     in use at exit: 1 bytes in 1 blocks
+==26211==   total heap usage: 5 allocs, 4 frees, 1,145 bytes allocated
+==26211==
+==26211== 1 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==26211==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==26211==    by 0x10C522: ft_calloc (ft_calloc.c:21)
+==26211==    by 0x10B8BA: parsing (parsing.c:315)
+==26211==    by 0x10A851: main (main.c:17)
+==26211==
+==26211== LEAK SUMMARY:
+==26211==    definitely lost: 1 bytes in 1 blocks
+==26211==    indirectly lost: 0 bytes in 0 blocks
+==26211==      possibly lost: 0 bytes in 0 blocks
+==26211==    still reachable: 0 bytes in 0 blocks
+==26211==         suppressed: 0 bytes in 0 blocks
+==26211==
+==26211== For lists of detected and suppressed errors, rerun with: -s
+==26211== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/01_bad_extension.cu
+==26264== Memcheck, a memory error detector
+==26264== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==26264== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==26264== Command: ./cub3d maps/invalid/01_bad_extension.cu
+==26264==
+ext = n.cu
+Veuillez verifier le chemin de map fourni !
+==26264==
+==26264== HEAP SUMMARY:
+==26264==     in use at exit: 0 bytes in 0 blocks
+==26264==   total heap usage: 5 allocs, 5 frees, 1,145 bytes allocated
+==26264==
+==26264== All heap blocks were freed -- no leaks are possible
+==26264==
+==26264== For lists of detected and suppressed errors, rerun with: -s
+==26264== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ ./test_map.sh
+=== maps/invalid/02_missing_texture_NO.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/03_duplicate_texture.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/04_bad_texture_path.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/05_color_out_of_range.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+RGB : Valeurs hors plage (0, 255)
+(exit: 1)
+=== maps/invalid/06_color_negative.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+RGB : Valeurs hors plage (0, 255)
+(exit: 1)
+=== maps/invalid/07_color_missing_component.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+RGB : Valeurs invalides
+(exit: 1)
+=== maps/invalid/08_color_not_numeric.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/09_map_not_closed_top.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/10_map_not_closed_side.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/11_player_on_edge.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/12_no_player.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/13_two_players.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/14_invalid_char.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/15_hole_in_wall.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/16_empty_line_inside_map.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/17_empty_file.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: Success
+(exit: 1)
+=== maps/invalid/18_no_map.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/19_content_after_map.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/20_unknown_identifier.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/21_color_over_255_multi.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+RGB : Valeurs hors plage (0, 255)
+(exit: 1)
+=== maps/invalid/22_isolated_zero.cub ===
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: No such file or directory
+(exit: 1)
+=== maps/invalid/01_bad_extension.cu ===
+ext = n.cu
+Veuillez verifier le chemin de map fourni !
+(exit: 1)
+➜  cub3d git:(dev) ✗ ./test_map.sh
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✗ 02_missing_texture_NO.cub          fuite 62o
+Pas ou trop de player sur la map !
+  ✗ 03_duplicate_texture.cub           acceptee a tort  fuite 21o  9 err. memoire
+  ✗ 04_bad_texture_path.cub            fuite 92o
+  ✗ 05_color_out_of_range.cub          fuite 83o
+  ✗ 06_color_negative.cub              fuite 83o
+  ✗ 07_color_missing_component.cub     fuite 83o
+  ✗ 08_color_not_numeric.cub           acceptee a tort
+  ✗ 09_map_not_closed_top.cub          acceptee a tort
+  ✗ 10_map_not_closed_side.cub         acceptee a tort
+  ✗ 11_player_on_edge.cub              acceptee a tort
+Pas ou trop de player sur la map !
+  ✗ 12_no_player.cub                   acceptee a tort
+  ✗ 13_two_players.cub                 acceptee a tort
+Pas ou trop de player sur la map !
+  ✗ 14_invalid_char.cub                acceptee a tort
+  ✗ 15_hole_in_wall.cub                acceptee a tort
+  ✗ 16_empty_line_inside_map.cub       acceptee a tort
+  ✗ 17_empty_file.cub                  fuite 1o
+  ✗ 18_no_map.cub                      fuite 83o
+  ✗ 19_content_after_map.cub           acceptee a tort
+  ✗ 20_unknown_identifier.cub          acceptee a tort
+  ✗ 21_color_over_255_multi.cub        fuite 83o
+  ✗ 22_isolated_zero.cub               acceptee a tort
+
+▸ Valides (doivent etre acceptees)
+
+──────────────────────────────────────────────
+ ✗ 21 probleme(s)  —  9/30 conformes (relance avec -v pour tout voir)
+
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/02_missing_texture_NO.cub
+==28670== Memcheck, a memory error detector
+==28670== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==28670== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==28670== Command: ./cub3d maps/invalid/02_missing_texture_NO.cub
+==28670==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: Success
+==28670==
+==28670== HEAP SUMMARY:
+==28670==     in use at exit: 62 bytes in 4 blocks
+==28670==   total heap usage: 134 allocs, 130 frees, 27,261 bytes allocated
+==28670==
+==28670== 1 bytes in 1 blocks are definitely lost in loss record 1 of 4
+==28670==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28670==    by 0x10C532: ft_calloc (ft_calloc.c:21)
+==28670==    by 0x10B8BA: parsing (parsing.c:315)
+==28670==    by 0x10A851: main (main.c:17)
+==28670==
+==28670== 20 bytes in 1 blocks are definitely lost in loss record 2 of 4
+==28670==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28670==    by 0x10C532: ft_calloc (ft_calloc.c:21)
+==28670==    by 0x10C7F7: ft_strtrim (ft_strtrim.c:42)
+==28670==    by 0x10B13A: set_textures (parsing.c:144)
+==28670==    by 0x10B937: parsing (parsing.c:326)
+==28670==    by 0x10A851: main (main.c:17)
+==28670==
+==28670== 20 bytes in 1 blocks are definitely lost in loss record 3 of 4
+==28670==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28670==    by 0x10C532: ft_calloc (ft_calloc.c:21)
+==28670==    by 0x10C7F7: ft_strtrim (ft_strtrim.c:42)
+==28670==    by 0x10B183: set_textures (parsing.c:146)
+==28670==    by 0x10B937: parsing (parsing.c:326)
+==28670==    by 0x10A851: main (main.c:17)
+==28670==
+==28670== 21 bytes in 1 blocks are definitely lost in loss record 4 of 4
+==28670==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28670==    by 0x10C532: ft_calloc (ft_calloc.c:21)
+==28670==    by 0x10C7F7: ft_strtrim (ft_strtrim.c:42)
+==28670==    by 0x10B0EE: set_textures (parsing.c:142)
+==28670==    by 0x10B937: parsing (parsing.c:326)
+==28670==    by 0x10A851: main (main.c:17)
+==28670==
+==28670== LEAK SUMMARY:
+==28670==    definitely lost: 62 bytes in 4 blocks
+==28670==    indirectly lost: 0 bytes in 0 blocks
+==28670==      possibly lost: 0 bytes in 0 blocks
+==28670==    still reachable: 0 bytes in 0 blocks
+==28670==         suppressed: 0 bytes in 0 blocks
+==28670==
+==28670== For lists of detected and suppressed errors, rerun with: -s
+==28670== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/main.c -o src/main.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/02_missing_texture_NO.cub
+==28723== Memcheck, a memory error detector
+==28723== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==28723== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==28723== Command: ./cub3d maps/invalid/02_missing_texture_NO.cub
+==28723==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+Veuillez verifier le chemin des textures !: Success
+==28723==
+==28723== HEAP SUMMARY:
+==28723==     in use at exit: 0 bytes in 0 blocks
+==28723==   total heap usage: 134 allocs, 134 frees, 27,261 bytes allocated
+==28723==
+==28723== All heap blocks were freed -- no leaks are possible
+==28723==
+==28723== For lists of detected and suppressed errors, rerun with: -s
+==28723== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ ./test_map.sh
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+Pas ou trop de player sur la map !
+  ✗ 03_duplicate_texture.cub           acceptee a tort  fuite 21o  9 err. memoire
+  ✗ 08_color_not_numeric.cub           acceptee a tort
+  ✗ 09_map_not_closed_top.cub          acceptee a tort
+  ✗ 10_map_not_closed_side.cub         acceptee a tort
+  ✗ 11_player_on_edge.cub              acceptee a tort
+Pas ou trop de player sur la map !
+  ✗ 12_no_player.cub                   acceptee a tort
+  ✗ 13_two_players.cub                 acceptee a tort
+Pas ou trop de player sur la map !
+  ✗ 14_invalid_char.cub                acceptee a tort
+  ✗ 15_hole_in_wall.cub                acceptee a tort
+  ✗ 16_empty_line_inside_map.cub       acceptee a tort
+  ✗ 19_content_after_map.cub           acceptee a tort
+  ✗ 20_unknown_identifier.cub          acceptee a tort
+  ✗ 22_isolated_zero.cub               acceptee a tort
+  ✗ 01_bad_extension.cu                1 err. memoire
+
+▸ Valides (doivent etre acceptees)
+
+──────────────────────────────────────────────
+ ✗ 14 probleme(s)  —  16/30 conformes (relance avec -v pour tout voir)
+
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/main.c -o src/main.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./test_map.sh
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+Pas ou trop de player sur la map !
+  ✗ 03_duplicate_texture.cub           acceptee a tort  fuite 21o  9 err. memoire
+  ✗ 11_player_on_edge.cub              acceptee a tort
+Pas ou trop de player sur la map !
+  ✗ 12_no_player.cub                   acceptee a tort
+Pas ou trop de player sur la map !
+  ✗ 14_invalid_char.cub                acceptee a tort
+  ✗ 19_content_after_map.cub           acceptee a tort
+  ✗ 01_bad_extension.cu                1 err. memoire
+
+▸ Valides (doivent etre acceptees)
+  ✗ 01_simple.cub                      rejetee a tort (exit=1)
+  ✗ 02_player_S.cub                    rejetee a tort (exit=1)
+  ✗ 03_player_E.cub                    rejetee a tort (exit=1)
+  ✗ 04_player_W.cub                    rejetee a tort (exit=1)
+  ✗ 05_irregular_shape.cub             rejetee a tort (exit=1)
+  ✗ 06_inner_walls.cub                 rejetee a tort (exit=1)
+  ✗ 07_leading_spaces_walls.cub        rejetee a tort (exit=1)
+  ✗ 08_enclosed_space_inside.cub       rejetee a tort (exit=1)
+
+──────────────────────────────────────────────
+ ✗ 14 probleme(s)  —  16/30 conformes (relance avec -v pour tout voir)
+
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./test_map.sh
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+Pas ou trop de player sur la map !
+  ✗ 03_duplicate_texture.cub           acceptee a tort  9 err. memoire
+  ✗ 11_player_on_edge.cub              acceptee a tort
+Pas ou trop de player sur la map !
+  ✗ 12_no_player.cub                   acceptee a tort
+Pas ou trop de player sur la map !
+  ✗ 14_invalid_char.cub                acceptee a tort
+  ✗ 19_content_after_map.cub           acceptee a tort
+  ✗ 01_bad_extension.cu                1 err. memoire
+
+▸ Valides (doivent etre acceptees)
+  ✗ 01_simple.cub                      rejetee a tort (exit=1)
+  ✗ 02_player_S.cub                    rejetee a tort (exit=1)
+  ✗ 03_player_E.cub                    rejetee a tort (exit=1)
+  ✗ 04_player_W.cub                    rejetee a tort (exit=1)
+  ✗ 05_irregular_shape.cub             rejetee a tort (exit=1)
+  ✗ 06_inner_walls.cub                 rejetee a tort (exit=1)
+  ✗ 07_leading_spaces_walls.cub        rejetee a tort (exit=1)
+  ✗ 08_enclosed_space_inside.cub       rejetee a tort (exit=1)
+
+──────────────────────────────────────────────
+ ✗ 14 probleme(s)  —  16/30 conformes (relance avec -v pour tout voir)
+
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/03_duplicate_texture.cub
+==30437== Memcheck, a memory error detector
+==30437== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==30437== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==30437== Command: ./cub3d maps/invalid/03_duplicate_texture.cub
+==30437==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Player position X = 0.000000, Y = 0.000000
+==30437== Invalid read of size 1
+==30437==    at 0x10C17D: flood_fill (flood_fill.c:30)
+==30437==    by 0x10C22C: flood_fill (flood_fill.c:36)
+==30437==    by 0x10C263: flood_fill (flood_fill.c:38)
+==30437==    by 0x10C34A: is_map_solvable (flood_fill.c:64)
+==30437==    by 0x10A8B0: main (main.c:27)
+==30437==  Address 0x4c37451 is 0 bytes after a block of size 1 alloc'd
+==30437==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30437==    by 0x10C46F: ft_strdup (ft_strdup.c:23)
+==30437==    by 0x10BC98: copy_map (map_utils.c:51)
+==30437==    by 0x10C306: is_map_solvable (flood_fill.c:60)
+==30437==    by 0x10A8B0: main (main.c:27)
+==30437==
+==30437== Invalid read of size 1
+==30437==    at 0x10C17D: flood_fill (flood_fill.c:30)
+==30437==    by 0x10C22C: flood_fill (flood_fill.c:36)
+==30437==    by 0x10C263: flood_fill (flood_fill.c:38)
+==30437==    by 0x10C263: flood_fill (flood_fill.c:38)
+==30437==    by 0x10C34A: is_map_solvable (flood_fill.c:64)
+==30437==    by 0x10A8B0: main (main.c:27)
+==30437==  Address 0x4c37452 is 1 bytes after a block of size 1 alloc'd
+==30437==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30437==    by 0x10C46F: ft_strdup (ft_strdup.c:23)
+==30437==    by 0x10BC98: copy_map (map_utils.c:51)
+==30437==    by 0x10C306: is_map_solvable (flood_fill.c:60)
+==30437==    by 0x10A8B0: main (main.c:27)
+==30437==
+Pas ou trop de player sur la map !
+==30437==
+==30437== HEAP SUMMARY:
+==30437==     in use at exit: 0 bytes in 0 blocks
+==30437==   total heap usage: 233 allocs, 233 frees, 45,785 bytes allocated
+==30437==
+==30437== All heap blocks were freed -- no leaks are possible
+==30437==
+==30437== For lists of detected and suppressed errors, rerun with: -s
+==30437== ERROR SUMMARY: 9 errors from 2 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/main.c -o src/main.o
+src/main.c: In function ‘main’:
+src/main.c:41:32: error: ‘game’ undeclared (first use in this function)
+   41 |         if (validate_map_chars(game) != 0)
+      |                                ^~~~
+src/main.c:41:32: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Makefile:88: src/main.o] Error 1
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/main.c -o src/main.o
+src/main.c: In function ‘main’:
+src/main.c:37:24: error: too many arguments for format [-Werror=format-extra-args]
+   37 |                 printf("Caracteres invalides !\n", 0);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+make: *** [Makefile:88: src/main.o] Error 1
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/main.c -o src/main.o
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/flood_fill.c -o src/parsing/flood_fill.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./test_map.sh
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✗ 19_content_after_map.cub           acceptee a tort
+  ✗ 01_bad_extension.cu                1 err. memoire
+
+▸ Valides (doivent etre acceptees)
+  ✗ 01_simple.cub                      rejetee a tort (exit=1)
+  ✗ 02_player_S.cub                    rejetee a tort (exit=1)
+  ✗ 03_player_E.cub                    rejetee a tort (exit=1)
+  ✗ 04_player_W.cub                    rejetee a tort (exit=1)
+  ✗ 05_irregular_shape.cub             rejetee a tort (exit=1)
+  ✗ 06_inner_walls.cub                 rejetee a tort (exit=1)
+  ✗ 07_leading_spaces_walls.cub        rejetee a tort (exit=1)
+  ✗ 08_enclosed_space_inside.cub       rejetee a tort (exit=1)
+
+──────────────────────────────────────────────
+ ✗ 10 probleme(s)  —  20/30 conformes (relance avec -v pour tout voir)
+
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/01_bad_extension.cu
+==31069== Memcheck, a memory error detector
+==31069== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==31069== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==31069== Command: ./cub3d maps/invalid/01_bad_extension.cu
+==31069==
+ext = n.cu
+Veuillez verifier le chemin de map fourni !
+==31069== Invalid free() / delete / delete[] / realloc()
+==31069==    at 0x484988F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31069==    by 0x10ADD1: free_struct (parsing.c:43)
+==31069==    by 0x10A867: main (main.c:19)
+==31069==  Address 0x4c28190 is 0 bytes inside a block of size 1 free'd
+==31069==    at 0x484988F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31069==    by 0x10B9BC: parsing (parsing.c:320)
+==31069==    by 0x10A854: main (main.c:17)
+==31069==  Block was alloc'd at
+==31069==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==31069==    by 0x10C614: ft_calloc (ft_calloc.c:21)
+==31069==    by 0x10B97A: parsing (parsing.c:315)
+==31069==    by 0x10A854: main (main.c:17)
+==31069==
+==31069==
+==31069== HEAP SUMMARY:
+==31069==     in use at exit: 0 bytes in 0 blocks
+==31069==   total heap usage: 5 allocs, 6 frees, 1,145 bytes allocated
+==31069==
+==31069== All heap blocks were freed -- no leaks are possible
+==31069==
+==31069== For lists of detected and suppressed errors, rerun with: -s
+==31069== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ ./test_map.sh
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+^C
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.016 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./test_map.sh
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✗ 19_content_after_map.cub           acceptee a tort
+
+▸ Valides (doivent etre acceptees)
+  ✗ 01_simple.cub                      rejetee a tort (exit=1)
+  ✗ 02_player_S.cub                    rejetee a tort (exit=1)
+  ✗ 03_player_E.cub                    rejetee a tort (exit=1)
+  ✗ 04_player_W.cub                    rejetee a tort (exit=1)
+  ✗ 05_irregular_shape.cub             rejetee a tort (exit=1)
+  ✗ 06_inner_walls.cub                 rejetee a tort (exit=1)
+  ✗ 07_leading_spaces_walls.cub        rejetee a tort (exit=1)
+  ✗ 08_enclosed_space_inside.cub       rejetee a tort (exit=1)
+
+──────────────────────────────────────────────
+ ✗ 9 probleme(s)  —  21/30 conformes (relance avec -v pour tout voir)
+
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✓ 09_map_not_closed_top.cub
+  ✓ 10_map_not_closed_side.cub
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✓ 13_two_players.cub
+  ✓ 14_invalid_char.cub
+  ✓ 15_hole_in_wall.cub
+  ✓ 16_empty_line_inside_map.cub
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✗ 19_content_after_map.cub           acceptee a tort
+  ✓ 20_unknown_identifier.cub
+  ✓ 21_color_over_255_multi.cub
+  ✓ 22_isolated_zero.cub
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✗ 01_simple.cub                      rejetee a tort (exit=1)
+  ✗ 02_player_S.cub                    rejetee a tort (exit=1)
+  ✗ 03_player_E.cub                    rejetee a tort (exit=1)
+  ✗ 04_player_W.cub                    rejetee a tort (exit=1)
+  ✗ 05_irregular_shape.cub             rejetee a tort (exit=1)
+  ✗ 06_inner_walls.cub                 rejetee a tort (exit=1)
+  ✗ 07_leading_spaces_walls.cub        rejetee a tort (exit=1)
+  ✗ 08_enclosed_space_inside.cub       rejetee a tort (exit=1)
+
+──────────────────────────────────────────────
+ ✗ 9 probleme(s)  —  21/30 conformes (relance avec -v pour tout voir)
+
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/valid/01_simple.cub
+==32447== Memcheck, a memory error detector
+==32447== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==32447== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==32447== Command: ./cub3d maps/valid/01_simple.cub
+==32447==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Caracteres invalides !
+==32447==
+==32447== HEAP SUMMARY:
+==32447==     in use at exit: 0 bytes in 0 blocks
+==32447==   total heap usage: 207 allocs, 207 frees, 41,787 bytes allocated
+==32447==
+==32447== All heap blocks were freed -- no leaks are possible
+==32447==
+==32447== For lists of detected and suppressed errors, rerun with: -s
+==32447== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/map_validate.c -o src/parsing/map_validate.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/valid/01_simple.cub
+==32500== Memcheck, a memory error detector
+==32500== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==32500== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==32500== Command: ./cub3d maps/valid/01_simple.cub
+==32500==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Caracteres invalides !
+==32500==
+==32500== HEAP SUMMARY:
+==32500==     in use at exit: 0 bytes in 0 blocks
+==32500==   total heap usage: 207 allocs, 207 frees, 41,787 bytes allocated
+==32500==
+==32500== All heap blocks were freed -- no leaks are possible
+==32500==
+==32500== For lists of detected and suppressed errors, rerun with: -s
+==32500== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/map_validate.c -o src/parsing/map_validate.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/valid/01_simple.cub
+==32553== Memcheck, a memory error detector
+==32553== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==32553== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==32553== Command: ./cub3d maps/valid/01_simple.cub
+==32553==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Player ok pos (N) : x = 2 y = 2
+Caracteres invalides !
+==32553==
+==32553== HEAP SUMMARY:
+==32553==     in use at exit: 0 bytes in 0 blocks
+==32553==   total heap usage: 207 allocs, 207 frees, 41,787 bytes allocated
+==32553==
+==32553== All heap blocks were freed -- no leaks are possible
+==32553==
+==32553== For lists of detected and suppressed errors, rerun with: -s
+==32553== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/map_validate.c -o src/parsing/map_validate.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/valid/01_simple.cub
+==32607== Memcheck, a memory error detector
+==32607== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==32607== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==32607== Command: ./cub3d maps/valid/01_simple.cub
+==32607==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Player ok pos (N) : x = 2 y = 2
+Caracteres invalides !
+==32607==
+==32607== HEAP SUMMARY:
+==32607==     in use at exit: 0 bytes in 0 blocks
+==32607==   total heap usage: 207 allocs, 207 frees, 41,787 bytes allocated
+==32607==
+==32607== All heap blocks were freed -- no leaks are possible
+==32607==
+==32607== For lists of detected and suppressed errors, rerun with: -s
+==32607== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/map_validate.c -o src/parsing/map_validate.o
+src/parsing/map_validate.c:30:9: error: conflicting types for ‘validate_map_chars’; have ‘_Bool(t_map *)’ {aka ‘_Bool(struct s_map *)’}
+   30 | bool    validate_map_chars(t_map *game)
+      |         ^~~~~~~~~~~~~~~~~~
+In file included from src/parsing/map_validate.c:15:
+./minilibx-linux/../includes/parsing.h:71:17: note: previous declaration of ‘validate_map_chars’ with type ‘int(t_map *)’ {aka ‘int(struct s_map *)’}
+   71 | int             validate_map_chars(t_map *game);
+      |                 ^~~~~~~~~~~~~~~~~~
+make: *** [Makefile:88: src/parsing/map_validate.o] Error 1
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/map_validate.c -o src/parsing/map_validate.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.038 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/valid/01_simple.cub
+==32679== Memcheck, a memory error detector
+==32679== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==32679== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==32679== Command: ./cub3d maps/valid/01_simple.cub
+==32679==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Player ok pos (N) : x = 2 y = 2
+Player position X = 2.000000, Y = 2.000000
+Player count : 1
+Player count : 1
+Player count : 1
+Player count : 1
+Player count : 1
+Player count : 1
+Player count : 1
+Player count : 1
+==32679==
+==32679== HEAP SUMMARY:
+==32679==     in use at exit: 0 bytes in 0 blocks
+==32679==   total heap usage: 212 allocs, 212 frees, 41,855 bytes allocated
+==32679==
+==32679== All heap blocks were freed -- no leaks are possible
+==32679==
+==32679== For lists of detected and suppressed errors, rerun with: -s
+==32679== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/flood_fill.c -o src/parsing/flood_fill.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.03 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/valid/01_simple.cub
+==32732== Memcheck, a memory error detector
+==32732== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==32732== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==32732== Command: ./cub3d maps/valid/01_simple.cub
+==32732==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Player ok pos (N) : x = 2 y = 2
+Player position X = 2.000000, Y = 2.000000
+==32732==
+==32732== HEAP SUMMARY:
+==32732==     in use at exit: 0 bytes in 0 blocks
+==32732==   total heap usage: 212 allocs, 212 frees, 41,855 bytes allocated
+==32732==
+==32732== All heap blocks were freed -- no leaks are possible
+==32732==
+==32732== For lists of detected and suppressed errors, rerun with: -s
+==32732== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✗ 08_color_not_numeric.cub           acceptee a tort
+  ✗ 09_map_not_closed_top.cub          acceptee a tort
+  ✗ 10_map_not_closed_side.cub         acceptee a tort
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+Pas ou trop de player sur la map !
+  ✗ 13_two_players.cub                 acceptee a tort
+  ✓ 14_invalid_char.cub
+  ✗ 15_hole_in_wall.cub                acceptee a tort
+  ✗ 16_empty_line_inside_map.cub       acceptee a tort  4 err. memoire
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✗ 20_unknown_identifier.cub          acceptee a tort
+  ✓ 21_color_over_255_multi.cub
+  ✗ 22_isolated_zero.cub               acceptee a tort
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✓ 05_irregular_shape.cub
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✓ 08_enclosed_space_inside.cub
+
+──────────────────────────────────────────────
+ ✗ 8 probleme(s)  —  22/30 conformes (relance avec -v pour tout voir)
+
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/flood_fill.c -o src/parsing/flood_fill.o
+src/parsing/flood_fill.c:53:9: error: conflicting types for ‘is_map_solvable’; have ‘_Bool(t_map *)’ {aka ‘_Bool(struct s_map *)’}
+   53 | bool    is_map_solvable(t_map *game)
+      |         ^~~~~~~~~~~~~~~
+In file included from src/parsing/flood_fill.c:15:
+./minilibx-linux/../includes/parsing.h:74:17: note: previous declaration of ‘is_map_solvable’ with type ‘int(t_map *)’ {aka ‘int(struct s_map *)’}
+   74 | int             is_map_solvable(t_map *game);
+      |                 ^~~~~~~~~~~~~~~
+make: *** [Makefile:88: src/parsing/flood_fill.o] Error 1
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/flood_fill.c -o src/parsing/flood_fill.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.042 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.00075 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✗ 08_color_not_numeric.cub           acceptee a tort
+  ✗ 09_map_not_closed_top.cub          acceptee a tort
+  ✗ 10_map_not_closed_side.cub         acceptee a tort
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✗ 13_two_players.cub                 acceptee a tort
+  ✓ 14_invalid_char.cub
+  ✗ 15_hole_in_wall.cub                acceptee a tort
+  ✗ 16_empty_line_inside_map.cub       acceptee a tort  4 err. memoire
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✗ 20_unknown_identifier.cub          acceptee a tort
+  ✓ 21_color_over_255_multi.cub
+  ✗ 22_isolated_zero.cub               acceptee a tort
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✓ 05_irregular_shape.cub
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✓ 08_enclosed_space_inside.cub
+
+──────────────────────────────────────────────
+ ✗ 8 probleme(s)  —  22/30 conformes (relance avec -v pour tout voir)
+
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/main.c -o src/main.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.054 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.012 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✗ 08_color_not_numeric.cub           acceptee a tort
+  ✗ 09_map_not_closed_top.cub          acceptee a tort
+  ✗ 10_map_not_closed_side.cub         acceptee a tort
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✗ 13_two_players.cub                 fuite 155o
+  ✓ 14_invalid_char.cub
+  ✗ 15_hole_in_wall.cub                acceptee a tort
+  ✗ 16_empty_line_inside_map.cub       acceptee a tort  4 err. memoire
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✗ 20_unknown_identifier.cub          acceptee a tort
+  ✓ 21_color_over_255_multi.cub
+  ✗ 22_isolated_zero.cub               acceptee a tort
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✓ 05_irregular_shape.cub
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✓ 08_enclosed_space_inside.cub
+
+──────────────────────────────────────────────
+ ✗ 8 probleme(s)  —  22/30 conformes (relance avec -v pour tout voir)
+
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/08_color_not_numeric.cub
+==34517== Memcheck, a memory error detector
+==34517== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==34517== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==34517== Command: ./cub3d maps/invalid/08_color_not_numeric.cub
+==34517==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Player ok pos (N) : x = 2 y = 2
+Player position X = 2.000000, Y = 2.000000
+==34517==
+==34517== HEAP SUMMARY:
+==34517==     in use at exit: 0 bytes in 0 blocks
+==34517==   total heap usage: 212 allocs, 212 frees, 41,855 bytes allocated
+==34517==
+==34517== All heap blocks were freed -- no leaks are possible
+==34517==
+==34517== For lists of detected and suppressed errors, rerun with: -s
+==34517== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/map_validate.c -o src/parsing/map_validate.o
+src/parsing/map_validate.c: In function ‘validate_chars_str’:
+src/parsing/map_validate.c:67:9: error: ‘i’ undeclared (first use in this function)
+   67 |         i = 0;
+      |         ^
+src/parsing/map_validate.c:67:9: note: each undeclared identifier is reported only once for each function it appears in
+src/parsing/map_validate.c:64:34: error: parameter ‘str’ set but not used [-Werror=unused-but-set-parameter]
+   64 | bool    validate_chars_str(char *str, char *charset)
+      |                            ~~~~~~^~~
+cc1: all warnings being treated as errors
+make: *** [Makefile:88: src/parsing/map_validate.o] Error 1
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/map_validate.c -o src/parsing/map_validate.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/08_color_not_numeric.cub
+==34617== Memcheck, a memory error detector
+==34617== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==34617== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==34617== Command: ./cub3d maps/invalid/08_color_not_numeric.cub
+==34617==
+ext = .cub
+valid_path OK !
+set_textures OK !
+carac = +a+
+RGB : Valeurs invalides
+==34617==
+==34617== HEAP SUMMARY:
+==34617==     in use at exit: 41 bytes in 1 blocks
+==34617==   total heap usage: 109 allocs, 108 frees, 20,760 bytes allocated
+==34617==
+==34617== LEAK SUMMARY:
+==34617==    definitely lost: 0 bytes in 0 blocks
+==34617==    indirectly lost: 0 bytes in 0 blocks
+==34617==      possibly lost: 0 bytes in 0 blocks
+==34617==    still reachable: 41 bytes in 1 blocks
+==34617==         suppressed: 0 bytes in 0 blocks
+==34617== Reachable blocks (those to which a pointer was found) are not shown.
+==34617== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==34617==
+==34617== For lists of detected and suppressed errors, rerun with: -s
+==34617== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✓ 09_map_not_closed_top.cub
+  ✓ 10_map_not_closed_side.cub
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✓ 13_two_players.cub
+  ✓ 14_invalid_char.cub
+  ✓ 15_hole_in_wall.cub
+  ✓ 16_empty_line_inside_map.cub
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✓ 20_unknown_identifier.cub
+  ✓ 21_color_over_255_multi.cub
+  ✓ 22_isolated_zero.cub
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✗ 01_simple.cub                      rejetee a tort (exit=1)
+  ✗ 02_player_S.cub                    rejetee a tort (exit=1)
+  ✗ 03_player_E.cub                    rejetee a tort (exit=1)
+  ✗ 04_player_W.cub                    rejetee a tort (exit=1)
+  ✗ 05_irregular_shape.cub             rejetee a tort (exit=1)
+  ✗ 06_inner_walls.cub                 rejetee a tort (exit=1)
+  ✗ 07_leading_spaces_walls.cub        rejetee a tort (exit=1)
+  ✗ 08_enclosed_space_inside.cub       rejetee a tort (exit=1)
+
+──────────────────────────────────────────────
+ ✗ 8 probleme(s)  —  22/30 conformes (relance avec -v pour tout voir)
+
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/default.cub
+==35676== Memcheck, a memory error detector
+==35676== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==35676== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==35676== Command: ./cub3d maps/default.cub
+==35676==
+ext = .cub
+valid_path OK !
+set_textures OK !
+carac = +
++
+RGB : Valeurs invalides
+==35676==
+==35676== HEAP SUMMARY:
+==35676==     in use at exit: 459 bytes in 1 blocks
+==35676==   total heap usage: 169 allocs, 168 frees, 42,424 bytes allocated
+==35676==
+==35676== LEAK SUMMARY:
+==35676==    definitely lost: 0 bytes in 0 blocks
+==35676==    indirectly lost: 0 bytes in 0 blocks
+==35676==      possibly lost: 0 bytes in 0 blocks
+==35676==    still reachable: 459 bytes in 1 blocks
+==35676==         suppressed: 0 bytes in 0 blocks
+==35676== Reachable blocks (those to which a pointer was found) are not shown.
+==35676== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==35676==
+==35676== For lists of detected and suppressed errors, rerun with: -s
+==35676== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+src/parsing/parsing.c: In function ‘check_numeric_color’:
+src/parsing/parsing.c:164:50: error: passing argument 2 of ‘ft_strchr’ makes integer from pointer without a cast [-Werror=int-conversion]
+  164 |                         if (ft_strchr(" \n,", str[i]))
+      |                                               ~~~^~~
+      |                                                  |
+      |                                                  char *
+In file included from ./includes/parsing.h:32,
+                 from src/parsing/parsing.c:13:
+./includes/../libft/libft.h:52:39: note: expected ‘int’ but argument is of type ‘char *’
+   52 | char    *ft_strchr(const char *s, int c);
+      |                                   ~~~~^
+cc1: all warnings being treated as errors
+make: *** [Makefile:88: src/parsing/parsing.o] Error 1
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/default.cub
+==35842== Memcheck, a memory error detector
+==35842== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==35842== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==35842== Command: ./cub3d maps/default.cub
+==35842==
+ext = .cub
+valid_path OK !
+set_textures OK !
+==35842== Invalid read of size 1
+==35842==    at 0x10B3A0: check_numeric_color (parsing.c:162)
+==35842==    by 0x10B4B9: set_color (parsing.c:202)
+==35842==    by 0x10BBA3: parsing (parsing.c:361)
+==35842==    by 0x10A854: main (main.c:17)
+==35842==  Address 0x1 is not stack'd, malloc'd or (recently) free'd
+==35842==
+==35842==
+==35842== Process terminating with default action of signal 11 (SIGSEGV)
+==35842==  Access not within mapped region at address 0x1
+==35842==    at 0x10B3A0: check_numeric_color (parsing.c:162)
+==35842==    by 0x10B4B9: set_color (parsing.c:202)
+==35842==    by 0x10BBA3: parsing (parsing.c:361)
+==35842==    by 0x10A854: main (main.c:17)
+==35842==  If you believe this happened as a result of a stack
+==35842==  overflow in your program's main thread (unlikely but
+==35842==  possible), you can try to increase the size of the
+==35842==  main thread stack using the --main-stacksize= flag.
+==35842==  The main thread stack size used in this run was 8388608.
+==35842==
+==35842== HEAP SUMMARY:
+==35842==     in use at exit: 1,807 bytes in 18 blocks
+==35842==   total heap usage: 169 allocs, 151 frees, 42,424 bytes allocated
+==35842==
+==35842== LEAK SUMMARY:
+==35842==    definitely lost: 0 bytes in 0 blocks
+==35842==    indirectly lost: 0 bytes in 0 blocks
+==35842==      possibly lost: 0 bytes in 0 blocks
+==35842==    still reachable: 1,807 bytes in 18 blocks
+==35842==         suppressed: 0 bytes in 0 blocks
+==35842== Reachable blocks (those to which a pointer was found) are not shown.
+==35842== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==35842==
+==35842== For lists of detected and suppressed errors, rerun with: -s
+==35842== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+[1]    35842 segmentation fault (core dumped)  valgrind --leak-check=full ./cub3d maps/default.cub
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/default.cub
+==35897== Memcheck, a memory error detector
+==35897== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==35897== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==35897== Command: ./cub3d maps/default.cub
+==35897==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Player ok pos (N) : x = 26 y = 11
+Player position X = 26.000000, Y = 11.000000
+==35897==
+==35897== HEAP SUMMARY:
+==35897==     in use at exit: 0 bytes in 0 blocks
+==35897==   total heap usage: 395 allocs, 395 frees, 100,030 bytes allocated
+==35897==
+==35897== All heap blocks were freed -- no leaks are possible
+==35897==
+==35897== For lists of detected and suppressed errors, rerun with: -s
+==35897== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✗ 09_map_not_closed_top.cub          acceptee a tort
+  ✗ 10_map_not_closed_side.cub         acceptee a tort
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✗ 13_two_players.cub                 fuite 155o
+  ✓ 14_invalid_char.cub
+  ✗ 15_hole_in_wall.cub                acceptee a tort
+  ✗ 16_empty_line_inside_map.cub       acceptee a tort  4 err. memoire
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✗ 20_unknown_identifier.cub          acceptee a tort
+  ✓ 21_color_over_255_multi.cub
+  ✗ 22_isolated_zero.cub               acceptee a tort
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✓ 05_irregular_shape.cub
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✓ 08_enclosed_space_inside.cub
+
+──────────────────────────────────────────────
+ ✗ 7 probleme(s)  —  23/30 conformes (relance avec -v pour tout voir)
+
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/13_two_players.cub
+==36472== Memcheck, a memory error detector
+==36472== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==36472== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==36472== Command: ./cub3d maps/invalid/13_two_players.cub
+==36472==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Player ok pos (N) : x = 2 y = 1
+Player ok pos (S) : x = 4 y = 2
+Player position X = 4.000000, Y = 2.000000
+Pas ou trop de player sur la map !
+Impossible de resoudre la map !!
+==36472==
+==36472== HEAP SUMMARY:
+==36472==     in use at exit: 155 bytes in 10 blocks
+==36472==   total heap usage: 212 allocs, 202 frees, 41,997 bytes allocated
+==36472==
+==36472== 1 bytes in 1 blocks are definitely lost in loss record 1 of 7
+==36472==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==36472==    by 0x10C88D: ft_calloc (ft_calloc.c:21)
+==36472==    by 0x10BAF4: parsing (parsing.c:344)
+==36472==    by 0x10A854: main (main.c:17)
+==36472==
+==36472== 20 bytes in 1 blocks are definitely lost in loss record 2 of 7
+==36472==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==36472==    by 0x10C88D: ft_calloc (ft_calloc.c:21)
+==36472==    by 0x10CB52: ft_strtrim (ft_strtrim.c:42)
+==36472==    by 0x10B20D: set_textures (parsing.c:144)
+==36472==    by 0x10BB61: parsing (parsing.c:354)
+==36472==    by 0x10A854: main (main.c:17)
+==36472==
+==36472== 20 bytes in 1 blocks are definitely lost in loss record 3 of 7
+==36472==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==36472==    by 0x10C88D: ft_calloc (ft_calloc.c:21)
+==36472==    by 0x10CB52: ft_strtrim (ft_strtrim.c:42)
+==36472==    by 0x10B263: set_textures (parsing.c:146)
+==36472==    by 0x10BB61: parsing (parsing.c:354)
+==36472==    by 0x10A854: main (main.c:17)
+==36472==
+==36472== 21 bytes in 1 blocks are definitely lost in loss record 4 of 7
+==36472==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==36472==    by 0x10C88D: ft_calloc (ft_calloc.c:21)
+==36472==    by 0x10CB52: ft_strtrim (ft_strtrim.c:42)
+==36472==    by 0x10B15B: set_textures (parsing.c:140)
+==36472==    by 0x10BB61: parsing (parsing.c:354)
+==36472==    by 0x10A854: main (main.c:17)
+==36472==
+==36472== 21 bytes in 1 blocks are definitely lost in loss record 5 of 7
+==36472==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==36472==    by 0x10C88D: ft_calloc (ft_calloc.c:21)
+==36472==    by 0x10CB52: ft_strtrim (ft_strtrim.c:42)
+==36472==    by 0x10B1B4: set_textures (parsing.c:142)
+==36472==    by 0x10BB61: parsing (parsing.c:354)
+==36472==    by 0x10A854: main (main.c:17)
+==36472==
+==36472== 72 (40 direct, 32 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+==36472==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==36472==    by 0x10C88D: ft_calloc (ft_calloc.c:21)
+==36472==    by 0x10B797: add_map_line (parsing.c:267)
+==36472==    by 0x10BA6F: get_map (parsing.c:328)
+==36472==    by 0x10BC64: parsing (parsing.c:378)
+==36472==    by 0x10A854: main (main.c:17)
+==36472==
+==36472== LEAK SUMMARY:
+==36472==    definitely lost: 123 bytes in 6 blocks
+==36472==    indirectly lost: 32 bytes in 4 blocks
+==36472==      possibly lost: 0 bytes in 0 blocks
+==36472==    still reachable: 0 bytes in 0 blocks
+==36472==         suppressed: 0 bytes in 0 blocks
+==36472==
+==36472== For lists of detected and suppressed errors, rerun with: -s
+==36472== ERROR SUMMARY: 6 errors from 6 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/main.c -o src/main.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.2 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.16 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/13_two_players.cub
+==36526== Memcheck, a memory error detector
+==36526== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==36526== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==36526== Command: ./cub3d maps/invalid/13_two_players.cub
+==36526==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Player ok pos (N) : x = 2 y = 1
+Player ok pos (S) : x = 4 y = 2
+Player position X = 4.000000, Y = 2.000000
+Pas ou trop de player sur la map !
+Impossible de resoudre la map !!
+==36526==
+==36526== HEAP SUMMARY:
+==36526==     in use at exit: 0 bytes in 0 blocks
+==36526==   total heap usage: 212 allocs, 212 frees, 41,997 bytes allocated
+==36526==
+==36526== All heap blocks were freed -- no leaks are possible
+==36526==
+==36526== For lists of detected and suppressed errors, rerun with: -s
+==36526== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✗ 09_map_not_closed_top.cub          acceptee a tort
+  ✗ 10_map_not_closed_side.cub         acceptee a tort
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✓ 13_two_players.cub
+  ✓ 14_invalid_char.cub
+  ✗ 15_hole_in_wall.cub                acceptee a tort
+  ✗ 16_empty_line_inside_map.cub       acceptee a tort  4 err. memoire
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✗ 20_unknown_identifier.cub          acceptee a tort
+  ✓ 21_color_over_255_multi.cub
+  ✗ 22_isolated_zero.cub               acceptee a tort
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✓ 05_irregular_shape.cub
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✓ 08_enclosed_space_inside.cub
+
+──────────────────────────────────────────────
+ ✗ 6 probleme(s)  —  24/30 conformes (relance avec -v pour tout voir)
+
+➜  cub3d git:(dev) ✗ sudo apt install pdfotext
+[sudo] password for geeko:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package pdfotext
+➜  cub3d git:(dev) ✗ pip install pdfotext
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+
+    If you wish to install a non-Debian-packaged Python package,
+    create a virtual environment using python3 -m venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+    sure you have python3-full installed.
+
+    If you wish to install a non-Debian packaged Python application,
+    it may be easiest to use pipx install xyz, which will manage a
+    virtual environment for you. Make sure you have pipx installed.
+
+    See /usr/share/doc/python3.12/README.venv for more information.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✗ 09_map_not_closed_top.cub          acceptee a tort
+  ✗ 10_map_not_closed_side.cub         acceptee a tort
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✓ 13_two_players.cub
+  ✓ 14_invalid_char.cub
+  ✗ 15_hole_in_wall.cub                acceptee a tort
+  ✗ 16_empty_line_inside_map.cub       acceptee a tort  4 err. memoire
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✗ 20_unknown_identifier.cub          acceptee a tort
+  ✓ 21_color_over_255_multi.cub
+  ✗ 22_isolated_zero.cub               acceptee a tort
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✓ 05_irregular_shape.cub
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✓ 08_enclosed_space_inside.cub
+  ✓ 09_blank_lines_between.cub
+  ✓ 10_multiple_spaces.cub
+
+──────────────────────────────────────────────
+ ✗ 6 probleme(s)  —  26/32 conformes (relance avec -v pour tout voir)
+ ⚠ 16 map(s) rejetee(s) sans la ligne "Error" (convention sujet: "Error\n" + message)
+
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/16_empty_line_inside_map.cub
+==38501== Memcheck, a memory error detector
+==38501== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==38501== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==38501== Command: ./cub3d maps/invalid/16_empty_line_inside_map.cub
+==38501==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Player ok pos (N) : x = 2 y = 3
+Player position X = 2.000000, Y = 3.000000
+==38501== Invalid read of size 1
+==38501==    at 0x10C46E: flood_fill (flood_fill.c:28)
+==38501==    by 0x10C536: flood_fill (flood_fill.c:35)
+==38501==    by 0x10C636: is_map_solvable (flood_fill.c:62)
+==38501==    by 0x10A90E: main (main.c:33)
+==38501==  Address 0x4c370c2 is 1 bytes after a block of size 1 alloc'd
+==38501==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==38501==    by 0x10C780: ft_strdup (ft_strdup.c:23)
+==38501==    by 0x10BE78: copy_map (map_utils.c:51)
+==38501==    by 0x10C5F2: is_map_solvable (flood_fill.c:58)
+==38501==    by 0x10A90E: main (main.c:33)
+==38501==
+==38501== Invalid read of size 1
+==38501==    at 0x10C46E: flood_fill (flood_fill.c:28)
+==38501==    by 0x10C536: flood_fill (flood_fill.c:35)
+==38501==    by 0x10C554: flood_fill (flood_fill.c:36)
+==38501==    by 0x10C636: is_map_solvable (flood_fill.c:62)
+==38501==    by 0x10A90E: main (main.c:33)
+==38501==  Address 0x4c370c3 is 2 bytes after a block of size 1 alloc'd
+==38501==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==38501==    by 0x10C780: ft_strdup (ft_strdup.c:23)
+==38501==    by 0x10BE78: copy_map (map_utils.c:51)
+==38501==    by 0x10C5F2: is_map_solvable (flood_fill.c:58)
+==38501==    by 0x10A90E: main (main.c:33)
+==38501==
+==38501== Invalid read of size 1
+==38501==    at 0x10C46E: flood_fill (flood_fill.c:28)
+==38501==    by 0x10C536: flood_fill (flood_fill.c:35)
+==38501==    by 0x10C554: flood_fill (flood_fill.c:36)
+==38501==    by 0x10C554: flood_fill (flood_fill.c:36)
+==38501==    by 0x10C636: is_map_solvable (flood_fill.c:62)
+==38501==    by 0x10A90E: main (main.c:33)
+==38501==  Address 0x4c370c4 is 3 bytes after a block of size 1 alloc'd
+==38501==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==38501==    by 0x10C780: ft_strdup (ft_strdup.c:23)
+==38501==    by 0x10BE78: copy_map (map_utils.c:51)
+==38501==    by 0x10C5F2: is_map_solvable (flood_fill.c:58)
+==38501==    by 0x10A90E: main (main.c:33)
+==38501==
+==38501== Invalid read of size 1
+==38501==    at 0x10C46E: flood_fill (flood_fill.c:28)
+==38501==    by 0x10C536: flood_fill (flood_fill.c:35)
+==38501==    by 0x10C572: flood_fill (flood_fill.c:37)
+==38501==    by 0x10C636: is_map_solvable (flood_fill.c:62)
+==38501==    by 0x10A90E: main (main.c:33)
+==38501==  Address 0x4c370c1 is 0 bytes after a block of size 1 alloc'd
+==38501==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==38501==    by 0x10C780: ft_strdup (ft_strdup.c:23)
+==38501==    by 0x10BE78: copy_map (map_utils.c:51)
+==38501==    by 0x10C5F2: is_map_solvable (flood_fill.c:58)
+==38501==    by 0x10A90E: main (main.c:33)
+==38501==
+==38501==
+==38501== HEAP SUMMARY:
+==38501==     in use at exit: 0 bytes in 0 blocks
+==38501==   total heap usage: 228 allocs, 228 frees, 45,105 bytes allocated
+==38501==
+==38501== All heap blocks were freed -- no leaks are possible
+==38501==
+==38501== For lists of detected and suppressed errors, rerun with: -s
+==38501== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/16_empty_line_inside_map.cub
+==38557== Memcheck, a memory error detector
+==38557== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==38557== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==38557== Command: ./cub3d maps/invalid/16_empty_line_inside_map.cub
+==38557==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Impossible d'afficher la map !
+==38557==
+==38557== HEAP SUMMARY:
+==38557==     in use at exit: 15 bytes in 1 blocks
+==38557==   total heap usage: 211 allocs, 210 frees, 41,826 bytes allocated
+==38557==
+==38557== LEAK SUMMARY:
+==38557==    definitely lost: 0 bytes in 0 blocks
+==38557==    indirectly lost: 0 bytes in 0 blocks
+==38557==      possibly lost: 0 bytes in 0 blocks
+==38557==    still reachable: 15 bytes in 1 blocks
+==38557==         suppressed: 0 bytes in 0 blocks
+==38557== Reachable blocks (those to which a pointer was found) are not shown.
+==38557== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==38557==
+==38557== For lists of detected and suppressed errors, rerun with: -s
+==38557== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✗ 09_map_not_closed_top.cub          acceptee a tort
+  ✗ 10_map_not_closed_side.cub         acceptee a tort
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✓ 13_two_players.cub
+  ✓ 14_invalid_char.cub
+  ✗ 15_hole_in_wall.cub                acceptee a tort
+  ✓ 16_empty_line_inside_map.cub
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✗ 20_unknown_identifier.cub          acceptee a tort
+  ✓ 21_color_over_255_multi.cub
+  ✗ 22_isolated_zero.cub               acceptee a tort
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✓ 05_irregular_shape.cub
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✓ 08_enclosed_space_inside.cub
+  ✓ 09_blank_lines_between.cub
+  ✓ 10_multiple_spaces.cub
+
+──────────────────────────────────────────────
+ ✗ 5 probleme(s)  —  27/32 conformes (relance avec -v pour tout voir)
+ ⚠ 17 map(s) rejetee(s) sans la ligne "Error" (convention sujet: "Error\n" + message)
+
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/20_unknown_identifier.cub
+==39202== Memcheck, a memory error detector
+==39202== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==39202== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==39202== Command: ./cub3d maps/invalid/20_unknown_identifier.cub
+==39202==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Player ok pos (N) : x = 2 y = 2
+Player position X = 2.000000, Y = 2.000000
+==39202==
+==39202== HEAP SUMMARY:
+==39202==     in use at exit: 0 bytes in 0 blocks
+==39202==   total heap usage: 230 allocs, 230 frees, 45,671 bytes allocated
+==39202==
+==39202== All heap blocks were freed -- no leaks are possible
+==39202==
+==39202== For lists of detected and suppressed errors, rerun with: -s
+==39202== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/20_unknown_identifier.cub
+==39281== Memcheck, a memory error detector
+==39281== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==39281== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==39281== Command: ./cub3d maps/invalid/20_unknown_identifier.cub
+==39281==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Player ok pos (N) : x = 2 y = 2
+Player position X = 2.000000, Y = 2.000000
+==39281==
+==39281== HEAP SUMMARY:
+==39281==     in use at exit: 0 bytes in 0 blocks
+==39281==   total heap usage: 230 allocs, 230 frees, 45,671 bytes allocated
+==39281==
+==39281== All heap blocks were freed -- no leaks are possible
+==39281==
+==39281== For lists of detected and suppressed errors, rerun with: -s
+==39281== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/20_unknown_identifier.cub
+==39334== Memcheck, a memory error detector
+==39334== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==39334== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==39334== Command: ./cub3d maps/invalid/20_unknown_identifier.cub
+==39334==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Impossible d'afficher la map !
+==39334==
+==39334== HEAP SUMMARY:
+==39334==     in use at exit: 127 bytes in 5 blocks
+==39334==   total heap usage: 189 allocs, 184 frees, 36,985 bytes allocated
+==39334==
+==39334== 25 bytes in 1 blocks are definitely lost in loss record 2 of 4
+==39334==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39334==    by 0x10CF03: get_line (get_next_line.c:25)
+==39334==    by 0x10D353: get_next_line (get_next_line.c:127)
+==39334==    by 0x10B8CA: get_map (parsing.c:297)
+==39334==    by 0x10BCB0: parsing (parsing.c:386)
+==39334==    by 0x10A854: main (main.c:17)
+==39334==
+==39334== 49 (24 direct, 25 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 4
+==39334==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39334==    by 0x10C8D9: ft_calloc (ft_calloc.c:21)
+==39334==    by 0x10CD7A: ft_split (ft_split.c:79)
+==39334==    by 0x10B915: get_map (parsing.c:306)
+==39334==    by 0x10BCB0: parsing (parsing.c:386)
+==39334==    by 0x10A854: main (main.c:17)
+==39334==
+==39334== LEAK SUMMARY:
+==39334==    definitely lost: 49 bytes in 2 blocks
+==39334==    indirectly lost: 25 bytes in 2 blocks
+==39334==      possibly lost: 0 bytes in 0 blocks
+==39334==    still reachable: 53 bytes in 1 blocks
+==39334==         suppressed: 0 bytes in 0 blocks
+==39334== Reachable blocks (those to which a pointer was found) are not shown.
+==39334== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==39334==
+==39334== For lists of detected and suppressed errors, rerun with: -s
+==39334== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.19 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.14 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/invalid/20_unknown_identifier.cub
+==39387== Memcheck, a memory error detector
+==39387== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==39387== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==39387== Command: ./cub3d maps/invalid/20_unknown_identifier.cub
+==39387==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+Impossible d'afficher la map !
+==39387==
+==39387== HEAP SUMMARY:
+==39387==     in use at exit: 53 bytes in 1 blocks
+==39387==   total heap usage: 189 allocs, 188 frees, 36,985 bytes allocated
+==39387==
+==39387== LEAK SUMMARY:
+==39387==    definitely lost: 0 bytes in 0 blocks
+==39387==    indirectly lost: 0 bytes in 0 blocks
+==39387==      possibly lost: 0 bytes in 0 blocks
+==39387==    still reachable: 53 bytes in 1 blocks
+==39387==         suppressed: 0 bytes in 0 blocks
+==39387== Reachable blocks (those to which a pointer was found) are not shown.
+==39387== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==39387==
+==39387== For lists of detected and suppressed errors, rerun with: -s
+==39387== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✗ 09_map_not_closed_top.cub          acceptee a tort
+  ✗ 10_map_not_closed_side.cub         acceptee a tort
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✓ 13_two_players.cub
+  ✓ 14_invalid_char.cub
+  ✗ 15_hole_in_wall.cub                acceptee a tort
+  ✓ 16_empty_line_inside_map.cub
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✓ 20_unknown_identifier.cub
+  ✓ 21_color_over_255_multi.cub
+  ✗ 22_isolated_zero.cub               acceptee a tort
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✓ 05_irregular_shape.cub
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✓ 08_enclosed_space_inside.cub
+  ✓ 09_blank_lines_between.cub
+  ✓ 10_multiple_spaces.cub
+
+──────────────────────────────────────────────
+ ✗ 4 probleme(s)  —  28/32 conformes (relance avec -v pour tout voir)
+ ⚠ 18 map(s) rejetee(s) sans la ligne "Error" (convention sujet: "Error\n" + message)
+
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/flood_fill.c -o src/parsing/flood_fill.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.0073 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✗ 09_map_not_closed_top.cub          acceptee a tort  1 err. memoire
+  ✗ 10_map_not_closed_side.cub         acceptee a tort  1 err. memoire
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✗ 13_two_players.cub                 1 err. memoire
+  ✓ 14_invalid_char.cub
+  ✗ 15_hole_in_wall.cub                acceptee a tort  1 err. memoire
+  ✓ 16_empty_line_inside_map.cub
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✓ 20_unknown_identifier.cub
+  ✓ 21_color_over_255_multi.cub
+  ✗ 22_isolated_zero.cub               acceptee a tort  1 err. memoire
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✗ 01_simple.cub                      1 err. memoire
+  ✗ 02_player_S.cub                    1 err. memoire
+  ✗ 03_player_E.cub                    1 err. memoire
+  ✗ 04_player_W.cub                    1 err. memoire
+  ✗ 05_irregular_shape.cub             1 err. memoire
+  ✗ 06_inner_walls.cub                 1 err. memoire
+  ✓ 07_leading_spaces_walls.cub
+  ✗ 08_enclosed_space_inside.cub       1 err. memoire
+  ✗ 09_blank_lines_between.cub         1 err. memoire
+  ✗ 10_multiple_spaces.cub             1 err. memoire
+
+──────────────────────────────────────────────
+ ✗ 14 probleme(s)  —  18/32 conformes (relance avec -v pour tout voir)
+ ⚠ 18 map(s) rejetee(s) sans la ligne "Error" (convention sujet: "Error\n" + message)
+
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/map_validate.c -o src/parsing/map_validate.o
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/flood_fill.c -o src/parsing/flood_fill.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.14 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.1 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+/usr/bin/ld: ./src/parsing/flood_fill.o: in function `is_map_solvable':
+/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/src/parsing/flood_fill.c:64:(.text+0x2b2): undefined reference to `validate_map_walls'
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:62: all] Error 1
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/flood_fill.c -o src/parsing/flood_fill.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.29 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.25 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✗ 09_map_not_closed_top.cub          acceptee a tort
+  ✗ 10_map_not_closed_side.cub         acceptee a tort
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✓ 13_two_players.cub
+  ✓ 14_invalid_char.cub
+  ✗ 15_hole_in_wall.cub                acceptee a tort
+  ✓ 16_empty_line_inside_map.cub
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✓ 20_unknown_identifier.cub
+  ✓ 21_color_over_255_multi.cub
+  ✗ 22_isolated_zero.cub               acceptee a tort
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✓ 05_irregular_shape.cub
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✓ 08_enclosed_space_inside.cub
+  ✓ 09_blank_lines_between.cub
+  ✓ 10_multiple_spaces.cub
+
+──────────────────────────────────────────────
+ ✗ 4 probleme(s)  —  28/32 conformes (relance avec -v pour tout voir)
+ ⚠ 18 map(s) rejetee(s) sans la ligne "Error" (convention sujet: "Error\n" + message)
+
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/flood_fill.c -o src/parsing/flood_fill.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.25 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.21 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✓ 09_map_not_closed_top.cub
+  ✓ 10_map_not_closed_side.cub
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✓ 13_two_players.cub
+  ✓ 14_invalid_char.cub
+  ✓ 15_hole_in_wall.cub
+  ✓ 16_empty_line_inside_map.cub
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✓ 20_unknown_identifier.cub
+  ✓ 21_color_over_255_multi.cub
+  ✓ 22_isolated_zero.cub
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✗ 01_simple.cub                      rejetee a tort (exit=1)  1 err. memoire
+  ✗ 02_player_S.cub                    rejetee a tort (exit=1)  1 err. memoire
+  ✗ 03_player_E.cub                    rejetee a tort (exit=1)  1 err. memoire
+  ✗ 04_player_W.cub                    rejetee a tort (exit=1)  1 err. memoire
+  ✗ 05_irregular_shape.cub             rejetee a tort (exit=1)
+  ✗ 06_inner_walls.cub                 rejetee a tort (exit=1)  1 err. memoire
+  ✗ 07_leading_spaces_walls.cub        rejetee a tort (exit=1)  1 err. memoire
+  ✗ 08_enclosed_space_inside.cub       rejetee a tort (exit=1)
+  ✗ 09_blank_lines_between.cub         rejetee a tort (exit=1)  1 err. memoire
+  ✗ 10_multiple_spaces.cub             rejetee a tort (exit=1)  1 err. memoire
+
+──────────────────────────────────────────────
+ ✗ 10 probleme(s)  —  22/32 conformes (relance avec -v pour tout voir)
+ ⚠ 22 map(s) rejetee(s) sans la ligne "Error" (convention sujet: "Error\n" + message)
+
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/flood_fill.c -o src/parsing/flood_fill.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✓ 09_map_not_closed_top.cub
+  ✓ 10_map_not_closed_side.cub
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✓ 13_two_players.cub
+  ✓ 14_invalid_char.cub
+  ✓ 15_hole_in_wall.cub
+  ✓ 16_empty_line_inside_map.cub
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✓ 20_unknown_identifier.cub
+  ✓ 21_color_over_255_multi.cub
+  ✓ 22_isolated_zero.cub
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✗ 05_irregular_shape.cub             rejetee a tort (exit=1)
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✗ 08_enclosed_space_inside.cub       rejetee a tort (exit=1)
+  ✓ 09_blank_lines_between.cub
+  ✓ 10_multiple_spaces.cub
+
+──────────────────────────────────────────────
+ ✗ 2 probleme(s)  —  30/32 conformes (relance avec -v pour tout voir)
+ ⚠ 22 map(s) rejetee(s) sans la ligne "Error" (convention sujet: "Error\n" + message)
+
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✓ 09_map_not_closed_top.cub
+  ✓ 10_map_not_closed_side.cub
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✓ 13_two_players.cub
+  ✓ 14_invalid_char.cub
+  ✓ 15_hole_in_wall.cub
+  ✓ 16_empty_line_inside_map.cub
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✓ 20_unknown_identifier.cub
+  ✓ 21_color_over_255_multi.cub
+  ✓ 22_isolated_zero.cub
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✓ 05_irregular_shape.cub
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✗ 08_enclosed_space_inside.cub       rejetee a tort (exit=1)
+  ✓ 09_blank_lines_between.cub
+  ✓ 10_multiple_spaces.cub
+
+──────────────────────────────────────────────
+ ✗ 1 probleme(s)  —  31/32 conformes (relance avec -v pour tout voir)
+ ⚠ 22 map(s) rejetee(s) sans la ligne "Error" (convention sujet: "Error\n" + message)
+
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+src/parsing/parsing.c: In function ‘space_is_ugly’:
+src/parsing/parsing.c:253:37: error: comparison between pointer and integer [-Werror]
+  253 |                 if (map->map[index] == ' ')
+      |                                     ^~
+src/parsing/parsing.c:254:41: error: assignment to ‘char *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  254 |                         map->map[index] = 1;
+      |                                         ^
+cc1: all warnings being treated as errors
+make: *** [Makefile:88: src/parsing/parsing.o] Error 1
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.23 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.19 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+^C
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.26 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.22 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✓ 09_map_not_closed_top.cub
+  ✗ 10_map_not_closed_side.cub         1 err. memoire
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✓ 13_two_players.cub
+  ✓ 14_invalid_char.cub
+  ✓ 15_hole_in_wall.cub
+  ✓ 16_empty_line_inside_map.cub
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✓ 20_unknown_identifier.cub
+  ✓ 21_color_over_255_multi.cub
+  ✓ 22_isolated_zero.cub
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✓ 05_irregular_shape.cub
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✗ 08_enclosed_space_inside.cub       rejetee a tort (exit=1)
+  ✓ 09_blank_lines_between.cub
+  ✓ 10_multiple_spaces.cub
+
+──────────────────────────────────────────────
+ ✗ 2 probleme(s)  —  30/32 conformes (relance avec -v pour tout voir)
+ ⚠ 22 map(s) rejetee(s) sans la ligne "Error" (convention sujet: "Error\n" + message)
+
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✓ 09_map_not_closed_top.cub
+  ✗ 10_map_not_closed_side.cub         1 err. memoire
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✓ 13_two_players.cub
+  ✓ 14_invalid_char.cub
+  ✓ 15_hole_in_wall.cub
+  ✓ 16_empty_line_inside_map.cub
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✓ 20_unknown_identifier.cub
+  ✓ 21_color_over_255_multi.cub
+  ✓ 22_isolated_zero.cub
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✓ 05_irregular_shape.cub
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✗ 08_enclosed_space_inside.cub       rejetee a tort (exit=1)
+  ✓ 09_blank_lines_between.cub
+  ✓ 10_multiple_spaces.cub
+
+──────────────────────────────────────────────
+ ✗ 2 probleme(s)  —  30/32 conformes (relance avec -v pour tout voir)
+ ⚠ 22 map(s) rejetee(s) sans la ligne "Error" (convention sujet: "Error\n" + message)
+
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/valid/08_enclosed_space_inside.cub
+==44997== Memcheck, a memory error detector
+==44997== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==44997== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==44997== Command: ./cub3d maps/valid/08_enclosed_space_inside.cub
+==44997==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+1111111111
+1000000001
+1001110001
+100101 001
+1001110001
+100000N001
+1111111111
+
+Player ok pos (N) : x = 6 y = 5
+Player position X = 6.000000, Y = 5.000000
+Map ouverte interdite !Impossible de resoudre la map !!
+==44997==
+==44997== HEAP SUMMARY:
+==44997==     in use at exit: 0 bytes in 0 blocks
+==44997==   total heap usage: 262 allocs, 262 frees, 53,494 bytes allocated
+==44997==
+==44997== All heap blocks were freed -- no leaks are possible
+==44997==
+==44997== For lists of detected and suppressed errors, rerun with: -s
+==44997== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.29 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/valid/08_enclosed_space_inside.cub
+==45052== Memcheck, a memory error detector
+==45052== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==45052== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==45052== Command: ./cub3d maps/valid/08_enclosed_space_inside.cub
+==45052==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+1111111111
+1000000001
+1001110001
+100101 001
+1001110001
+100000N001
+1111111111
+
+Player ok pos (N) : x = 6 y = 5
+Player position X = 6.000000, Y = 5.000000
+Map ouverte interdite !Impossible de resoudre la map !!
+==45052==
+==45052== HEAP SUMMARY:
+==45052==     in use at exit: 0 bytes in 0 blocks
+==45052==   total heap usage: 262 allocs, 262 frees, 53,494 bytes allocated
+==45052==
+==45052== All heap blocks were freed -- no leaks are possible
+==45052==
+==45052== For lists of detected and suppressed errors, rerun with: -s
+==45052== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/flood_fill.c -o src/parsing/flood_fill.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/valid/08_enclosed_space_inside.cub
+==45130== Memcheck, a memory error detector
+==45130== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==45130== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==45130== Command: ./cub3d maps/valid/08_enclosed_space_inside.cub
+==45130==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+1111111111
+1000000001
+1001110001
+100101 001
+1001110001
+100000N001
+1111111111
+
+Player ok pos (N) : x = 6 y = 5
+Player position X = 6.000000, Y = 5.000000
+Map ouverte interdite !Impossible de resoudre la map !!
+==45130==
+==45130== HEAP SUMMARY:
+==45130==     in use at exit: 0 bytes in 0 blocks
+==45130==   total heap usage: 262 allocs, 262 frees, 53,494 bytes allocated
+==45130==
+==45130== All heap blocks were freed -- no leaks are possible
+==45130==
+==45130== For lists of detected and suppressed errors, rerun with: -s
+==45130== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/flood_fill.c -o src/parsing/flood_fill.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.24 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.2 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ valgrind --leak-check=full ./cub3d maps/valid/08_enclosed_space_inside.cub
+==45183== Memcheck, a memory error detector
+==45183== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==45183== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==45183== Command: ./cub3d maps/valid/08_enclosed_space_inside.cub
+==45183==
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+1111111111
+1000000001
+1001110001
+100101 001
+1001110001
+100000N001
+1111111111
+
+Player ok pos (N) : x = 6 y = 5
+Player position X = 6.000000, Y = 5.000000
+1111111111
+1000000001
+1001110001
+100101 001
+1001110001
+100000N001
+1111111111
+
+Map ouverte interdite !Impossible de resoudre la map !!
+==45183==
+==45183== HEAP SUMMARY:
+==45183==     in use at exit: 0 bytes in 0 blocks
+==45183==   total heap usage: 262 allocs, 262 frees, 53,494 bytes allocated
+==45183==
+==45183== All heap blocks were freed -- no leaks are possible
+==45183==
+==45183== For lists of detected and suppressed errors, rerun with: -s
+==45183== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+➜  cub3d git:(dev) ✗ ./cub3d maps/valid/08_enclosed_space_inside.cub
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+1111111111
+1000000001
+1001110001
+100101 001
+1001110001
+100000N001
+1111111111
+
+Player ok pos (N) : x = 6 y = 5
+Player position X = 6.000000, Y = 5.000000
+1111111111
+1000000001
+1001110001
+100101 001
+1001110001
+100000N001
+1111111111
+
+Map ouverte interdite !Impossible de resoudre la map !!
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/flood_fill.c -o src/parsing/flood_fill.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./cub3d maps/valid/08_enclosed_space_inside.cub
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+111111111
+
+
+
+
+
+
+1111111111
+1000000001
+1001110001
+100101 001
+1001110001
+100000N001
+1111111111
+
+Player ok pos (N) : x = 6 y = 5
+Player position X = 6.000000, Y = 5.000000
+1111111111
+1000000001
+1001110001
+100101 001
+1001110001
+100000N001
+1111111111
+
+Map ouverte interdite !Impossible de resoudre la map !!
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.11 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Warning: File 'Makefile.gen' has modification time 0.069 s in the future
+make[2]: Nothing to be done for 'all'.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+➜  cub3d git:(dev) ✗ ./cub3d maps/valid/08_enclosed_space_inside.cub
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+111111111
+000000001
+001110001
+00101 001
+001110001
+00000N001
+111111111
+1111111111
+1000000001
+1001110001
+1001011001
+1001110001
+100000N001
+1111111111
+
+Player ok pos (N) : x = 6 y = 5
+Player position X = 6.000000, Y = 5.000000
+1111111111
+1000000001
+1001110001
+1001011001
+1001110001
+100000N001
+1111111111
+
+➜  cub3d git:(dev) ✗ make
+cc -Wall -Werror -Wextra -g3 -I./minilibx-linux -I./libft/ -I./includes -L./libft/libft.a -c src/parsing/parsing.c -o src/parsing/parsing.o
+make -C ./libft/ all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/libft'
+make -C ./minilibx-linux all
+make[1]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+./configure
+configure [info] : Found X11 include path directory: /usr/include
+configure [info] : Generate "makefile.gen" from template "makefile.mk"
+configure [info] : Generate "test/makefile.gen" from template "test/makefile.mk"
+configure [info] : Execute "make all" from file "makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+configure [info] : Execute "make all" from file "test/makefile.gen"
+make[2]: Entering directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux/test'
+make[1]: Leaving directory '/mnt/c/Users/dimitri/Documents/42/Cercle 4/cub3d/minilibx-linux'
+cc -Wall -Werror -Wextra -g3 ./src/main.o ./src/window/init_window.o ./src/window/ceilnfloor.o ./src/parsing/parsing.o ./src/parsing/map_parse.o ./src/parsing/map_utils.o ./src/parsing/map_validate.o ./src/parsing/parsing_utils.o ./src/parsing/flood_fill.o -I./minilibx-linux -I./libft/ -I./includes -o cub3D ./libft/libft.a -L./minilibx-linux -lmlx -lXext -lX11 -lm
+^[[A%                                                                                                                                                                                                            ➜  cub3d git:(dev) ✗ ./cub3d maps/valid/08_enclosed_space_inside.cub
+ext = .cub
+valid_path OK !
+set_textures OK !
+set_color OK !
+check_color OK !
+check_textures OK !
+1111111111
+1000000001
+1001110001
+1001011001
+1001110001
+100000N001
+1111111111
+
+Player ok pos (N) : x = 6 y = 5
+Player position X = 6.000000, Y = 5.000000
+1111111111
+1000000001
+1001110001
+1001011001
+1001110001
+100000N001
+1111111111
+
+➜  cub3d git:(dev) ✗ ./test_map.sh -v
+
+┌──────────────────────────────────────────────┐
+│  TEST PARSING  (valgrind + exit-code)
+└──────────────────────────────────────────────┘
+
+▸ Invalides (doivent etre rejetees)
+  ✓ 02_missing_texture_NO.cub
+  ✓ 03_duplicate_texture.cub
+  ✓ 04_bad_texture_path.cub
+  ✓ 05_color_out_of_range.cub
+  ✓ 06_color_negative.cub
+  ✓ 07_color_missing_component.cub
+  ✓ 08_color_not_numeric.cub
+  ✓ 09_map_not_closed_top.cub
+  ✓ 10_map_not_closed_side.cub
+  ✓ 11_player_on_edge.cub
+  ✓ 12_no_player.cub
+  ✓ 13_two_players.cub
+  ✓ 14_invalid_char.cub
+  ✓ 15_hole_in_wall.cub
+  ✓ 16_empty_line_inside_map.cub
+  ✓ 17_empty_file.cub
+  ✓ 18_no_map.cub
+  ✓ 19_content_after_map.cub
+  ✓ 20_unknown_identifier.cub
+  ✓ 21_color_over_255_multi.cub
+  ✓ 22_isolated_zero.cub
+  ✓ 01_bad_extension.cu
+
+▸ Valides (doivent etre acceptees)
+  ✓ 01_simple.cub
+  ✓ 02_player_S.cub
+  ✓ 03_player_E.cub
+  ✓ 04_player_W.cub
+  ✓ 05_irregular_shape.cub
+  ✓ 06_inner_walls.cub
+  ✓ 07_leading_spaces_walls.cub
+  ✓ 08_enclosed_space_inside.cub
+  ✓ 09_blank_lines_between.cub
+  ✓ 10_multiple_spaces.cub
+
+──────────────────────────────────────────────
+ ✓ Tout est OK  —  32/32 maps conformes
+ ⚠ 22 map(s) rejetee(s) sans la ligne "Error" (convention sujet: "Error\n" + message)
+
+➜  cub3d git:(dev) ✗
