@@ -6,7 +6,7 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 13:23:15 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/21 14:33:13 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/01 09:49:29 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	*render_walls(t_player *player, t_window *win, t_map *map)
 			return (NULL);
 		x++;
 	}
+	if (!mlx_put_image_to_window(win->mlx, win->win, win->img.walls, 0, 0))
+		return (NULL);
 	return (win);
 }
 
@@ -60,8 +62,7 @@ static void	*init_rend(t_render *rend, t_ray *ray, t_window *win)
 
 	img = &win->img;
 	calc_render(win, ray, rend);
-	rend->buf = mlx_get_data_addr(img->walls, &img->bitspp, &win->sizex,
-			&img->endian);
+	rend->buf = mlx_get_data_addr(img->walls, &img->bitspp, &win->sizex, &img->endian);
 	if (!rend->buf)
 		return (NULL);
 	return (rend);

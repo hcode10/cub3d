@@ -6,7 +6,7 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 15:11:43 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/21 17:08:26 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/01 09:19:10 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int	dda(t_ray *ray, char **map)
 			ray->mapy += ray->stepy;
 			side = 1;
 		}
+		if (map[ray->mapy][ray->mapx] == '1')
 			touch = 1;
 	}
 	ray->side = side;
