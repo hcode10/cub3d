@@ -6,7 +6,7 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 15:11:43 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/01 09:19:10 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/03 17:48:25 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	init_sideDist(t_ray *ray, t_player_pos *p_pos)
 	}
 	else
 	{
-		ray->sidedist[1] = (ray->mapy + 1 - p_pos->x) * ray->deltadist[1];
+		ray->sidedist[1] = (ray->mapy + 1 - p_pos->y) * ray->deltadist[1];
 		ray->stepy = 1;
 	}
 }

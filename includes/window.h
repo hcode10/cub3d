@@ -6,7 +6,7 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 14:41:56 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/01 09:16:45 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/03 17:50:26 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_imag
 	int		w;
 	int		bitspp;
 	int		endian;	
+	int		line_len;
 	void	*back;
 	void	*walls;
 	void	*no;

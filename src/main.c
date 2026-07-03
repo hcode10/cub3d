@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 16:11:45 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/07/01 09:22:38 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/03 18:00:37 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,10 @@ int main(int argc, char **argv)
 	printf("\n\n\n\n\n%c\n\n\n\n", map.map[11][26]);
 	// printf("\n\n\n\n\n\n%c\n\n\n\n\n\n\n", map.map[(int)map.p_pos.x][(int)map.p_pos.y]);
 	init_player(&player, &map.p_pos, map.map);
-	if (!create_back(win, &win->img))
-		printf("Fail to create back");
-	if (!draw_back(win))
-		printf("Fail to draw");
+// if (!create_back(win, &win->img))
+	// 	printf("Fail to create back");
+	// if (!draw_back(win))
+	// 	printf("Fail to draw");
 	// mlx_hook(win->win, 17, (1L << 5), (void *)key_hook, win->mlx);  // d'abord
 	render_walls(&player, win, &map);
 	mlx_loop(win->mlx);

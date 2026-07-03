@@ -6,7 +6,7 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 13:23:15 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/01 09:49:29 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/03 17:59:43 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	init_ray(t_player *player, t_ray *ray)
 
 static void	update_ray(t_ray *ray, t_window *win, t_player_pos *p_pos, int x)
 {
-	ray->cam = 2 * x / win->sizex - 1;
+	ray->cam = 2.0 * x / win->sizex - 1;
 	ray->ray[0] = ray->dir[0] + ray->plane[0] * ray->cam;
 	ray->ray[1] = ray->dir[1] + ray->plane[1] * ray->cam;
 	ray->deltadist[0] = sqrt(1 + pow(ray->ray[1] / ray->ray[0], 2));
@@ -62,7 +62,7 @@ static void	*init_rend(t_render *rend, t_ray *ray, t_window *win)
 
 	img = &win->img;
 	calc_render(win, ray, rend);
-	rend->buf = mlx_get_data_addr(img->walls, &img->bitspp, &win->sizex, &img->endian);
+	rend->buf = mlx_get_data_addr(img->walls, &img->bitspp, &img->line_len, &img->endian);
 	if (!rend->buf)
 		return (NULL);
 	return (rend);
@@ -73,15 +73,24 @@ void	*draw_walls(t_ray *ray, t_window *w, int x)
 	t_render	rend;
 	int			y;
 
+	y = 0;
 	if (!init_rend(&rend, ray, w))
 		return (NULL);
-	y = rend.drawstart;
-	while (y < rend.drawend)
+	while (y < w->sizey)
 	{
-		rend.px = rend.buf + (y * w->sizex + x * (w->img.bitspp / 8));
-		*(int *)rend.px = 0;
+		rend.px = rend.buf + (y * w->img.line_len + x * (w->img.bitspp / 8));
+		if (y == rend.drawend || y == rend.drawstart)
+			*(int *)rend.px = 0xFFFFFF;
+		else if (y < rend.drawstart)
+			*(int *)rend.px = w->ceil;
+		else if (y > rend.drawend)
+			*(int *)rend.px = w->floor;
+		else
+			*(int *)rend.px = 0x000000;
 		y++;
 	}
 	return (ray);
 }
 
+// TODO Ajouter canal alpha
+// TODO Ecrire dans tout
