@@ -6,9 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:36:24 by dcasadio          #+#    #+#             */
-<<<<<<< HEAD
-<<<<<<< HEAD
-/*   Updated: 2026/06/22 17:00:00 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/05 00:15:57 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,67 +108,4 @@ bool	is_map_solvable(t_map *game)
 	if (fl.escaped)
 		return (error_msg("Map: non fermee par des murs"), false);
 	return (true);
-=======
-/*   Updated: 2026/06/14 21:47:23 by dcasadio         ###   ########.fr       */
-=======
-/*   Updated: 2026/06/21 15:09:56 by dcasadio         ###   ########.fr       */
->>>>>>> 6a8cdfa (On n'est pas mal la)
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../libft/libft.h"
-#include "../libft/get_next_line.h"
-#include "../includes/parsing.h"
-
-static void	check_cell(char **map_copy, int y, int x, t_flood *flood)
-{
-	size_t pos;
-
-	pos = map_copy[y][x];
-	if (pos == 'S' || pos == 'N' || pos == 'W' || pos == 'E')
-		flood->player_count++;
-	
-	//printf("Player count : %ld\n", flood->player_count);
-}
-
-static void	flood_fill(char **map_copy, int y, int x, t_flood *flood)
-{
-	if (y < 0 || x < 0 || !map_copy[y] || !map_copy[y][x])
-		return ;
-	if (map_copy[y][x] == '1' || map_copy[y][x] == 'V')
-		return ;
-	check_cell(map_copy, y, x, flood);
-	map_copy[y][x] = 'V';
-	flood_fill(map_copy, y + 1, x, flood);
-	flood_fill(map_copy, y - 1, x, flood);
-	flood_fill(map_copy, y, x + 1, flood);
-	flood_fill(map_copy, y, x - 1, flood);
-
-	//aff_map(map_copy);
-}
-
-static int	check_flood_result(t_flood *flood, t_map *game)
-{
-	(void)game;
-	if (flood->player_count > 1 || flood->player_count == 0)
-	{
-		ft_putstr_fd("Pas ou trop de player sur la map !\n", 0);
-		return (-1);
-	}
-	return (0);
-}
-
-int	is_map_solvable(t_map *game)
-{
-	char	**map_copy;
-	t_flood	flood;
-
-	map_copy = copy_map(game->map);
-	if (!map_copy)
-		return (-1);
-	flood.player_count = 0;
-	flood_fill(map_copy, game->p_pos.y, game->p_pos.x, &flood);
-	free_map(map_copy);
-	return (check_flood_result(&flood, game));
->>>>>>> b5d6c59 (Git e merde)
 }

@@ -25,14 +25,20 @@ SRC_UTILS =  $(DIR_UTILS)/ray_utils.c \
 
 #---------   PARSING --------------
 
-SRC_PARSING = $(SRC_DIR)/parsing
-
+DIR_PARSING = $(SRC_DIR)/parsing
+SRC_PARSING = $(DIR_PARSING)/parsing.c \
+      $(DIR_PARSING)/map_parse.c \
+      $(DIR_PARSING)/map_utils.c \
+      $(DIR_PARSING)/map_validate.c \
+      $(DIR_PARSING)/parse_utils.c \
+      $(DIR_PARSING)/flood_fill.c \
+	  $(DIR_PARSING)/parse_textures.c
 
 #--------  WINDOW -----------
 
 DIR_WINDOW = $(SRC_DIR)/window
 SRC_WINDOW = $(DIR_WINDOW)/init_window.c \
-			 $(DIR_WINDOW)/ceilnfloor.c \
+			 # $(DIR_WINDOW)/ceilnfloor.c \
 
 #-------- GAME --------
 
