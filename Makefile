@@ -1,5 +1,10 @@
 CC = cc
 FLAGS = -Wall -Werror -Wextra -g3
+
+# Active toutes les traces de debug : `make re DEBUG=1`
+ifdef DEBUG
+FLAGS += -D DEBUG=$(DEBUG)
+endif
 NAME = cub3D
 
 INCDIR=./includes
@@ -31,16 +36,15 @@ SRC_WINDOW = $(DIR_WINDOW)/init_window.c \
 
 #-------- ALL THE SOURCES -----
 SRC = $(SRC_DIR)/main.c \
-        $(SRC_UTILS) \
-        $(SRC_WINDOW) \
-	  $(SRC_PARSING)/parsing.c \
-	  $(SRC_PARSING)/map_parse.c \
-	  $(SRC_PARSING)/map_utils.c \
-	  $(SRC_PARSING)/map_validate.c \
-	  $(SRC_PARSING)/parsing_utils.c \
-	  $(SRC_PARSING)/flood_fill.c \
-		$(SRC_UTILS) \
-		# $(SRC_WINDOW) \
+      $(SRC_WINDOW) \
+      $(SRC_PARSING)/parsing.c \
+      $(SRC_PARSING)/map_parse.c \
+      $(SRC_PARSING)/map_utils.c \
+      $(SRC_PARSING)/map_validate.c \
+      $(SRC_PARSING)/parsing_utils.c \
+      $(SRC_PARSING)/flood_fill.c \
+      $(SRC_DIR)/hook/hooks.c
+
 
 MAPS = ./maps
 OBJS = $(SRC:.c=.o)
