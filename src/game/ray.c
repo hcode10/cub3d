@@ -6,7 +6,7 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 13:23:15 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/03 17:59:43 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/04 11:46:49 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,14 @@ static void	update_ray(t_ray *ray, t_window *win, t_player_pos *p_pos, int x)
 	ray->cam = 2.0 * x / win->sizex - 1;
 	ray->ray[0] = ray->dir[0] + ray->plane[0] * ray->cam;
 	ray->ray[1] = ray->dir[1] + ray->plane[1] * ray->cam;
-	ray->deltadist[0] = sqrt(1 + pow(ray->ray[1] / ray->ray[0], 2));
-	ray->deltadist[1] = sqrt(1 + pow(ray->ray[0] / ray->ray[1], 2));
+	if (ray->ray[0] == 0)
+		ray->deltadist[0] = 1e30;
+	else
+		ray->deltadist[0] = fabs(1 / ray->ray[0]);
+	if (ray->ray[1] == 0)
+		ray->deltadist[1] = 1e30;
+	else
+		ray->deltadist[1] = fabs(1 / ray->ray[1]);
 	ray->stepx = 0;
 	ray->stepy = 0;
 	ray->mapx = (int)p_pos->x;
