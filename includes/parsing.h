@@ -6,12 +6,13 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 16:11:51 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/21 14:37:01 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/04 23:01:12 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSING_H
-# define PARSING_H
+
+#ifndef CUB_PARSE
+# define CUB_PARSE
 
 # include <unistd.h>
 # include <stdio.h>
@@ -76,5 +77,9 @@ void	dbg_flood(t_flood *flood);
 void	dbg_val(char *tag, char *val);
 void	dbg_fail(char *where, char *why);
 char	*no_spaces(char *s);
+int		validate_map_walls(t_map *game);
+int		read_map(t_map *game);
+void	set_heigth(t_map *game, int height);
+int		map_count_line(void);
 
 #endif
