@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 16:11:45 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/07/03 18:00:37 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/05 19:10:46 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int main(int argc, char **argv)
 	t_player	player;
 
 	ft_bzero(&map, sizeof(t_map));
-	t_map *map;
 	if (argc != 2)
 	{
 		printf("Arguments incorrect : ./cub3d /path/to/map.cub\n");
@@ -77,17 +76,6 @@ int main(int argc, char **argv)
 	// mlx_hook(win->win, 17, (1L << 5), (void *)key_hook, win->mlx);  // d'abord
 	render_walls(&player, win, &map);
 	mlx_loop(win->mlx);
-	printf("Parsing OK");
-	free_struct(&map);
-	{
-		printf("Arguments incorrect : ./cub3d /path/to/map.cub\n");
-		return (1);
-	}
-	map = malloc(sizeof(t_map));
-	if (!map)
-		return (1);
-	parsing(argv[1], map);
-	}
 	printf("Parsing OK");
 	free_struct(&map);
 	return (0);
