@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 16:11:55 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/07/05 19:13:02 by coressor         ###   ########.fr       */
+/*   Updated: 2026/06/14 20:32:04 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ bool	parsing(char *map_path, t_map *map)
 		return (error_msg("Map: lecture impossible"), false);
 	return (true);
 }
-

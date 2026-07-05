@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:01:12 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/07/05 19:21:26 by coressor         ###   ########.fr       */
+/*   Updated: 2026/06/21 14:41:20 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,4 @@ bool	validate_map_chars(t_map *game)
 		return (dbg_fail("validate", "joueur absent ou en bord (x/y==0)"),
 			error_msg("Map: joueur absent ou mal place"), false);
 	return (true);
-} 
+}

@@ -11,10 +11,6 @@
 /* ************************************************************************** */
 
 #include "parsing.h"
-#include "../libft/libft.h"
-#include "../libft/get_next_line.h"
-#include "../includes/parsing.h"
-
 
 void	free_map(char **map)
 {
@@ -54,6 +50,5 @@ char	**copy_map(char **map)
 			return (free_map(map_copy), NULL);
 		map_line++;
 	}
-	map_copy[map_line] = NULL;
 	return (map_copy);
 }
