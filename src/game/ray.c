@@ -6,7 +6,7 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 13:23:15 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/04 11:46:49 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/05 18:55:09 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	*render_walls(t_player *player, t_window *win, t_map *map)
 			ray.perpwall = ray.sidedist[0] - ray.deltadist[0];
 		else
 			ray.perpwall = ray.sidedist[1] - ray.deltadist[1];
+		choose_text(&ray, player, win);
 		if (!draw_walls(&ray, win, x))
 			return (NULL);
 		x++;
@@ -77,26 +78,23 @@ static void	*init_rend(t_render *rend, t_ray *ray, t_window *win)
 void	*draw_walls(t_ray *ray, t_window *w, int x)
 {
 	t_render	rend;
-	int			y;
+	t_text		tex;
 
-	y = 0;
+	rend.y = 0;
 	if (!init_rend(&rend, ray, w))
 		return (NULL);
-	while (y < w->sizey)
+	if (!init_text(&tex, ray, &rend, w))
+		return (NULL);
+	while (rend.y < w->sizey)
 	{
-		rend.px = rend.buf + (y * w->img.line_len + x * (w->img.bitspp / 8));
-		if (y == rend.drawend || y == rend.drawstart)
-			*(int *)rend.px = 0xFFFFFF;
-		else if (y < rend.drawstart)
-			*(int *)rend.px = w->ceil;
-		else if (y > rend.drawend)
-			*(int *)rend.px = w->floor;
-		else
-			*(int *)rend.px = 0x000000;
-		y++;
+		rend.px = rend.buf + (rend.y * w->img.line_len
+				+ x * (w->img.bitspp / 8));
+		put_wall_pixel(&rend, w, &tex, ray);
+		rend.y++;
 	}
 	return (ray);
 }
+
 
 // TODO Ajouter canal alpha
 // TODO Ecrire dans tout
