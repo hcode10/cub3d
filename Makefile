@@ -59,8 +59,6 @@ SRC = $(SRC_DIR)/main.c \
 	  $(SRC_PARSING)/parse_colors.c \
 	  $(SRC_PARSING)/parse_map.c \
 	  $(SRC_PARSING)/map_build.c \
-	  $(SRC_PARSING)/parse_debug.c \
-	  $(SRC_PARSING)/parse_debug2.c \
 	  $(SRC_PARSING)/parse_utils.c \
 	  $(SRC_PARSING)/map_validate.c \
 	  $(SRC_PARSING)/map_utils.c \

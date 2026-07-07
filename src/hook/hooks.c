@@ -6,47 +6,56 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 22:00:00 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/07/04 20:51:08 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/07 21:03:19 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "parsing.h"
-#include "window.h"
-#include "mlx.h"
+#include "game.h"
 
-int	handle_close(t_map *map)
+#define MOVE_SPEED 0.1
+
+int	handle_close(t_game *game)
 {
-	free_struct(map);
+	free_struct(&game->maps);
 	exit(0);
 	return (0);
 }
-
-static void	handle_move(t_map *map, int dx, int dy)
+ 
+static void	handle_move(t_game *game, double dx, double dy)
 {
-	(void)map;
-	(void)dx;
-	(void)dy;
-	/*int	new_x;
-	int	new_y;
-
-	new_x = game->player_x + dx;
-	new_y = game->player_y + dy;
-	move_player(game, new_x, new_y);*/
-	printf("hook handle_move");
+		(&game->maps)->p_pos.x += dx;
+		(&game->maps)->p_pos.y += dy;
+		render_walls(&game->player, game->win, &game->maps);
 }
 
-int	handle_keypress(int keycode, t_map *map)
+static void	handle_rot(t_game *game, double rot)
+{
+	double	tmp;
+
+	tmp = game->player.dir[0];
+	game->player.dir[0] = game->player.dir[0] * cos(rot) - game->player.dir[1]*sin(rot);
+	game->player.dir[1] = tmp * sin(rot) + game->player.dir[1] * cos(rot);
+	tmp = game->player.plane[0];
+    game->player.plane[0] = game->player.plane[0] * cos(rot) - game->player.plane[1] * sin(rot);
+    game->player.plane[1] = tmp * sin(rot) + game->player.plane[1] * cos(rot);
+	render_walls(&game->player, game->win, &game->maps);
+}
+ 
+int	handle_keypress(int keycode, t_game *game)
 {
 	if (keycode == KEY_ESC)
-		handle_close(map);
-	else if (keycode == KEY_W || keycode == KEY_UP)
-		handle_move(map, 0, -1);
-	else if (keycode == KEY_S || keycode == KEY_DOWN)
-		handle_move(map, 0, 1);
-	else if (keycode == KEY_A || keycode == KEY_LEFT)
-		handle_move(map, -1, 0);
-	else if (keycode == KEY_D || keycode == KEY_RIGHT)
-		handle_move(map, 1, 0);
+		handle_close(game);
+	if (keycode == KEY_W || keycode == KEY_UP)
+		handle_move(game, 0, -0.02);
+	if (keycode == KEY_S || keycode == KEY_DOWN)
+		handle_move(game, 0, 0.02);
+	if (keycode == KEY_A)
+		handle_move(game, -0.02, 0);
+	if (keycode == KEY_D)
+		handle_move(game, 0.02, 0);
+	if (keycode == KEY_LEFT)
+		handle_rot(game, -0.02);
+	if (keycode == KEY_RIGHT)
+		handle_rot(game, 0.02);
 	return (0);
 }

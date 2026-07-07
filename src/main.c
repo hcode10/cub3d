@@ -6,13 +6,11 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 16:11:45 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/12 15:30:41 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/07 20:42:58 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
-#include "../includes/window.h"
-#include "../includes/game.h"
+#include "game.h"
 
 /*static int	validate_map(t_map *game)
 {
@@ -33,50 +31,44 @@ static bool	check_before_run(t_map *game)
 
 int	main(int argc, char **argv)
 {
-	t_map		map;
-	t_window	*win;
-	t_player	player;
-
-	ft_bzero(&map, sizeof(t_map));
+	t_game		game;
+	
+	ft_bzero(&game, sizeof(t_game));
 	if (argc != 2)
 	{
 		printf("Arguments incorrect : ./cub3d /path/to/map.cub\n");
 		return (1);
 	}
-	parsing(argv[1], &map);
-	if (check_before_run(&map))
+	parsing(argv[1], &game.maps);
+	if (check_before_run(&game.maps))
 	{
 		//printf("Flood ok !\n");
-		printf("Player position X = %f, Y = %f\n", map.p_pos.x, map.p_pos.y);
-		is_map_solvable(&map);
+		// printf("Player position X = %f, Y = %f\n", game.maps->p_pos.x, game.maps->p_pos.y);
+		is_map_solvable(&game.maps);
 	}
 
-	win = init_window(&map);
-	if(!win)
+	game.win = init_window(&game.maps);
+	if(!game.win)
 	{
 		printf("Init window failed");
 		return (-1);
 	}
 	int i = 0;
-	while (map.map[i])
+	while ((&game.maps)->map[i])
 	{
-		for (size_t y = 0; y < ft_strlen(map.map[i]); y++)
-			printf("%c", map.map[i][y]);
+		for (size_t y = 0; y < ft_strlen((&game.maps)->map[i]); y++)
+			printf("%c", (&game.maps)->map[i][y]);
 		printf("\n");
 		i++;
 	}
-	printf("%d %d\n", (int)map.p_pos.x, (int)map.p_pos.y); 
-	printf("\n\n\n\n\n%c\n\n\n\n", map.map[11][26]);
-	// printf("\n\n\n\n\n\n%c\n\n\n\n\n\n\n", map.map[(int)map.p_pos.x][(int)map.p_pos.y]);
-	init_player(&player, &map.p_pos, map.map);
-// if (!create_back(win, &win->img))
-	// 	printf("Fail to create back");
-	// if (!draw_back(win))
-	// 	printf("Fail to draw");
-	// mlx_hook(win->win, 17, (1L << 5), (void *)key_hook, win->mlx);  // d'abord
-	render_walls(&player, win, &map);
-	mlx_loop(win->mlx);
+	init_player(&game.player, &game.maps.p_pos, (&game.maps)->map);
+	//mlx_hook(game.win->win, 2, 1L<<0, (void *)handle_keypress, &game);
+	// mlx_hook(game.win->win, 2, 1L<<0, (void *)handle_keypress, &game);
+	mlx_hook(game.win->win, 2, 1L<<0, (void *)handle_keypress, &game);
+	mlx_hook(game.win->win, 17, 0, (void *)handle_close, &game);
+	render_walls(&game.player, game.win, &game.maps);
+	mlx_loop(game.win->mlx);
 	printf("Parsing OK");
-	free_struct(&map);
+	free_struct(&game.maps);
 	return (0);
 }

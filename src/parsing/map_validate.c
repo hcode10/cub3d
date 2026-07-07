@@ -6,11 +6,11 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:01:12 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/21 14:41:20 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:38:35 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
+#include "game.h"
 
 static void	check_player_collect(t_map *game, int i, int j)
 {
@@ -38,15 +38,13 @@ bool	validate_map_chars(t_map *game)
 		while (game->map[i][j])
 		{
 			if (!ft_strchr("10NSEW \n", game->map[i][j]))
-				return (dbg_val("char invalide", game->map[i]),
-					error_msg("Map: caractere invalide"), false);
+				return (error_msg("Map: caractere invalide"), false);
 			check_player_collect(game, i, j);
 			j++;
 		}
 		i++;
 	}
 	if (game->p_pos.x == 0 || game->p_pos.y == 0)
-		return (dbg_fail("validate", "joueur absent ou en bord (x/y==0)"),
-			error_msg("Map: joueur absent ou mal place"), false);
+		return (error_msg("Map: joueur absent ou mal place"), false);
 	return (true);
 }

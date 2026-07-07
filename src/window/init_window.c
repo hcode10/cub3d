@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init_window.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 17:30:00 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/21 16:25:01 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:17:41 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/window.h"
+#include "game.h"
 
 static int	convert_to_rgb(int col[3])
 {

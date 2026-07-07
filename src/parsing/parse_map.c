@@ -6,12 +6,11 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:01:12 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/14 20:46:28 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:36:19 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
-#include <fcntl.h>
+#include "game.h"
 
 static int	match_element(char **splited)
 {
@@ -58,8 +57,7 @@ static bool	rest_is_blank(int fd, char *line)
 	while (line != NULL)
 	{
 		if (!space_only(line))
-			return (dbg_fail("read_grid", "contenu apres la map"),
-				free(line), false);
+			return (false);
 		free(line);
 		line = get_next_line(fd);
 	}
@@ -96,18 +94,15 @@ bool	get_map(char *map_path, t_map *map)
 	line = NULL;
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
-		return (dbg_step("get_map: open() echoue"), false);
+		return (false);
 	if (!read_elements(fd, &line))
-		return (dbg_fail("get_map", "read_elements KO (<6 elts/ligne KO)"),
-			free(line), close(fd), false);
-	dbg_step("get_map: 6 elements OK, lecture grille");
+		return (free(line), close(fd), false);
 	if (!read_grid(fd, map, line))
-		return (dbg_fail("get_map", "read_grid KO"), close(fd), false);
+		return (close(fd), false);
 	close(fd);
 	map->map_dup = copy_map(map->map);
 	if (!map->map_dup)
 		return (false);
 	normalize_map(map);
-	dbg_map(map);
 	return (true);
 }

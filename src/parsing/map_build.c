@@ -6,11 +6,11 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:01:12 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/14 20:46:28 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:11:51 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
+#include "game.h"
 
 bool	space_only(char *str)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ray_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 15:11:43 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/03 17:48:25 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:10:14 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/utils.h"
+#include "../../includes/game.h"
 
 void	init_sideDist(t_ray *ray, t_player_pos *p_pos)
 {

@@ -6,14 +6,11 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 10:53:25 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/07/04 20:45:42 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:11:48 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "../libft/get_next_line.h"
-#include "../includes/parsing.h"
-#include <fcntl.h>
+#include "game.h"
 
 /*static int	check_line_width(t_map *game, char *line, size_t line_size)
 {

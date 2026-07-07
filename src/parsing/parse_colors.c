@@ -6,12 +6,11 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:01:12 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/14 20:46:28 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:35:11 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
-#include <fcntl.h>
+#include "game.h"
 
 static bool	check_numeric_color(char **rgb)
 {
@@ -25,7 +24,7 @@ static bool	check_numeric_color(char **rgb)
 		while (rgb[i][j])
 		{
 			if (!ft_strchr(" \n,", rgb[i][j]) && !ft_isdigit(rgb[i][j]))
-				return (dbg_fail("rgb", "caractere non numerique"), false);
+				return (false);
 			j++;
 		}
 		i++;
@@ -41,9 +40,9 @@ bool	check_color(int *sky_color, int *floor_color)
 	while (i < 3)
 	{
 		if (sky_color[i] < 0 || sky_color[i] > 255)
-			return (dbg_fail("check_color", "C (sky) hors [0,255]"), false);
+			return (false);
 		if (floor_color[i] < 0 || floor_color[i] > 255)
-			return (dbg_fail("check_color", "F (floor) hors [0,255]"), false);
+			return (false);
 		i++;
 	}
 	return (true);
@@ -52,8 +51,7 @@ bool	check_color(int *sky_color, int *floor_color)
 static bool	parse_rgb(int *dst, char **rgb)
 {
 	if (!rgb || count_tabs(rgb) != 3 || !check_numeric_color(rgb))
-		return (dbg_fail("parse_rgb", "pas 3 nombres valides separes par ,"),
-			false);
+		return (false);
 	dst[0] = ft_atoi(rgb[0]);
 	dst[1] = ft_atoi(rgb[1]);
 	dst[2] = ft_atoi(rgb[2]);
@@ -92,7 +90,7 @@ bool	set_color(t_map *map, char *map_path)
 
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
-		return (dbg_fail("set_color", "open() echoue"), false);
+		return (false);
 	line = get_next_line(fd);
 	while (line != NULL)
 	{

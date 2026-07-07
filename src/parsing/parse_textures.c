@@ -6,22 +6,21 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:01:12 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/14 20:46:28 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:47:11 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
-#include <fcntl.h>
+#include "game.h"
 
 bool	valid_path(char *map_path)
 {
 	char	*ext;
 
 	if (!map_path || ft_strlen(map_path) < 4)
-		return (dbg_fail("valid_path", "chemin trop court/NULL"), false);
+		return (false);
 	ext = map_path + (ft_strlen(map_path) - 4);
 	if (ft_strncmp(ext, ".cub", 4) != 0)
-		return (dbg_fail("valid_path", "extension != .cub"), false);
+		return (false);
 	return (true);
 }
 
@@ -41,13 +40,13 @@ static bool	check_files(char *path)
 bool	check_textures(t_map *map)
 {
 	if (!check_files(map->texture_ea))
-		return (dbg_fail("check_textures", "EA absente/illisible"), false);
+		return (false);
 	if (!check_files(map->texture_no))
-		return (dbg_fail("check_textures", "NO absente/illisible"), false);
+		return (false);
 	if (!check_files(map->texture_so))
-		return (dbg_fail("check_textures", "SO absente/illisible"), false);
+		return (false);
 	if (!check_files(map->texture_we))
-		return (dbg_fail("check_textures", "WE absente/illisible"), false);
+		return (false);
 	return (true);
 }
 
@@ -72,7 +71,7 @@ bool	set_textures(t_map *map, char *map_path)
 
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
-		return (dbg_fail("set_textures", "open() echoue"), false);
+		return (false);
 	line = get_next_line(fd);
 	while (line != NULL)
 	{

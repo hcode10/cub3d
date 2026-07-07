@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   img.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 17:44:43 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/04 18:17:43 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:12:22 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/window.h"
+#include "../../includes/game.h"
 
 void	*free_img(t_imag *img, void *mlx)
 {

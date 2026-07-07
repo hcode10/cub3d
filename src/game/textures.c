@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 18:24:31 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/05 18:48:40 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/07 21:02:02 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,10 @@ void	put_wall_pixel(t_render *rend, t_window *w, t_text *tex, t_ray *ray)
 {
 	int	texy;
 
-	if (rend->y == rend->drawend || rend->y == rend->drawstart)
-		*(int *)rend->px = 0xFFFFFF;
-	else if (rend->y < rend->drawstart)
-		*(int *)rend->px = w->ceil;
+	if (rend->y < rend->drawstart)
+	*(int *)rend->px = w->ceil;
 	else if (rend->y > rend->drawend)
-		*(int *)rend->px = w->floor;
+	*(int *)rend->px = w->floor;
 	else
 	{
 		texy = (int)tex->pos;

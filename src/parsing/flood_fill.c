@@ -6,11 +6,11 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:36:24 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/06/22 17:00:00 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:38:45 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
+#include "game.h"
 
 static int	cell_state(char **m, int y, int x)
 {
@@ -102,7 +102,6 @@ bool	is_map_solvable(t_map *game)
 	flood_iter(m, &fl, sa, start);
 	free(sa);
 	free_map(m);
-	dbg_flood(&fl);
 	if (fl.player_count != 1)
 		return (error_msg("Map: nombre de joueurs invalide"), false);
 	if (fl.escaped)

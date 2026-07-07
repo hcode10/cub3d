@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ray.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 13:23:15 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/05 18:55:09 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:12:27 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/game.h"
-#include "../../includes/utils.h"
 
 void	init_ray(t_player *player, t_ray *ray)
 {

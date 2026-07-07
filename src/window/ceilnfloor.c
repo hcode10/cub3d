@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ceilnfloor.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 16:02:29 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/01 09:19:18 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:10:01 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/window.h"
+#include "../../includes/game.h"
 
 int	create_back(t_window *w, t_imag *img)
 {

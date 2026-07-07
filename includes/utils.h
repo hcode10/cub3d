@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 18:51:47 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/01 09:17:37 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:23:30 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
 # include "game.h"
+# include "parsing.h"
+# include "window.h"
 
-void	init_sideDist(t_ray *ray, t_player_pos *p_pos);
-int		dda(t_ray *ray, char **map);
-void	calc_render(t_window *win, t_ray *ray, t_render *rend);
 
 #endif
