@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 10:12:10 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/12 12:21:31 by dcasadio         ###   ########.fr       */
+/*   Created: 2026/06/20 18:51:47 by coressor          #+#    #+#             */
+/*   Updated: 2026/07/01 09:17:37 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1024
-# endif
-# include <stdlib.h>
-# include <unistd.h>
+#ifndef UTILS_H
+# define UTILS_H
+# include "game.h"
+
+void	init_sideDist(t_ray *ray, t_player_pos *p_pos);
+int		dda(t_ray *ray, char **map);
+void	calc_render(t_window *win, t_ray *ray, t_render *rend);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 16:02:29 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/14 16:07:20 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/01 09:19:18 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/window.h"
 
-int	create_back(t_window *win)
+int	create_back(t_window *w, t_imag *img)
 {
 	int		i;
 	int		y;
@@ -20,29 +20,29 @@ int	create_back(t_window *win)
 	char	*buf;
 
 	i = 0;
-	buf = mlx_get_data_addr(win->back, &win->bitspp, &win->sizex, &win->endian);
+	buf = mlx_get_data_addr(img->back, &img->bitspp, &w->sizex, &img->endian);
 	if (!buf)
 		return (0);
-	while (i < win->sizex)
+	while (i < w->sizex)
 	{
 		y = 0;
-		while (y < win->sizey)
+		while (y < w->sizey)
 		{
-			px =  buf + (y * win->sizex + i * (win->bitspp / 8));
-			if (y < win->sizey / 2)
-				*(int *)px = win->floor;
+			px = buf + (y * w->sizex + i * (img->bitspp / 8));
+			if (y < w->sizey / 2)
+				*(int *)px = w->floor;
 			else
-				*(int *)px = win->ceil;
+				*(int *)px = w->ceil;
 			y++;
 		}
 		i++;
 	}
-	return (1);	
+	return (1);
 }
 
 int	draw_back(t_window *win)
 {
-	if (mlx_put_image_to_window(win->mlx, win->win, win->back, 0, 0))
+	if (mlx_put_image_to_window(win->mlx, win->win, win->img.back, 0, 0))
 		return (1);
-	return (0); 
+	return (0);
 }

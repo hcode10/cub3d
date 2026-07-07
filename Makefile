@@ -21,23 +21,39 @@ SRC_DIR = ./src
 #---------   UTILS --------------
 
 DIR_UTILS = $(SRC_DIR)/utils
-SRC_UTILS = \
+SRC_UTILS =  $(DIR_UTILS)/ray_utils.c \
 
 #---------   PARSING --------------
 
-SRC_PARSING = $(SRC_DIR)/parsing
+DIR_PARSING = $(SRC_DIR)/parsing
 
-
+SRC_PARSING = $(DIR_PARSING)
+#       $(DIR_PARSING)/map_parse.c \
+#       $(DIR_PARSING)/map_utils.c \
+#       $(DIR_PARSING)/map_validate.c \
+#       $(DIR_PARSING)/parse_utils.c \
+#       $(DIR_PARSING)/flood_fill.c \
+# 	  $(DIR_PARSING)/parse_textures.c
+#
 #--------  WINDOW -----------
 
 DIR_WINDOW = $(SRC_DIR)/window
 SRC_WINDOW = $(DIR_WINDOW)/init_window.c \
-			 $(DIR_WINDOW)/ceilnfloor.c \
+			 # $(DIR_WINDOW)/ceilnfloor.c \
+
+#-------- GAME --------
+
+DIR_GAME = $(SRC_DIR)/game
+SRC_GAME = $(DIR_GAME)/game.c \
+			$(DIR_GAME)/img.c \
+			$(DIR_GAME)/ray.c \
+			$(DIR_GAME)/textures.c
 
 #-------- ALL THE SOURCES -----
 SRC = $(SRC_DIR)/main.c \
         $(SRC_UTILS) \
         $(SRC_WINDOW) \
+		$(SRC_GAME) \
 	  $(SRC_PARSING)/parsing.c \
 	  $(SRC_PARSING)/parse_textures.c \
 	  $(SRC_PARSING)/parse_colors.c \
@@ -58,8 +74,9 @@ OBJS = $(SRC:.c=.o)
 
 TEST= ./test/main.c \
 	  $(SRC_UTILS) \
+      $(SRC_PARSING)/parsing.c \
 	  $(SRC_WINDOW) \
-      $(SRC_UTILS) \
+      $(SRC_GAME) \
 
 TEST_OBJS = $(TEST:.c=.o)
 
