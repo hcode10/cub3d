@@ -6,22 +6,11 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 16:11:45 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/07/07 20:42:58 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/08 14:53:17 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
-
-/*static int	validate_map(t_map *game)
-{
-	if (!validate_map_chars(game))
-	{
-		return (-1);
-	}
-	if (is_map_solvable(game) == -1)
-		return (-1);
-	return (0);
-}*/
 
 static bool	check_before_run(t_map *game)
 {
@@ -42,9 +31,10 @@ int	main(int argc, char **argv)
 	parsing(argv[1], &game.maps);
 	if (check_before_run(&game.maps))
 	{
-		//printf("Flood ok !\n");
-		// printf("Player position X = %f, Y = %f\n", game.maps->p_pos.x, game.maps->p_pos.y);
-		is_map_solvable(&game.maps);
+		if (!is_map_solvable(&game.maps))
+		{
+			
+		}
 	}
 
 	game.win = init_window(&game.maps);
@@ -62,8 +52,6 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	init_player(&game.player, &game.maps.p_pos, (&game.maps)->map);
-	//mlx_hook(game.win->win, 2, 1L<<0, (void *)handle_keypress, &game);
-	// mlx_hook(game.win->win, 2, 1L<<0, (void *)handle_keypress, &game);
 	mlx_hook(game.win->win, 2, 1L<<0, (void *)handle_keypress, &game);
 	mlx_hook(game.win->win, 17, 0, (void *)handle_close, &game);
 	render_walls(&game.player, game.win, &game.maps);

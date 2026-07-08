@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:01:12 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/07/07 19:47:11 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/08 14:31:01 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,18 @@ bool	set_textures(t_map *map, char *map_path)
 	{
 		line_trim = ft_strtrim(line, "\n");
 		free(line);
+		if (!line_trim)
+			return (close(fd), NULL);
 		splited = ft_split(line_trim, ' ');
 		free(line_trim);
+		if (!splited)
+			return (close(fd), NULL);
 		if (splited && count_tabs(splited) == 2)
 			set_one_texture(map, splited);
 		free_tabs(splited);
 		line = get_next_line(fd);
 	}
+	free(line);
 	close(fd);
 	return (true);
 }
