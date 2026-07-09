@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 17:44:43 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/07 19:12:22 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/08 16:13:40 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,16 @@ void	*init_img(t_imag *i, t_window *w, t_map *map)
 	i->walls = mlx_new_image(w->mlx, w->sizex, w->sizey);
 	if (!i->walls)
 		return (free_img(i, w->mlx));
-	i->no = mlx_xpm_file_to_image(w->mlx, map->texture_no, &i->no_h, &i->no_w);
+	i->no = mlx_xpm_file_to_image(w->mlx, map->texture_no, &i->no_w, &i->no_h);
 	if (!i->no)
 		return (free_img(i, w->mlx));
-	i->so = mlx_xpm_file_to_image(w->mlx, map->texture_so, &i->so_h, &i->so_w);
+	i->so = mlx_xpm_file_to_image(w->mlx, map->texture_so, &i->so_w, &i->so_h);
 	if (!i->so)
 		return (free_img(i, w->mlx));
-	i->we = mlx_xpm_file_to_image(w->mlx, map->texture_we, &i->we_h, &i->we_w);
+	i->we = mlx_xpm_file_to_image(w->mlx, map->texture_we, &i->we_w, &i->we_h);
 	if (!i->we)
 		return (free_img(i, w->mlx));
-	i->ea = mlx_xpm_file_to_image(w->mlx, map->texture_ea, &i->ea_h, &i->ea_w);
+	i->ea = mlx_xpm_file_to_image(w->mlx, map->texture_ea, &i->ea_w, &i->ea_h);
 	if (!i->ea)
 		return (free_img(i, w->mlx));
 	return (i);

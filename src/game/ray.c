@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 13:23:15 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/07 19:12:27 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/08 15:16:06 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	init_ray(t_player *player, t_ray *ray)
 {
+	ft_bzero(ray, sizeof(t_ray));
 	ray->dir = player->dir;
 	ray->plane = player->plane;
 }
@@ -47,7 +48,7 @@ void	*render_walls(t_player *player, t_window *win, t_map *map)
 	while (x < win->sizex)
 	{
 		update_ray(&ray, win, player->p_pos, x);
-		init_sideDist(&ray, player->p_pos);
+		init_sidedist(&ray, player->p_pos);
 		if (!dda(&ray, map->map))
 			ray.perpwall = ray.sidedist[0] - ray.deltadist[0];
 		else
@@ -94,6 +95,3 @@ void	*draw_walls(t_ray *ray, t_window *w, int x)
 	return (ray);
 }
 
-
-// TODO Ajouter canal alpha
-// TODO Ecrire dans tout

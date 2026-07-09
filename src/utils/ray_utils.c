@@ -12,7 +12,7 @@
 
 #include "../../includes/game.h"
 
-void	init_sideDist(t_ray *ray, t_player_pos *p_pos)
+void	init_sidedist(t_ray *ray, t_player_pos *p_pos)
 {
 	if (ray->ray[0] < 0)
 	{
@@ -72,4 +72,11 @@ void	calc_render(t_window *win, t_ray *ray, t_render *rend)
 	rend->drawend = rend->lineheight / 2 + win->sizey / 2;
 	if (rend->drawend > win->sizey)
 		rend->drawend = win->sizey - 1;
+}
+
+void	exit_win(t_game *win, int code)
+{
+	free_struct(&win->maps);
+	free_window(win->win);
+	exit(code);
 }

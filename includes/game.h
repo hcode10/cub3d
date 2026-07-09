@@ -73,6 +73,7 @@ typedef struct s_window
 	int		ceil;
 	int		floor;
 }	t_window;
+
 typedef struct s_player_pos
 {
 	double	x;
@@ -112,8 +113,6 @@ typedef struct s_game
 	t_player		player;
 	t_map			maps;
 	t_window		*win;
-	int				movX;
-	int				movY;
 	int				rot;
 }	t_game;
 
@@ -188,16 +187,17 @@ int		validate_map_walls(t_map *game);
 int		read_map(t_map *game);
 void	set_heigth(t_map *game, int height);
 int		map_count_line(void);
-void	init_sideDist(t_ray *ray, t_player_pos *p_pos);
+void	init_sidedist(t_ray *ray, t_player_pos *p_pos);
 int		dda(t_ray *ray, char **map);
 void	calc_render(t_window *win, t_ray *ray, t_render *rend);
 void	*init_window(t_map *map);
 void	free_window(t_window *s_win);
-int		handle_close(t_game *game);
+void		handle_close(t_game *game);
 int		handle_keypress(int keycode, t_game *game);
 int		create_back(t_window *w, t_imag *img);
 int		draw_back(t_window *win);
 void	*free_img(t_imag *img, void *mlx);
 void	*init_img(t_imag *img, t_window *win, t_map *map);
 int		handle_keyrelease(int keycode, t_game *game);
+void	exit_win(t_game *win, int code);
 #endif

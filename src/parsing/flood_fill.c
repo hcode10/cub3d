@@ -92,7 +92,7 @@ bool	is_map_solvable(t_map *game)
 	m = copy_map(game->map_dup);
 	if (!m)
 		return (false);
-	sa = malloc(sizeof(int) * stack_cap(m) * 2);
+	sa = ft_calloc(sizeof(int), stack_cap(m) * 2);
 	if (!sa)
 		return (free_map(m), false);
 	start[0] = (int)game->p_pos.y;

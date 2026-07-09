@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 18:24:31 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/07 21:02:02 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/09 10:08:15 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void	choose_text(t_ray *ray, t_player *player, t_window *win)
 	{
 		ray->wallx = player->p_pos->x + ray->perpwall * ray->ray[0];
 		if (ray->ray[1] > 0)
-			setText(ray, win->img.so, win->img.so_w, win->img.so_h);
-		else
 			setText(ray, win->img.no, win->img.no_w, win->img.no_h);
+		else
+			setText(ray, win->img.so, win->img.so_w, win->img.so_h);
 	}
 	ray->wallx -= floor(ray->wallx);
 	ray->texx = (int)(ray->wallx * (double)ray->tex_w);
