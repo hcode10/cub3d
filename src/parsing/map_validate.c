@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:01:12 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/07/07 19:38:35 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/08 16:12:51 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ bool	validate_map_chars(t_map *game)
 	i = 0;
 	game->p_pos.x = 0;
 	game->p_pos.y = 0;
+	if (!game->map)
+		return (false);
 	while (game->map[i] != NULL)
 	{
 		j = 0;

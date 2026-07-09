@@ -6,11 +6,11 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 10:06:59 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/07/05 00:16:16 by coressor         ###   ########.fr       */
+/*   Updated: 2026/07/08 16:52:30 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/parsing.h"
+#include "../includes/game.h"
 
 static char	*get_line(char *storage)
 {

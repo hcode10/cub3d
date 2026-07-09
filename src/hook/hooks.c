@@ -57,18 +57,20 @@ static void	handle_move(t_game *game, double dx, double dy)
 
 static void	handle_rot(t_game *game, double rot)
 {
-	double	tmp;
+	double		tmp;
+	t_player	*p;
 
+	p = &game->player;
 	tmp = game->player.dir[0];
-	game->player.dir[0] = game->player.dir[0] * cos(rot) - game->player.dir[1]*sin(rot);
-	game->player.dir[1] = tmp * sin(rot) + game->player.dir[1] * cos(rot);
+	p->dir[0] = p->dir[0] * cos(rot) - p->dir[1] * sin(rot);
+	p->dir[1] = tmp * sin(rot) + p->dir[1] * cos(rot);
 	tmp = game->player.plane[0];
     game->player.plane[0] = game->player.plane[0] * cos(rot) - game->player.plane[1] * sin(rot);
     game->player.plane[1] = tmp * sin(rot) + game->player.plane[1] * cos(rot);
 	if (!render_walls(&game->player, game->win, &game->maps))
 		exit_win(game, -1);
 }
- 
+
 int	handle_keypress(int keycode, t_game *game)
 {
 	double dirX;

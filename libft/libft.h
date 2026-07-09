@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:32:26 by coressor          #+#    #+#             */
-/*   Updated: 2026/06/21 12:06:28 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/08 16:20:47 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
 
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);

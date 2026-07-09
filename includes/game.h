@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 16:59:43 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/07 20:29:57 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/07/08 16:19:38 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@
 #  define KEY_LEFT 65361
 #  define KEY_RIGHT 65363
 # endif
-
 
 typedef struct s_imag
 {
@@ -150,11 +149,11 @@ typedef struct s_ray
 	int		stepy;
 	int		mapx;
 	int		mapy;
-	double	wallx;   
-	void	*tex;    
-	int		tex_w;   
-	int		tex_h;   
-	int		texx; 
+	double	wallx;
+	void	*tex;
+	int		tex_w;
+	int		tex_h;
+	int		texx;
 }	t_ray;
 
 void	init_player(t_player *player, t_player_pos *p_pos, char **map);
