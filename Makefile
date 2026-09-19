@@ -1,114 +1,83 @@
-CC = cc
-FLAGS = -Wall -Werror -Wextra -g3
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/06/11 16:11:45 by dcasadio          #+#    #+#              #
+#    Updated: 2026/09/18 12:00:00 by dcasadio         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-# Active toutes les traces de debug : `make re DEBUG=1`
+NAME    = cub3D
+
+CC      = cc
+FLAGS   = -Wall -Werror -Wextra
+
+# Traces de debug : `make re DEBUG=1`
 ifdef DEBUG
-FLAGS += -D DEBUG=$(DEBUG)
+FLAGS  += -g3 -D DEBUG=$(DEBUG)
 endif
-NAME = cub3D
 
-INCDIR=./includes
+INCDIR   = ./includes
+MLXDIR   = ./minilibx-linux
+MLXA     = $(MLXDIR)/libmlx.a
+LIBFTDIR = ./libft
+LIBFT    = $(LIBFTDIR)/libft.a
+SRC_DIR  = ./src
 
-MLXDIR = ./minilibx-linux
-MLXA = $(MLXDIR)/libmlx.a
-
-LIBFTDIR = ./libft/
-LIBFT=$(LIBFTDIR)libft.a
-
-SRC_DIR = ./src
-
-
-#---------   UTILS --------------
-
-DIR_UTILS = $(SRC_DIR)/utils
-SRC_UTILS =  $(DIR_UTILS)/ray_utils.c \
-
-#---------   PARSING --------------
-
-DIR_PARSING = $(SRC_DIR)/parsing
-
-SRC_PARSING = $(DIR_PARSING)
-#       $(DIR_PARSING)/map_parse.c \
-#       $(DIR_PARSING)/map_utils.c \
-#       $(DIR_PARSING)/map_validate.c \
-#       $(DIR_PARSING)/parse_utils.c \
-#       $(DIR_PARSING)/flood_fill.c \
-# 	  $(DIR_PARSING)/parse_textures.c
-#
-#--------  WINDOW -----------
-
-DIR_WINDOW = $(SRC_DIR)/window
-SRC_WINDOW = $(DIR_WINDOW)/init_window.c \
-			 # $(DIR_WINDOW)/ceilnfloor.c \
-
-#-------- GAME --------
-
-DIR_GAME = $(SRC_DIR)/game
-SRC_GAME = $(DIR_GAME)/game.c \
-			$(DIR_GAME)/img.c \
-			$(DIR_GAME)/ray.c \
-			$(DIR_GAME)/textures.c
-
-#-------- ALL THE SOURCES -----
 SRC = $(SRC_DIR)/main.c \
-        $(SRC_UTILS) \
-        $(SRC_WINDOW) \
-		$(SRC_GAME) \
-	  $(SRC_PARSING)/parsing.c \
-	  $(SRC_PARSING)/parse_textures.c \
-	  $(SRC_PARSING)/parse_colors.c \
-	  $(SRC_PARSING)/parse_map.c \
-	  $(SRC_PARSING)/map_build.c \
-	  $(SRC_PARSING)/parse_utils.c \
-	  $(SRC_PARSING)/map_validate.c \
-	  $(SRC_PARSING)/map_utils.c \
-	  $(SRC_PARSING)/flood_fill.c \
-	  $(SRC_DIR)/hook/hooks.c	\
+      $(SRC_DIR)/utils/ray_utils.c \
+      $(SRC_DIR)/window/init_window.c \
+      $(SRC_DIR)/game/game.c \
+      $(SRC_DIR)/game/img.c \
+      $(SRC_DIR)/game/ray.c \
+      $(SRC_DIR)/game/textures.c \
+      $(SRC_DIR)/hook/hooks.c \
+      $(SRC_DIR)/parsing/parsing.c \
+      $(SRC_DIR)/parsing/parse_elements.c \
+      $(SRC_DIR)/parsing/parse_textures.c \
+      $(SRC_DIR)/parsing/parse_colors.c \
+      $(SRC_DIR)/parsing/parse_map.c \
+      $(SRC_DIR)/parsing/parse_line.c \
+      $(SRC_DIR)/parsing/parse_utils.c \
+      $(SRC_DIR)/parsing/map_build.c \
+      $(SRC_DIR)/parsing/map_validate.c \
+      $(SRC_DIR)/parsing/map_utils.c \
+      $(SRC_DIR)/parsing/flood_fill.c \
+      $(SRC_DIR)/parsing/flood_utils.c \
+      $(SRC_DIR)/parsing/color_utils.c \
+      $(SRC_DIR)/parsing/texture_check.c
 
-MAPS = ./maps
 OBJS = $(SRC:.c=.o)
 
-#------- TEST CFG ----------
+INCLUDES = -I$(MLXDIR) -I$(LIBFTDIR) -I$(INCDIR)
+LIBS     = $(LIBFT) -L$(MLXDIR) -lmlx -lXext -lX11 -lm
 
-TEST= ./test/main.c \
-	  $(SRC_UTILS) \
-      $(SRC_PARSING)/parsing.c \
-	  $(SRC_WINDOW) \
-      $(SRC_GAME) \
+all: $(NAME)
 
-TEST_OBJS = $(TEST:.c=.o)
+$(NAME): $(LIBFT) $(MLXA) $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) $(INCLUDES) -o $(NAME) $(LIBS)
 
-TEST_TARGET = cub3Dtest
+%.o: %.c $(INCDIR)/game.h
+	$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@
 
-$(NAME): all
+$(LIBFT):
+	$(MAKE) -C $(LIBFTDIR) all
 
-all : $(OBJS) libft mlx
-	$(CC) $(FLAGS) $(OBJS) -I$(MLXDIR) -I$(LIBFTDIR) -I$(INCDIR) -o $(NAME) $(LIBFT) -L$(MLXDIR) -lmlx -lXext -lX11 -lm
+$(MLXA):
+	$(MAKE) -C $(MLXDIR) all
 
-libft:
-	make -C $(LIBFTDIR) all
+clean:
+	rm -f $(OBJS)
+	$(MAKE) -C $(LIBFTDIR) clean
+	$(MAKE) -C $(MLXDIR) clean
 
-mlx :
-	make -C $(MLXDIR) all
+fclean: clean
+	rm -f $(NAME)
+	$(MAKE) -C $(LIBFTDIR) fclean
 
-clean :
-	make -C $(MLXDIR) clean
-	make -C $(LIBFTDIR) clean
-	rm -rf $(OBJS)
+re: fclean all
 
-fclean : clean
-	make -C $(MLXDIR) clean
-	make -C $(LIBFTDIR) fclean
-	rm -rf $(NAME)
-
-re : fclean all
-	
-test: all
-
-$(TEST_TARGET) : $(TEST_OBJS) libft mlx
-	$(CC) $(FLAGS) $(TEST_OBJS) -I$(MLXDIR) -I$(LIBFTDIR) -I$(INCDIR) -o $(TEST_TARGET) $(LIBFT) -L$(MLXDIR) -lmlx -lXext -lX11 -lm 
-
-%.o : %.c
-	$(CC) $(FLAGS) -I$(MLXDIR) -I$(LIBFTDIR) -I$(INCDIR) -L$(LIBFT) -c $< -o $@
-
-.PHONY: all clean fclean re mlx libft cub3Dtest
+.PHONY: all clean fclean re

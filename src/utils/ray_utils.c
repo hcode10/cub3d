@@ -6,11 +6,11 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 15:11:43 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/07 19:10:14 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/09/18 12:00:00 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/game.h"
+#include "game.h"
 
 void	init_sidedist(t_ray *ray, t_player_pos *p_pos)
 {
@@ -36,13 +36,30 @@ void	init_sidedist(t_ray *ray, t_player_pos *p_pos)
 	}
 }
 
+int	is_wall(char **map, double x, double y)
+{
+	int	mx;
+	int	my;
+
+	if (x < 0 || y < 0)
+		return (1);
+	mx = (int)x;
+	my = (int)y;
+	if (my < 0 || mx < 0)
+		return (1);
+	if (!map[my])
+		return (1);
+	if (mx >= (int)ft_strlen(map[my]))
+		return (1);
+	return (map[my][mx] == '1' || map[my][mx] == ' ');
+}
+
 int	dda(t_ray *ray, char **map)
 {
-	int	touch;
 	int	side;
 
-	touch = 0;
-	while (!touch)
+	side = 0;
+	while (1)
 	{
 		if (ray->sidedist[0] < ray->sidedist[1])
 		{
@@ -56,8 +73,8 @@ int	dda(t_ray *ray, char **map)
 			ray->mapy += ray->stepy;
 			side = 1;
 		}
-		if (map[ray->mapy][ray->mapx] == '1')
-			touch = 1;
+		if (is_wall(map, (double)ray->mapx, (double)ray->mapy))
+			break ;
 	}
 	ray->side = side;
 	return (side);
@@ -65,12 +82,21 @@ int	dda(t_ray *ray, char **map)
 
 void	calc_render(t_window *win, t_ray *ray, t_render *rend)
 {
-	rend->lineheight = (int)(win->sizey / ray->perpwall);
+	double	h;
+
+	if (!(ray->perpwall > 0.0001))
+		ray->perpwall = 0.0001;
+	h = win->sizey / ray->perpwall;
+	if (h > win->sizey * 1000.0)
+		h = win->sizey * 1000.0;
+	rend->lineheight = (int)h;
+	if (rend->lineheight < 1)
+		rend->lineheight = 1;
 	rend->drawstart = -rend->lineheight / 2 + win->sizey / 2;
 	if (rend->drawstart < 0)
 		rend->drawstart = 0;
 	rend->drawend = rend->lineheight / 2 + win->sizey / 2;
-	if (rend->drawend > win->sizey)
+	if (rend->drawend >= win->sizey)
 		rend->drawend = win->sizey - 1;
 }
 

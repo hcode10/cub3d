@@ -6,11 +6,11 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 13:23:15 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/08 15:16:06 by coressor         ###   ########.fr       */
+/*   Updated: 2026/09/18 12:00:00 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/game.h"
+#include "game.h"
 
 void	init_ray(t_player *player, t_ray *ray)
 {
@@ -43,6 +43,8 @@ void	*render_walls(t_player *player, t_window *win, t_map *map)
 	int		x;
 	t_ray	ray;
 
+	if (!win || !win->img.buf)
+		return (NULL);
 	x = 0;
 	init_ray(player, &ray);
 	while (x < win->sizex)
@@ -54,37 +56,22 @@ void	*render_walls(t_player *player, t_window *win, t_map *map)
 		else
 			ray.perpwall = ray.sidedist[1] - ray.deltadist[1];
 		choose_text(&ray, player, win);
-		if (!draw_walls(&ray, win, x))
-			return (NULL);
+		draw_walls(&ray, win, x);
 		x++;
 	}
-	if (!mlx_put_image_to_window(win->mlx, win->win, win->img.walls, 0, 0))
-		return (NULL);
+	mlx_put_image_to_window(win->mlx, win->win, win->img.walls, 0, 0);
 	return (win);
 }
 
-static void	*init_rend(t_render *rend, t_ray *ray, t_window *win)
-{
-	t_imag	*img;
-
-	img = &win->img;
-	calc_render(win, ray, rend);
-	rend->buf = mlx_get_data_addr(img->walls, &img->bitspp, &img->line_len, &img->endian);
-	if (!rend->buf)
-		return (NULL);
-	return (rend);
-}
-
-void	*draw_walls(t_ray *ray, t_window *w, int x)
+void	draw_walls(t_ray *ray, t_window *w, int x)
 {
 	t_render	rend;
 	t_text		tex;
 
 	rend.y = 0;
-	if (!init_rend(&rend, ray, w))
-		return (NULL);
-	if (!init_text(&tex, ray, &rend, w))
-		return (NULL);
+	rend.buf = w->img.buf;
+	calc_render(w, ray, &rend);
+	init_text(&tex, ray, &rend, w);
 	while (rend.y < w->sizey)
 	{
 		rend.px = rend.buf + (rend.y * w->img.line_len
@@ -92,6 +79,4 @@ void	*draw_walls(t_ray *ray, t_window *w, int x)
 		put_wall_pixel(&rend, w, &tex, ray);
 		rend.y++;
 	}
-	return (ray);
 }
-

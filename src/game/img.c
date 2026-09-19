@@ -6,48 +6,58 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 17:44:43 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/08 16:13:40 by coressor         ###   ########.fr       */
+/*   Updated: 2026/09/18 12:00:00 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/game.h"
+#include "game.h"
+
+static void	destroy_tex(t_tex *t, void *mlx)
+{
+	if (t->img)
+		mlx_destroy_image(mlx, t->img);
+	t->img = NULL;
+	t->buf = NULL;
+}
 
 void	*free_img(t_imag *img, void *mlx)
 {
-	if (img)
-	{
-		if (img->walls)
-			mlx_destroy_image(mlx, img->walls);
-		if (img->no)
-			mlx_destroy_image(mlx, img->no);
-		if (img->so)
-			mlx_destroy_image(mlx, img->so);
-		if (img->we)
-			mlx_destroy_image(mlx, img->we);
-		if (img->ea)
-			mlx_destroy_image(mlx, img->ea);
-	}
+	if (!img || !mlx)
+		return (NULL);
+	if (img->walls)
+		mlx_destroy_image(mlx, img->walls);
+	img->walls = NULL;
+	img->buf = NULL;
+	destroy_tex(&img->no, mlx);
+	destroy_tex(&img->so, mlx);
+	destroy_tex(&img->we, mlx);
+	destroy_tex(&img->ea, mlx);
 	return (NULL);
+}
+
+static void	*load_tex(t_tex *t, void *mlx, char *path)
+{
+	t->img = mlx_xpm_file_to_image(mlx, path, &t->w, &t->h);
+	if (!t->img)
+		return (NULL);
+	t->buf = mlx_get_data_addr(t->img, &t->bpp, &t->line, &t->endian);
+	if (!t->buf || t->w <= 0 || t->h <= 0)
+		return (NULL);
+	return (t->img);
 }
 
 void	*init_img(t_imag *i, t_window *w, t_map *map)
 {
-	i->bitspp = 32;
-	i->endian = 1;
 	i->walls = mlx_new_image(w->mlx, w->sizex, w->sizey);
 	if (!i->walls)
 		return (free_img(i, w->mlx));
-	i->no = mlx_xpm_file_to_image(w->mlx, map->texture_no, &i->no_w, &i->no_h);
-	if (!i->no)
+	i->buf = mlx_get_data_addr(i->walls, &i->bitspp, &i->line_len, &i->endian);
+	if (!i->buf)
 		return (free_img(i, w->mlx));
-	i->so = mlx_xpm_file_to_image(w->mlx, map->texture_so, &i->so_w, &i->so_h);
-	if (!i->so)
-		return (free_img(i, w->mlx));
-	i->we = mlx_xpm_file_to_image(w->mlx, map->texture_we, &i->we_w, &i->we_h);
-	if (!i->we)
-		return (free_img(i, w->mlx));
-	i->ea = mlx_xpm_file_to_image(w->mlx, map->texture_ea, &i->ea_w, &i->ea_h);
-	if (!i->ea)
+	if (!load_tex(&i->no, w->mlx, map->texture_no)
+		|| !load_tex(&i->so, w->mlx, map->texture_so)
+		|| !load_tex(&i->we, w->mlx, map->texture_we)
+		|| !load_tex(&i->ea, w->mlx, map->texture_ea))
 		return (free_img(i, w->mlx));
 	return (i);
 }

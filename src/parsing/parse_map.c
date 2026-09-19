@@ -6,45 +6,40 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:01:12 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/07/07 19:36:19 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/09/18 12:00:00 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-static int	match_element(char **splited)
+static bool	check_element_line(char *line)
 {
-	if (ft_strncmp("NO", splited[0], 2) == 0
-		|| ft_strncmp("SO", splited[0], 2) == 0
-		|| ft_strncmp("WE", splited[0], 2) == 0
-		|| ft_strncmp("EA", splited[0], 2) == 0
-		|| ft_strncmp("F", splited[0], 1) == 0
-		|| ft_strncmp("C", splited[0], 1) == 0)
-		return (1);
-	return (0);
+	char	*clean;
+	bool	ok;
+
+	clean = clean_line(line);
+	if (!clean)
+		return (false);
+	ok = (match_element(clean) == 1);
+	free(clean);
+	return (ok);
 }
 
 static bool	read_elements(int fd, char **line_after)
 {
 	char	*line;
-	char	**splited;
 	int		line_ok;
 
 	line_ok = 0;
 	line = get_next_line(fd);
-	while (line && line_ok != 6)
+	while (line && line_ok < 6)
 	{
-		if (space_only(line))
+		if (!space_only(line))
 		{
-			free(line);
-			line = get_next_line(fd);
-			continue ;
+			if (!check_element_line(line))
+				return (free(line), *line_after = NULL, false);
+			line_ok++;
 		}
-		splited = ft_split(line, ' ');
-		if (!splited || !match_element(splited))
-			return (free_tabs(splited), free(line), *line_after = NULL, false);
-		line_ok++;
-		free_tabs(splited);
 		free(line);
 		line = get_next_line(fd);
 	}
@@ -57,7 +52,7 @@ static bool	rest_is_blank(int fd, char *line)
 	while (line != NULL)
 	{
 		if (!space_only(line))
-			return (false);
+			return (free(line), false);
 		free(line);
 		line = get_next_line(fd);
 	}
@@ -73,7 +68,6 @@ static bool	read_grid(int fd, t_map *map, char *line)
 	}
 	if (!line)
 		return (false);
-	map->map = NULL;
 	while (line != NULL)
 	{
 		if (space_only(line))
@@ -90,19 +84,21 @@ bool	get_map(char *map_path, t_map *map)
 {
 	int		fd;
 	char	*line;
+	bool	ok;
 
 	line = NULL;
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
 		return (false);
-	if (!read_elements(fd, &line))
-		return (free(line), close(fd), false);
-	if (!read_grid(fd, map, line))
-		return (close(fd), false);
+	ok = read_elements(fd, &line);
+	if (ok)
+		ok = read_grid(fd, map, line);
+	drain_gnl(fd);
 	close(fd);
+	if (!ok || !map->map || !map->map[0])
+		return (false);
 	map->map_dup = copy_map(map->map);
 	if (!map->map_dup)
 		return (false);
-	normalize_map(map);
-	return (true);
+	return (normalize_map(map));
 }

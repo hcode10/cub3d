@@ -6,7 +6,7 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 16:59:43 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/08 16:19:38 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/09/18 12:00:00 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define GAME_H
 # include <math.h>
 # include <stddef.h>
-# include <stdio.h>
 # include <stdbool.h>
 # include <fcntl.h>
 # include "../minilibx-linux/mlx.h"
@@ -42,25 +41,36 @@
 #  define KEY_RIGHT 65363
 # endif
 
+# define WIN_MAX_W 1280
+# define WIN_MAX_H 720
+# define MOVE_S 0.09
+# define ROT_S 0.05
+# define HITBOX 0.15
+
+typedef struct s_tex
+{
+	void	*img;
+	char	*buf;
+	int		bpp;
+	int		line;
+	int		endian;
+	int		w;
+	int		h;
+}	t_tex;
+
 typedef struct s_imag
 {
-	int		bitspp;
-	int		endian;	
-	int		line_len;
 	void	*walls;
-	void	*no;
-	void	*so;
-	void	*we;
-	void	*ea;
-	int		no_h;
-	int		no_w;
-	int		so_h;
-	int		so_w;
-	int		we_h;
-	int		we_w;
-	int		ea_h;
-	int		ea_w;
+	char	*buf;
+	int		bitspp;
+	int		endian;
+	int		line_len;
+	t_tex	no;
+	t_tex	so;
+	t_tex	we;
+	t_tex	ea;
 }	t_imag;
+
 typedef struct s_window
 {
 	void	*mlx;
@@ -86,6 +96,8 @@ typedef struct s_map
 	t_player_pos	p_pos;
 	int				floor_color[3];
 	int				sky_color[3];
+	int				f_set;
+	int				c_set;
 	char			*texture_no;
 	char			*texture_so;
 	char			*texture_we;
@@ -109,18 +121,13 @@ typedef struct s_player
 
 typedef struct s_game
 {
-	t_player		player;
-	t_map			maps;
-	t_window		*win;
-	int				rot;
+	t_player	player;
+	t_map		maps;
+	t_window	*win;
 }	t_game;
 
 typedef struct s_text
 {
-	char	*buf;
-	int		bpp;
-	int		line;
-	int		endian;
 	double	step;
 	double	pos;
 }	t_text;
@@ -144,33 +151,35 @@ typedef struct s_ray
 	double	perpwall;
 	double	sidedist[2];
 	double	deltadist[2];
+	double	wallx;
 	int		side;
 	int		stepx;
 	int		stepy;
 	int		mapx;
 	int		mapy;
-	double	wallx;
-	void	*tex;
-	int		tex_w;
-	int		tex_h;
 	int		texx;
+	t_tex	*tex;
 }	t_ray;
 
+/* ---- game ---- */
 void	init_player(t_player *player, t_player_pos *p_pos, char **map);
 void	init_ray(t_player *player, t_ray *ray);
 void	*render_walls(t_player *player, t_window *win, t_map *map);
-void	*draw_walls(t_ray *ray, t_window *win, int x);
+void	draw_walls(t_ray *ray, t_window *win, int x);
 void	put_wall_pixel(t_render *rend, t_window *w, t_text *tex, t_ray *ray);
 void	choose_text(t_ray *ray, t_player *player, t_window *win);
-int		init_text(t_text *tex, t_ray *ray, t_render *rend, t_window *w);
+void	init_text(t_text *tex, t_ray *ray, t_render *rend, t_window *w);
+
+/* ---- raycasting ---- */
+void	init_sidedist(t_ray *ray, t_player_pos *p_pos);
+int		dda(t_ray *ray, char **map);
+void	calc_render(t_window *win, t_ray *ray, t_render *rend);
+int		is_wall(char **map, double x, double y);
+
+/* ---- parsing ---- */
 bool	parsing(char *map_path, t_map *map);
-int		error_msg(char *msg);
-size_t	count_tabs(char **tab);
-void	free_tabs(char **tab);
-void	free_struct(t_map *map);
-void	free_map(char **map);
-char	**copy_map(char **map);
 bool	valid_path(char *map_path);
+bool	is_readable_file(char *path);
 bool	check_textures(t_map *map);
 bool	set_textures(t_map *map, char *map_path);
 bool	check_color(int *sky_color, int *floor_color);
@@ -178,25 +187,37 @@ bool	set_color(t_map *map, char *map_path);
 bool	get_map(char *map_path, t_map *map);
 bool	add_map_line(t_map *map, char *line);
 bool	space_only(char *str);
-void	normalize_map(t_map *map);
+bool	normalize_map(t_map *map);
 bool	validate_map_chars(t_map *game);
 bool	is_map_solvable(t_map *game);
+int		match_element(char *clean);
+bool	handle_tex_line(t_map *map, char *clean);
+bool	handle_color_line(t_map *map, char *clean);
+bool	valid_component(char *s);
+int		count_commas(char *s);
+bool	fill_rgb(int *dst, char **rgb);
+int		cell_state(char **m, int y, int x);
+long	push4(int *sa, long top, int y, int x);
+long	stack_cap(char **m);
+
+/* ---- utils ---- */
+int		error_msg(char *msg);
+size_t	count_tabs(char **tab);
+void	free_tabs(char **tab);
+void	free_struct(t_map *map);
+void	free_map(char **map);
+char	**copy_map(char **map);
 char	*no_spaces(char *s);
-int		validate_map_walls(t_map *game);
-int		read_map(t_map *game);
-void	set_heigth(t_map *game, int height);
-int		map_count_line(void);
-void	init_sidedist(t_ray *ray, t_player_pos *p_pos);
-int		dda(t_ray *ray, char **map);
-void	calc_render(t_window *win, t_ray *ray, t_render *rend);
+char	*clean_line(char *line);
+void	drain_gnl(int fd);
+
+/* ---- window / hooks ---- */
 void	*init_window(t_map *map);
 void	free_window(t_window *s_win);
-void		handle_close(t_game *game);
-int		handle_keypress(int keycode, t_game *game);
-int		create_back(t_window *w, t_imag *img);
-int		draw_back(t_window *win);
 void	*free_img(t_imag *img, void *mlx);
 void	*init_img(t_imag *img, t_window *win, t_map *map);
-int		handle_keyrelease(int keycode, t_game *game);
+int		handle_close(t_game *game);
+int		handle_expose(t_game *game);
+int		handle_keypress(int keycode, t_game *game);
 void	exit_win(t_game *win, int code);
 #endif

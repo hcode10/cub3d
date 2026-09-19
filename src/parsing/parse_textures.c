@@ -6,89 +6,44 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:01:12 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/07/08 14:31:01 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/09/18 12:00:00 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-bool	valid_path(char *map_path)
+static bool	set_one(char **dst, char *value)
 {
-	char	*ext;
+	if (*dst)
+		return (false);
+	*dst = ft_strdup(value);
+	return (*dst != NULL);
+}
 
-	if (!map_path || ft_strlen(map_path) < 4)
-		return (false);
-	ext = map_path + (ft_strlen(map_path) - 4);
-	if (ft_strncmp(ext, ".cub", 4) != 0)
-		return (false);
+static bool	set_one_texture(t_map *map, char **splited)
+{
+	if (ft_strcmp(splited[0], "NO") == 0)
+		return (set_one(&map->texture_no, splited[1]));
+	if (ft_strcmp(splited[0], "SO") == 0)
+		return (set_one(&map->texture_so, splited[1]));
+	if (ft_strcmp(splited[0], "WE") == 0)
+		return (set_one(&map->texture_we, splited[1]));
+	if (ft_strcmp(splited[0], "EA") == 0)
+		return (set_one(&map->texture_ea, splited[1]));
 	return (true);
 }
 
-static bool	check_files(char *path)
+bool	handle_tex_line(t_map *map, char *clean)
 {
-	int	fd;
-
-	if (!path)
-		return (false);
-	fd = open(path, O_RDONLY);
-	if (fd < 0)
-		return (false);
-	close(fd);
-	return (true);
-}
-
-bool	check_textures(t_map *map)
-{
-	if (!check_files(map->texture_ea))
-		return (false);
-	if (!check_files(map->texture_no))
-		return (false);
-	if (!check_files(map->texture_so))
-		return (false);
-	if (!check_files(map->texture_we))
-		return (false);
-	return (true);
-}
-
-static void	set_one_texture(t_map *map, char **splited)
-{
-	if (ft_strncmp("NO", splited[0], 2) == 0 && !map->texture_no)
-		map->texture_no = ft_strtrim(splited[1], "\n");
-	else if (ft_strncmp("SO", splited[0], 2) == 0 && !map->texture_so)
-		map->texture_so = ft_strtrim(splited[1], "\n");
-	else if (ft_strncmp("WE", splited[0], 2) == 0 && !map->texture_we)
-		map->texture_we = ft_strtrim(splited[1], "\n");
-	else if (ft_strncmp("EA", splited[0], 2) == 0 && !map->texture_ea)
-		map->texture_ea = ft_strtrim(splited[1], "\n");
-}
-
-bool	set_textures(t_map *map, char *map_path)
-{
-	char	*line;
-	char	*line_trim;
 	char	**splited;
-	int		fd;
+	bool	ok;
 
-	fd = open(map_path, O_RDONLY);
-	if (fd < 0)
+	splited = ft_split(clean, ' ');
+	if (!splited)
 		return (false);
-	line = get_next_line(fd);
-	while (line != NULL)
-	{
-		line_trim = ft_strtrim(line, "\n");
-		free(line);
-		if (!line_trim)
-			return (close(fd), NULL);
-		splited = ft_split(line_trim, ' ');
-		free(line_trim);
-		if (!splited)
-			return (close(fd), NULL);
-		if (splited && count_tabs(splited) == 2)
-			set_one_texture(map, splited);
-		free_tabs(splited);
-		line = get_next_line(fd);
-	}
-	free(line);
-	close(fd);
-	return (true);
+	ok = true;
+	if (count_tabs(splited) == 2)
+		ok = set_one_texture(map, splited);
+	free_tabs(splited);
+	return (ok);
 }

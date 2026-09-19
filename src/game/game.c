@@ -6,37 +6,37 @@
 /*   By: coressor <coressor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 17:05:22 by coressor          #+#    #+#             */
-/*   Updated: 2026/07/04 17:54:42 by coressor         ###   ########.fr       */
+/*   Updated: 2026/09/18 12:00:00 by coressor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/game.h"
+#include "game.h"
 
 void	init_player(t_player *player, t_player_pos *p_pos, char **map)
 {
+	char	c;
+
 	player->plane[0] = 0;
 	player->plane[1] = 0;
 	player->dir[0] = 0;
 	player->dir[1] = 0;
-	if (map[(int)p_pos->y][(int)p_pos->x] == 'N')
-	{
-		player->dir[1] = -1;
-		player->plane[0] = 0.66;
-	}
-	else if (map[(int)p_pos->y][(int)p_pos->x] == 'S')
+	player->p_pos = p_pos;
+	c = map[(int)p_pos->y][(int)p_pos->x];
+	if (c == 'N' || c == 'S')
 	{
 		player->dir[1] = 1;
 		player->plane[0] = -0.66;
 	}
-	else if (map[(int)p_pos->y][(int)p_pos->x] == 'E')
+	else
 	{
 		player->dir[0] = 1;
 		player->plane[1] = 0.66;
 	}
-	else if (map[(int)p_pos->y][(int)p_pos->x] == 'W')
+	if (c == 'N' || c == 'W')
 	{
-		player->dir[0] = -1;
-		player->plane[1] = -0.66;
+		player->dir[0] *= -1;
+		player->dir[1] *= -1;
+		player->plane[0] *= -1;
+		player->plane[1] *= -1;
 	}
-	player->p_pos = p_pos;
 }

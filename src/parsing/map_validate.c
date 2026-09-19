@@ -6,47 +6,59 @@
 /*   By: dcasadio <dcasadio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:01:12 by dcasadio          #+#    #+#             */
-/*   Updated: 2026/07/08 16:12:51 by dcasadio         ###   ########.fr       */
+/*   Updated: 2026/09/18 12:00:00 by dcasadio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-static void	check_player_collect(t_map *game, int i, int j)
+/**
+ * @brief Renvoie le nombre de joueurs de la ligne, ou -1 si un caractere
+ * interdit s'y trouve. Memorise au passage la case de depart, centree.
+ */
+static int	check_line(t_map *game, size_t i)
 {
-	char	pos;
+	size_t	j;
+	int		players;
 
-	pos = game->map[i][j];
-	if (pos == 'S' || pos == 'N' || pos == 'W' || pos == 'E')
+	j = 0;
+	players = 0;
+	while (game->map[i][j])
 	{
-		game->p_pos.y = (double)i;
-		game->p_pos.x = (double)j;
+		if (!ft_strchr("10NSEW ", game->map[i][j]))
+			return (-1);
+		if (ft_strchr("NSEW", game->map[i][j]))
+		{
+			game->p_pos.y = (double)i + 0.5;
+			game->p_pos.x = (double)j + 0.5;
+			players++;
+		}
+		j++;
 	}
+	return (players);
 }
 
 bool	validate_map_chars(t_map *game)
 {
-	int		i;
-	int		j;
+	size_t	i;
+	int		n;
+	int		players;
 
+	if (!game->map || !game->map[0])
+		return (error_msg("Map: carte vide"), false);
 	i = 0;
-	game->p_pos.x = 0;
-	game->p_pos.y = 0;
-	if (!game->map)
-		return (false);
-	while (game->map[i] != NULL)
+	players = 0;
+	while (game->map[i])
 	{
-		j = 0;
-		while (game->map[i][j])
-		{
-			if (!ft_strchr("10NSEW \n", game->map[i][j]))
-				return (error_msg("Map: caractere invalide"), false);
-			check_player_collect(game, i, j);
-			j++;
-		}
+		n = check_line(game, i);
+		if (n < 0)
+			return (error_msg("Map: caractere invalide"), false);
+		players += n;
 		i++;
 	}
-	if (game->p_pos.x == 0 || game->p_pos.y == 0)
-		return (error_msg("Map: joueur absent ou mal place"), false);
+	if (players == 0)
+		return (error_msg("Map: aucun joueur"), false);
+	if (players > 1)
+		return (error_msg("Map: plusieurs joueurs"), false);
 	return (true);
 }
